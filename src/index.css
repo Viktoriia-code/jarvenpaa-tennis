@@ -23,6 +23,7 @@ body {
   color: rgba(255, 255, 255, 0.87);
   --backgroundColor: #F8FAF9;
   --orange-gradient: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
+  --gray-bg: #E4E5E5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -44,6 +45,23 @@ a:hover {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+h3 {
+  color: #2B2B2B;
+  font-family: 'Poppins';
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.card-title {
+  font-family: 'Montserrat';
+  font-size: 33px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
 button {

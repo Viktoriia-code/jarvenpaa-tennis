@@ -2,15 +2,21 @@ import styled from 'styled-components';
 import noiseBg from '../assets/images/noise_transparent.png';
 import heroImg from '../assets/images/Hero/person.png';
 import instagramIcon from '../assets/icons/instagram_icon.svg';
+import HeroCard from "../components/HeroServiceCard";
+import { HeroServiceCards } from "../utils/menuInfo";
 
 const HeroStyles = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 50px;
+  padding-bottom: 45px;
   .container {
     width: 1330px;
+  }
+  .court-part {
     background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 35px;
   }
   .subtitle {
     color: #FFF;
@@ -115,6 +121,36 @@ const HeroStyles = styled.div`
   .instagram-link:hover .instagram-icon {
     background-position: 100% 100%;
   }
+  .tag-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: all .3s ease-in-out;
+  }
+  .tag-link:hover {
+    text-decoration: none;
+    color: #FF861E;
+    transition: all .3s ease-in-out;
+  }
+  .tag-item {
+    font-family: 'Poppins';
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+  }
+  .tag-link-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1114px;
+    padding-top: 27px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+  }
+  .cards_wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
 `;
 
 const Hero: React.FC = () => {
@@ -149,6 +185,31 @@ const Hero: React.FC = () => {
           </div>
           <div className='left-part'>
           </div>
+          <div className='tag-link-wrapper'>
+            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
+              <span className='tag-item'>#Tennis coach</span>
+            </a>
+            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
+              <span className='tag-item'>#Padel coach</span>
+            </a>
+            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
+              <span className='tag-item'>#Kerava</span>
+            </a>
+            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
+              <span className='tag-item'>#Tuusula</span>
+            </a>
+            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
+              <span className='tag-item'>#Järvenpää</span>
+            </a>
+            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
+              <span className='tag-item'>#Vantaa</span>
+            </a>
+          </div>
+        </div>
+        <div className="cards_wrapper">
+          {HeroServiceCards.map((path, index) => {
+            return <HeroCard {...path} key={index} />;
+          })}
         </div>
       </div>
     </HeroStyles>

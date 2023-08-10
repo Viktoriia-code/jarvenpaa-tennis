@@ -31,3 +31,24 @@ export const MenuLinks = [
 		text: "Contacts",
 	},
 ];
+
+export const HeroServiceCards = [
+	{
+		id: 1,
+		url: "/",
+		title: "Junior Tennis",
+		subtitle: "Groups",
+	},
+	{
+		id: 2,
+		url: "/#partners",
+		title: "adult Tennis",
+		subtitle: "Groups",
+	},
+	{
+		id: 3,
+		url: "/#about",
+		title: "Court booking",
+		subtitle: "Venues",
+	}
+];
