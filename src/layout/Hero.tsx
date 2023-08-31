@@ -5,13 +5,10 @@ import instagramIcon from '../assets/icons/instagram_icon.svg';
 import HeroCard from "../components/HeroServiceCard";
 import { HeroServiceCards } from "../utils/menuInfo";
 
-const HeroStyles = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 45px;
+const HeroStyles = styled.section`
   .container {
-    width: 1330px;
+    margin-top: 50px;
+    margin-bottom: 45px;
   }
   .court-part {
     background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
@@ -155,7 +152,7 @@ const HeroStyles = styled.div`
 
 const Hero: React.FC = () => {
   return (
-    <HeroStyles className="hero_section">
+    <HeroStyles>
       <div className="container">
         <div className='court-part'>
           <div className='court-line'>

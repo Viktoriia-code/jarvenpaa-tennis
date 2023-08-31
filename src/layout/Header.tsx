@@ -7,8 +7,6 @@ import styled from 'styled-components';
 const HeaderStyles = styled.header`
   background: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: center;
   .container {
     max-width: 1330px;
     display: flex;
