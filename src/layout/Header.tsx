@@ -1,18 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MenuLinks } from "../utils/menuInfo";
-import SunTennisLogo from "../assets/icons/sun_tennis_logo.svg";
+import JatsLogo from "../assets/images/jäts_logo.png";
 import styled from 'styled-components';
 
 const HeaderStyles = styled.header`
-  background: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  //background: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
+  //box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   .container {
     max-width: 1330px;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
     width: 100%;
   }
   .nav_menu {
@@ -25,15 +23,33 @@ const HeaderStyles = styled.header`
     text-transform: uppercase;
   }
   .nav_link {
-    text-decoration: none;
-    color: white;
+    color: black;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
     letter-spacing: 0.51px;
+  }
+  .logo_img {
+    width: 50px;
+  }
+  .instagram-icon {
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
+  .instagram-link .instagram-icon {
+    background-image: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
+    transition: all .3s ease-in-out;
+    background-size: 35px 35px;
+    background-position-y: -35px;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .instagram-link:hover .instagram-icon {
+    background-position: 100% 100%;
   }
 `;
 
@@ -75,61 +91,35 @@ const Header: React.FC = () => {
   };
 
   return (
-    <HeaderStyles className="header_section">
+    <HeaderStyles>
       
       {windowWidth >= 630 ? (
-        <div className="container">
-
-          <div className="navbar_logos">
-            
-            <div>
-              <NavLink to="/">
-                <img
-                  src={SunTennisLogo}
-                  alt="SkillsBridge_logo"
-                  className="logo_img"
-                />
-              </NavLink>
-            </div>
-          </div>
-          <nav className="navbar">
-            <ul
-              className={
-                isClick ? "nav-menu active" : "nav_menu"
-              }
-            >
-              {MenuLinks.map((menu) => {
-                const { id, url, text } = menu;
-                return (
-                  <li
-                    key={id}
-                    className="nav_item"
-                  >
-                    {text === "Paths" ? (
-                      <>
-                        <a
-                          href={url}
-                          onClick={closeMobileMenu}
-                          className="nav_link"
-                        >
-                          {text}
-                        </a>
-                        
-                      </>
-                    ) : (
-                      <a
-                        href={url}
-                        onClick={closeMobileMenu}
-                        className="nav_link"
-                      >
-                        {text}
-                      </a>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
+        <div className="container justify-between py-3 gap-10">
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src={JatsLogo}
+              alt="Jäts_logo"
+              width={70}
+            />
+            <p className="font-title text-black text-xl leading-tight">Järvenpään Tennisseura</p>
+          </Link>
+          <nav className="flex gap-x-6 flex-wrap w-full content-evenly">
+            {MenuLinks.map((menu) => {
+              const { id, url, text } = menu;
+              return (
+                <NavLink
+                  key={id}
+                  className="nav_item nav_link leading-none"
+                  to={url}
+                >
+                  {text}
+                </NavLink>
+              );
+            })}
           </nav>
+            {/*<a className='instagram-link' href="https://www.instagram.com/tennis_kokkaus/" target="_blank" rel="noopener noreferrer">
+              <img src={instagramIcon} alt="" className='instagram-icon' />
+            </a>*/}
         </div>
       ) : (
         <>
@@ -138,8 +128,8 @@ const Header: React.FC = () => {
               <div>
                 <NavLink to="/">
                   <img
-                    src={SunTennisLogo}
-                    alt="SkillsBridge_logo"
+                    src={JatsLogo}
+                    alt="Jäts_logo"
                     className="logo_img"
                   />
                 </NavLink>

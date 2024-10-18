@@ -2,33 +2,58 @@ export const MenuLinks = [
 	{
 		id: 1,
 		url: "/",
-		text: "Home",
+		text: "Etusivu",
 	},
 	{
 		id: 2,
 		url: "/#about",
-		text: "About",
+		text: "Seura",
 	},
 	{
 		id: 3,
 		url: "/#services",
-		text: "Services",
+		text: "Viikoittainen valmennus",
 	},
 
 	{
 		id: 4,
 		url: "/#lessons",
-		text: "Lessons",
+		text: "Yksityistunnit",
 	},
 	{
 		id: 5,
 		url: "/#locations",
-		text: "Locations",
+		text: "Tapahtumat ja kurssit",
 	},
   {
 		id: 6,
 		url: "/#contacts",
-		text: "Contacts",
+		text: "Yhteystiedot",
+	},
+	{
+		id: 7,
+		url: "/#contacts",
+		text: "Liity jäseneksi",
+	},
+	{
+		id: 8,
+		url: "/#contacts",
+		text: "Hallisarja ja turnaukset",
+	},
+	{
+		id: 9,
+		url: "/#contacts",
+		text: "Kenttävaraukset",
+	},
+	{
+		id: 10,
+		url: "/#contacts",
+		text: "In English",
+	},
+	{
+		id: 11,
+		url: "/#contacts",
+		text: "Senioritennis",
 	},
 ];
 

@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import noiseBg from '../assets/images/noise_transparent.png';
-import heroImg from '../assets/images/Hero/person.png';
-import instagramIcon from '../assets/icons/instagram_icon.svg';
+import HeroImg from "../assets/images/hero_bg.png";
 import HeroCard from "../components/HeroServiceCard";
 import { HeroServiceCards } from "../utils/menuInfo";
 
 const HeroStyles = styled.section`
   .container {
-    margin-top: 50px;
+    margin-top: 15px;
     margin-bottom: 45px;
   }
   .court-part {
@@ -84,11 +83,12 @@ const HeroStyles = styled.section`
     background-position: 100% 100%;
   }
   .hero-img {
-    width: 419px;
-    position: absolute;
-    bottom: 0;
-    left: 8vw;
-    width: 30vw;
+    position: relative;
+    bottom: 26vh;
+    left: 10vw;
+    width: 330px;
+    height: auto;
+    transform: rotate(6deg);
   }
   .top-block {
     content: '';
@@ -99,24 +99,6 @@ const HeroStyles = styled.section`
     justify-content: flex-end;
     width: 50%;
     padding-right: 9px;
-  }
-  .instagram-icon {
-    margin: 10px;
-    width: 35px;
-    height: 35px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  }
-  .instagram-link .instagram-icon {
-    background-image: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
-    transition: all .3s ease-in-out;
-    background-size: 35px 35px;
-    background-position-y: -35px;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-  .instagram-link:hover .instagram-icon {
-    background-position: 100% 100%;
   }
   .tag-link {
     text-decoration: none;
@@ -156,16 +138,13 @@ const Hero: React.FC = () => {
       <div className="container">
         <div className='court-part'>
           <div className='court-line'>
-              <p className="subtitle">At any day from 8AM to 19PM</p>
+              <p className="subtitle">Sekä arkisin että viikonloppuisin</p>
               <div className='right-side'>
-                <a className='instagram-link' href="https://www.instagram.com/tennis_kokkaus/" target="_blank" rel="noopener noreferrer">
-                  <img src={instagramIcon} alt="" className='instagram-icon' />
-                </a>
               </div>
           </div>
           <div className='high-court-line'>
             <div className="title">
-              <h1>Tennis and padel coach</h1>
+              <h1>Tennis lapsille ja aikuisille</h1>
             </div>
             <div className='top-block'></div>
           </div>
@@ -177,7 +156,11 @@ const Hero: React.FC = () => {
               <div className='top-block'></div>
             </div>
             <div className='top-block'>
-              <img src={heroImg} alt="" className="hero-img" />
+              <img 
+                src={HeroImg} 
+                alt="" 
+                className="hero-img"
+              />
             </div>
           </div>
           <div className='left-part'>
