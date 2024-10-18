@@ -1,5 +1,5 @@
 export const Content = {
   about: {
-    title: "About me",
+    title: "Seuran esittely",
   }
 }

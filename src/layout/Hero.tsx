@@ -89,6 +89,7 @@ const HeroStyles = styled.section`
     width: 330px;
     height: auto;
     transform: rotate(6deg);
+    border: 3px solid #FFF;
   }
   .top-block {
     content: '';

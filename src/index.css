@@ -16,7 +16,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--backgroundColor);
-
+  font-family: 'Poppins', sans-serif;
+  color: black;
 }
 
 :root {
@@ -100,7 +101,6 @@ header {
 }
 
 section .container {
-  margin-top: 45px;
   margin-bottom: 45px;
 }
 

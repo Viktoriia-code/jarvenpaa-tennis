@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import About from "./About";
+import Partners from "./Partners";
 
 
 const Home: React.FC = () => {
@@ -7,6 +8,7 @@ const Home: React.FC = () => {
     <main>
       <Hero />
       <About />
+      <Partners />
     </main>
   );
 };

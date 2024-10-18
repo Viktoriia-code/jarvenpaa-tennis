@@ -25,11 +25,11 @@ const AboutStyles = styled.section`
     color: var(--white);
     border-right: 3px solid #2B2B2B;
     width: 134px;
-    height: 89px;
+    height: 75px;
     text-align: center;
     background-color: var(--orange);
     font-family: 'Montserrat';
-    font-size: 40px;
+    font-size: 32px;
     font-style: italic;
     font-weight: 900;
     line-height: normal;
@@ -37,6 +37,7 @@ const AboutStyles = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
   }
   .hero-card-content {
     display: flex;
@@ -44,31 +45,29 @@ const AboutStyles = styled.section`
   .hero-card-icon {
     margin: 0 auto;
   }
-  .top_part {
-    display: flex;
-  }
 `
 
 const About: React.FC = () => {
   return (
-    <AboutStyles>
+    <AboutStyles className='bg-grayBg mt-11 pb-11'>
       <div className="container">
         <div className="title_wrapper">
           <SectionTitle title={Content.about.title} />
         </div>
-        <div className="top_part">
-          <div className='right_part'>
-            <p className="subtitle">Hello, my name is</p>
-            <h1 className='name_title'>Stefan Aalto-Setälä</h1>
-            <p className="subtitle">Tennis and padel couch</p>
-            <p className="main_text">
-            I am an enegetic and passionate tennis and padel coach. I am a dedicated, focused and very well organized coach, and can take care of a group of players from the individual physical, technical and mental program as well as scheduling a good tournament program.
-            </p>
-          </div>
+        <h1 className='name_title mb-2'>Järvenpään Tennisseura</h1>
+        <p className="subtitle mb-4 font-text">perustettu vuonna 2001</p>
+        <div className="flex justify-between gap-16">
+          <p className="font-text text-lg leading-relaxed">
+          Tavoitteenamme on edistää tennistoimintaa Järvenpäässä ja Keravalla yhteistyössä Keravan Tennisseuran kanssa. Haluaisimme, että mahdollisimman monella olisi mahdollisuus harrastaa kunto- tai kilpatennistä edellytystensä ja tavoitteidensa mukaisesti. Järjestämme ohjattuja ryhmätunteja lapsille ja aikuisille sekä arkisin että viikonloppuisin. Lisäksi tarjoamme yksityisopetusta, lyhytkursseja ja pyöritämme hallisarjaa Keski-Uudellamaalla.
+          </p>
           <div className="left-part">
-            <div className='exp_card'>
+            <div className='exp_card mb-4 bg-white items-center gap-6'>
               <div className="exp_card_year">20+</div>
-              <h3>Years of Tennis Playing Experience</h3>
+              <p className='text-lg'>Years of Tennis Playing Experience</p>
+            </div>
+            <div className='exp_card bg-white items-center gap-6'>
+              <div className="exp_card_year">200+</div>
+              <p className='text-lg'>Happy tennis students</p>
             </div>
           </div>
         </div>

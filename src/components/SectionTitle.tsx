@@ -10,8 +10,7 @@ const TitleStyles = styled.div`
     height: 84px;
     background: var(--blue-court);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    margin-bottom: 40px;
-    margin-top: 45px;
+    margin-bottom: 60px;
     white-space: nowrap;
   h2 {
     color: white;
