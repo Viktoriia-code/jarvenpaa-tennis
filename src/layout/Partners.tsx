@@ -11,7 +11,7 @@ const Partners: React.FC = () => {
     <section className='bg-white'>
       <div className="container">
         <div className="flex justify-center">
-          <SectionTitle title="Our partners" />
+          <SectionTitle title="Kumppanimme" />
         </div>
         <div className="flex flex-wrap justify-center gap-x-10 gap-y-14 items-center">
           <img src={JarvTennis} alt="" className="w-full h-auto max-w-[30%]" />

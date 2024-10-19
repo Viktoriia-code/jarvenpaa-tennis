@@ -10,7 +10,7 @@ const AboutStyles = styled.section`
   .name_title {
     color: var(--dark-blue);
     font-family: Montserrat;
-    font-size: 56px;
+    font-size: 52px;
     font-style: italic;
     font-weight: 900;
     line-height: 55px; /* 98.214% */

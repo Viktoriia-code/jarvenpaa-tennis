@@ -11,7 +11,8 @@ export default {
         white: "#FFFFFF",
         accent: "#FF861E",
         grayBg: "#E4E5E5",
-        darkBlue: "#0A4E91"
+        darkBlue: "#0A4E91",
+        yellow: "#F6D217"
       },
       fontFamily: {
         title: ["Montserrat", "sans-serif"],

@@ -65,7 +65,7 @@ h1 {
 }
 h2 {
   font-family: 'Montserrat';
-  font-size: 40px;
+  font-size: 35px;
   font-style: italic;
   font-weight: 900;
   line-height: normal;
@@ -124,7 +124,7 @@ button:focus-visible {
 }
 
 .subtitle {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.66px;
   text-transform: uppercase;

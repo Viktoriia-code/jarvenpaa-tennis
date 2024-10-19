@@ -117,9 +117,6 @@ const Header: React.FC = () => {
               );
             })}
           </nav>
-            {/*<a className='instagram-link' href="https://www.instagram.com/tennis_kokkaus/" target="_blank" rel="noopener noreferrer">
-              <img src={instagramIcon} alt="" className='instagram-icon' />
-            </a>*/}
         </div>
       ) : (
         <>
