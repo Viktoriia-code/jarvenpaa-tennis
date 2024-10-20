@@ -3,6 +3,8 @@ import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Seura from "./pages/Seura";
+import Hallitus from "./pages/Hallitus";
+import English from "./pages/English";
 
 const App = () => {
   return (
@@ -11,6 +13,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="seura" element={<Seura />} />
+          <Route path="seura/hallitus" element={<Hallitus />} />
+          <Route path="in-english" element={<English />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

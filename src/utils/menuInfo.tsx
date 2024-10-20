@@ -47,7 +47,7 @@ export const MenuLinks = [
 	},
 	{
 		id: 10,
-		url: "/#contacts",
+		url: "/in-english",
 		text: "In English",
 	},
 	{
