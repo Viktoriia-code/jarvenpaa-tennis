@@ -6,7 +6,7 @@ export const MenuLinks = [
 	},
 	{
 		id: 2,
-		url: "/#about",
+		url: "/seura",
 		text: "Seura",
 	},
 	{

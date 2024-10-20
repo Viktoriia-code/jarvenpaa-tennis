@@ -43,20 +43,21 @@ body {
 
 }
 @font-face {
-  font-weight: 900; /* Соответствует значению normal */
+  font-weight: 900;
   font-family: Montserrat;
   src: url("assets/fonts/Montserrat/Montserrat-BlackItalic.otf");
 }
 
-a {
+.link {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  color: var(--dark-blue);
+  text-decoration: underline;
+  transition: all .3s ease-in-out;
 }
 
+.link:hover {
+  color: var(--orange);
+}
 
 h1 {
   font-size: 3.2em;
