@@ -17,22 +17,22 @@ export const MenuLinks = [
 
 	{
 		id: 4,
-		url: "/#lessons",
+		url: "/yksityistunnit",
 		text: "Yksityistunnit",
 	},
 	{
 		id: 5,
-		url: "/#locations",
+		url: "/tapahtumat-ja-kurssit",
 		text: "Tapahtumat ja kurssit",
 	},
   {
 		id: 6,
-		url: "/#contacts",
+		url: "/yhteystiedot",
 		text: "Yhteystiedot",
 	},
 	{
 		id: 7,
-		url: "/#contacts",
+		url: "/liity-jaseneksi",
 		text: "Liity jäseneksi",
 	},
 	{

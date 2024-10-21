@@ -30,6 +30,10 @@ const NavbarStyles = styled.header`
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0.51px;
+    transition: all .3s ease-in-out;
+  }
+  .nav_link:hover {
+    color: #FF861E;
   }
   .logo_img {
     width: 50px;

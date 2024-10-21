@@ -34,15 +34,15 @@ export interface TitleProp {
 
 function SectionTitle({ title }: TitleProp) {
   return (
-        <TitleStyles>
-            <span className='title-doubler'>{title}</span>
-            <span className='title-doubler'>{title}</span>
-            <span className='title-doubler'>{title}</span>
-            <h2>{title}</h2>
-            <span className='title-doubler'>{title}</span>
-            <span className='title-doubler'>{title}</span>
-            <span className='title-doubler'>{title}</span>
-        </TitleStyles>
+    <TitleStyles>
+      <span className='title-doubler'>{title}</span>
+      <span className='title-doubler'>{title}</span>
+      <span className='title-doubler'>{title}</span>
+      <h2>{title}</h2>
+      <span className='title-doubler'>{title}</span>
+      <span className='title-doubler'>{title}</span>
+      <span className='title-doubler'>{title}</span>
+    </TitleStyles>
   );
 }
 

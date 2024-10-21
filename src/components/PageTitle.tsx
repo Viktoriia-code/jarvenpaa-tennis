@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import noiseBg from '../assets/images/noise_transparent.png';
 import '../App.css';
+import JarvTennis from '../assets/images/Jats_logo_full.png';
 
 const PageTitleStyles = styled.section`
   .container {
@@ -11,6 +12,7 @@ const PageTitleStyles = styled.section`
   .court-part {
     background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
   }
   .subtitle {
     color: #FFF;
@@ -35,6 +37,7 @@ const PageTitleStyles = styled.section`
     border-bottom: white solid 3px;
     display: flex;
     align-content: center;
+    position: relative;
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -82,13 +85,13 @@ const PageTitleStyles = styled.section`
     background-position: 100% 100%;
   }
   .hero-img {
-    position: relative;
-    bottom: 15vh;
-    left: 10vw;
-    width: 250px;
-    height: auto;
-    transform: rotate(6deg);
+    top: 50%;
+    right: 15%;
+    width: auto;
+    height: 230px;
+    transform: translateY(-50%) rotate(6deg);
     border: 3px solid #FFF;
+    z-index: 1;
   }
   .top-block {
     content: '';
@@ -115,7 +118,12 @@ interface PageTitleProps {
 const PageTitle: React.FC<PageTitleProps> = ({ title, image }) => {
   return (
     <PageTitleStyles>
-      <div className="container">
+      <div className="container relative">
+        <img 
+          src={image? image : JarvTennis} 
+          alt="" 
+          className="hero-img absolute"
+        />
         <div className='court-part'>
           <div className='court-line'>
             <p className="subtitle"></p>
@@ -125,20 +133,17 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image }) => {
             <div className="title">
               <h1>{title}</h1>
             </div>
-            <div className='top-block'></div>
+            <div className='top-block'>
+
+            </div>
           </div>
           <div className='court-line'>
             <div className="title">
               <div className="title"></div>
-              <div className='top-block'></div>
+              <div className='top-block'>
+              </div>
             </div>
-            <div className='top-block'>
-              <img 
-                src={image} 
-                alt="" 
-                className="hero-img"
-              />
-            </div>
+            <div className='top-block'></div>
           </div>
           <div className='left-part'>
           </div>
