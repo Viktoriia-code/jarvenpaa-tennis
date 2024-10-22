@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import noiseBg from '../assets/images/noise_transparent.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import JatsLogo from "../assets/images/jäts_logo.png";
 import instagramIcon from '../assets/icons/instagram_icon.svg';
 import facebookIcon from '../assets/icons/facebook.svg';
+import { MenuLink, MenuLinks } from '../utils/menuInfo';
 
 const FooterStyles = styled.section`
   background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
@@ -131,36 +132,31 @@ const Footer: React.FC = () => {
           <div className='flex gap-16'>
             <div className='flex flex-col'>
               <h3 className='subtitle mb-2 text-white'>Yleiset tiedot</h3>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Etusivu</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Seura</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Yhteystiedot</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Liity jäseneksi</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>In English</span>
-              </a>
+              {MenuLinks.filter((link: MenuLink) => link.group === 'Yleiset tiedot').map((link: MenuLink) => {
+                return (
+                  <NavLink 
+                    key={link.id}
+                    to={link.url}
+                    className='tag-link'
+                  >
+                    <span className='tag-item'>{link.text}</span>
+                  </NavLink>
+                )
+              })}
             </div>
             <div className='flex flex-col'>
               <h3 className='subtitle mb-2 text-white'>Ohjelmat</h3>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Viikoittainen valmennus</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Yksityistunnit</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Tapahtumat ja kurssit</span>
-              </a>
-              <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-                <span className='tag-item'>Senioritennis</span>
-              </a>
+              {MenuLinks.filter((link: MenuLink) => link.group === 'Ohjelmat').map((link: MenuLink) => {
+                return (
+                  <NavLink 
+                    key={link.id}
+                    to={link.url}
+                    className='tag-link'
+                  >
+                    <span className='tag-item'>{link.text}</span>
+                  </NavLink>
+                )
+              })}
             </div>
           </div>
         </div>

@@ -3,11 +3,11 @@ import noiseBg from '../../assets/images/noise_transparent.png';
 import HeroImg from "../../assets/images/hero_bg.png";
 import HeroCard from "../HeroServiceCard";
 import { HeroServiceCards } from "../../utils/menuInfo";
+import '../../index.css';
 
 const HeroStyles = styled.section`
   .container {
     margin-top: 15px;
-    margin-bottom: 45px;
   }
   .court-part {
     background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);

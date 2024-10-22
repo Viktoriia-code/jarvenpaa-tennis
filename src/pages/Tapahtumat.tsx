@@ -2,8 +2,8 @@ import PageTitle from '../components/PageTitle';
 import TennisCourt from '../assets/images/tennis_court.png';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
-import styled from 'styled-components';
 import '../index.css';
+import styled from 'styled-components';
 
 const TapahtumatFormStyles = styled.section`
   .form_input {
@@ -18,7 +18,7 @@ const Tapahtumat = () => {
     <>
       <PageTitle title='Tapahtumat ja kurssit syksy 2024' image={TennisCourt} />
       <section>
-        <div className="container flex flex-col gap-4">
+        <div className="container flex flex-col gap-4 px-12">
           <p className="font-text text-lg leading-relaxed">Järvenpään Tennisseura tarjoaa tenniskursseja sekä aloittelijoille että jo pidempäänkin pelanneille Järvenpään Tenniskeskuksessa (Kuuselankatu 2). Järjestämme <span className="font-semibold">aikuisille alkeiskursseja, tehotreenejä ja tennisklinikoita. Kursseihin ja tapahtumiin osallistuminen ei edellytä JäTS:n jäsenyyttä!</span> Voit osallistua mukaan myös <Link to="/hallisarja/" className="link">hallisarjaan</Link>, mikä toimii sopivana muotona kilpailemisen aloittamiselle. </p>
           <p className="font-text text-lg leading-relaxed"><span className="font-semibold">Alkeiskurssit</span> (3h tai 4h) sopivat uusille pelaajille, jotka eivät ole aikaisemmin olleet tennivalmennustunnilla mukana. Kursseilla harjoitellaan perustekniikoita sekä käydään läpi tenniksen oleellisimmat säännöt. Sisältää myös lainamailan. Kurssin hinta 75€ (3 tuntia) tai 100€ (4 tuntia). Max. 6 osallistujaa.</p>
           <p className="font-text text-lg leading-relaxed"><span className="font-semibold">Tehotreenit</span> (1.5h) keskittyvät tietyn teeman ympärille (peruslyönnit, verkkopeli jne.) ja harjoituksissa tehdään paljon toistoja teemaan liittyen. Hinta 45€. Max. 4 osallistujaa.</p>
@@ -26,14 +26,14 @@ const Tapahtumat = () => {
         </div>
       </section>
       <section className='bg-grayBg'>
-        <div className='container'>
+        <div className='container_small'>
           <div className="flex justify-center">
             <SectionTitle title="Tapahtumat" />
           </div>
           <p className="subtitle mb-4 font-text">VAPAAT PAIKAT PÄIVITETTY 4.10. klo 13.00</p>
           <p className="font-text text-lg leading-relaxed mb-6">OSALLISTUJILLE LÄHETETÄÄN VAHVISTUSVIESTI TAPAHTUMAN TOTEUTUMISESTA TAPAHTUMAA EDELTÄVÄNÄ KESKIVIIKKONA.</p>
           
-          <TapahtumatFormStyles className='flex flex-col gap-3 w-10/12'>
+          <TapahtumatFormStyles className='flex flex-col gap-3'>
             <span className='flex justify-end'>*Vaaditaan</span>
             <label htmlFor="name" className="font-text text-lg leading-relaxed flex items-center justify-between">Osallistujan nimi
               <input id="name"

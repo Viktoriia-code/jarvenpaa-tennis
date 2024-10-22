@@ -98,11 +98,18 @@ header {
 }
 
 .container {
-  width: 1330px;
+  max-width: 1330px;
+  width: 100%;
 }
 
 section .container {
-  margin-bottom: 45px;
+  margin-bottom: 50px;
+}
+
+.container_small {
+  max-width: 1000px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 button:focus,

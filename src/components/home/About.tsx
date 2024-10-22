@@ -49,7 +49,7 @@ const AboutStyles = styled.section`
 
 const About: React.FC = () => {
   return (
-    <AboutStyles className='bg-grayBg mt-11 pb-11'>
+    <AboutStyles className='bg-grayBg'>
       <div className="container">
         <div className="title_wrapper">
           <SectionTitle title={Content.about.title} />
