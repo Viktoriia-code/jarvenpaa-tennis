@@ -120,7 +120,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image }) => {
     <PageTitleStyles>
       <div className="container relative">
         <img 
-          src={image? image : JarvTennis} 
+          src={image ? image : JarvTennis} 
           alt="" 
           className="hero-img absolute"
         />

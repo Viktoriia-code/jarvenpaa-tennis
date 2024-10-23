@@ -8,6 +8,7 @@ import English from "./pages/English";
 import Yksityistunnit from "./pages/Yksityistunnit";
 import Tapahtumat from "./pages/Tapahtumat";
 import Yhteystiedot from "./pages/Yhteystiedot";
+import Senioritennis from "./pages/Senioritennis";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="tapahtumat-ja-kurssit" element={<Tapahtumat />} />
           <Route path="yhteystiedot" element={<Yhteystiedot />} />
           <Route path="in-english" element={<English />} />
+          <Route path="senioritennis" element={<Senioritennis />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
