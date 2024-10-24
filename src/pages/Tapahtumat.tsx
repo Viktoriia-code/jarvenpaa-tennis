@@ -5,7 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import '../index.css';
 import styled from 'styled-components';
 
-const TapahtumatFormStyles = styled.section`
+const TapahtumatFormStyles = styled.div`
   .form_input {
     padding: 0.5rem;
     min-width: 62%;

@@ -12,12 +12,17 @@ export default {
         accent: "#FF861E",
         grayBg: "#E4E5E5",
         darkBlue: "#0A4E91",
-        yellow: "#F6D217"
+        yellow: "#F6D217",
+        darkGreen: "#138C52",
+        lightGreen: "#DDE79D",
       },
       fontFamily: {
         title: ["Montserrat", "sans-serif"],
         text: ["Poppins", "Open Sans"],
         subtitle: ["Inter", "Open Sans"],
+      },
+      boxShadow: {
+        button: '0px 4px 8px 0px rgba(0, 0, 0, 0.2)',
       },
     },
   },

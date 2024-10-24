@@ -94,7 +94,7 @@ section,
 header {
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
@@ -153,9 +153,6 @@ button:focus-visible {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   button {
     background-color: #f9f9f9;

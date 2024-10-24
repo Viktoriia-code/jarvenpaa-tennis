@@ -9,6 +9,7 @@ import Yksityistunnit from "./pages/Yksityistunnit";
 import Tapahtumat from "./pages/Tapahtumat";
 import Yhteystiedot from "./pages/Yhteystiedot";
 import Senioritennis from "./pages/Senioritennis";
+import LiityJaseneksi from "./pages/LiityJaseneksi";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="yksityistunnit" element={<Yksityistunnit />} />
           <Route path="tapahtumat-ja-kurssit" element={<Tapahtumat />} />
           <Route path="yhteystiedot" element={<Yhteystiedot />} />
+          <Route path="liity-jaseneksi" element={<LiityJaseneksi />} />
           <Route path="in-english" element={<English />} />
           <Route path="senioritennis" element={<Senioritennis />} />
           <Route path="*" element={<Error />} />

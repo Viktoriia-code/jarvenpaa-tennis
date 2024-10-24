@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MenuLinks } from "../utils/menuInfo";
 import JatsLogo from "../assets/images/jäts_logo.png";
@@ -23,7 +23,6 @@ const NavbarStyles = styled.header`
     text-transform: uppercase;
   }
   .nav_link {
-    color: black;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
@@ -31,9 +30,6 @@ const NavbarStyles = styled.header`
     font-weight: 600;
     letter-spacing: 0.51px;
     transition: all .3s ease-in-out;
-  }
-  .nav_link:hover {
-    color: #FF861E;
   }
   .logo_img {
     width: 50px;
@@ -62,6 +58,9 @@ const Navbar: React.FC = () => {
   const [isClick, setIsClick] = useState(false);
   const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const location = useLocation();
+  const pathname = location.pathname; 
 
   useEffect(() => {
     const handleResize = () => {
@@ -107,13 +106,13 @@ const Navbar: React.FC = () => {
             />
             <p className="font-title text-black text-xl leading-tight">Järvenpään Tennisseura</p>
           </Link>
-          <nav className="flex gap-x-6 flex-wrap w-full content-evenly">
+          <nav className="flex gap-x-2 flex-wrap w-full content-evenly">
             {MenuLinks.map((menu) => {
               const { id, url, text } = menu;
               return (
                 <NavLink
                   key={id}
-                  className="nav_item nav_link leading-none"
+                  className={`nav_item nav_link leading-none p-2 text-black ${pathname === url ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
                   to={url}
                 >
                   {text}
