@@ -56,7 +56,7 @@ export const MenuLinks: MenuLink[] = [
 	},
 	{
 		id: 9,
-		url: "/#contacts",
+		url: "/kenttavaraukset",
 		text: "Kenttävaraukset",
 	},
 	{
