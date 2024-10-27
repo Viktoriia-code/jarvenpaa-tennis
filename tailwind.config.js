@@ -12,7 +12,7 @@ export default {
         accent: "#FF861E",
         grayBg: "#E4E5E5",
         darkBlue: "#0A4E91",
-        yellow: "#F6D217",
+        yellow: "#f6b93b",
         darkGreen: "#138C52",
         lightGreen: "#DDE79D",
       },
