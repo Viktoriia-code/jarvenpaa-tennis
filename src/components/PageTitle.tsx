@@ -7,7 +7,7 @@ import JarvTennis from '../assets/images/Jats_logo_full.png';
 const PageTitleStyles = styled.section`
   .container {
     margin-top: 15px;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
   .court-part {
     background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
@@ -41,18 +41,28 @@ const PageTitleStyles = styled.section`
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 53px;
+    font-size: 48px;
     font-style: italic;
     font-weight: 900;
     line-height: 55px; /* 103.774% */
     text-transform: uppercase;
-    width: 473px;
     color: white;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 50px;
+    padding-top: 55px;
+    padding-bottom: 55px;
+    padding-left: 48px;
+    padding-right: 20px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow-wrap: break-word;
   }
   .title {
+    border-right: white solid 3px;
+    max-width: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .small-court-line {
     border-right: white solid 3px;
     min-width: 50%;
     height: 100%;
@@ -92,6 +102,7 @@ const PageTitleStyles = styled.section`
     transform: translateY(-50%) rotate(6deg);
     border: 3px solid #FFF;
     z-index: 1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   .top-block {
     content: '';
@@ -138,8 +149,8 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image }) => {
             </div>
           </div>
           <div className='court-line'>
-            <div className="title">
-              <div className="title"></div>
+            <div className="small-court-line">
+              <div className="small-court-line"></div>
               <div className='top-block'>
               </div>
             </div>

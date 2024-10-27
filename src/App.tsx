@@ -12,6 +12,7 @@ import Senioritennis from "./pages/Senioritennis";
 import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
+import Valmennus from "./pages/Valmennus";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="seura" element={<Seura />} />
             <Route path="seura/hallitus" element={<Hallitus />} />
+            <Route path="valmennus" element={<Valmennus />} />
             <Route path="yksityistunnit" element={<Yksityistunnit />} />
             <Route path="tapahtumat-ja-kurssit" element={<Tapahtumat />} />
             <Route path="yhteystiedot" element={<Yhteystiedot />} />

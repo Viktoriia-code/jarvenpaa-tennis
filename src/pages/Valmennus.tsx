@@ -1,0 +1,64 @@
+import PageTitle from '../components/PageTitle';
+import ValmennusImage from '../assets/images/valmennus.jpg';
+import '../index.css';
+import HeroServiceCard from '../components/HeroServiceCard';
+import { Link } from 'react-router-dom';
+
+const Valmennus = () => {
+  return (
+    <>
+      <PageTitle title='Viikoittainen valmennus' image={ValmennusImage} />
+      <section>
+        <div className="container flex gap-10 items-start">
+          <div>
+            <a
+              href="/seura/hallitus"
+              className='flex bg-grayBg items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold hover:text-accent transition-all duration-300 ease-in-out'
+            >
+              Aikuisvalmennus sisäkausi 2024-2025
+            </a>
+            <a
+              href="/seura/hallitus"
+              className='flex bg-grayBg items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold hover:text-accent transition-all duration-300 ease-in-out'
+            >
+              Aikuisvalmennus sisäkausi 2024-2025
+            </a>
+            <a
+              href="/seura/hallitus"
+              className='flex bg-grayBg items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold hover:text-accent transition-all duration-300 ease-in-out'
+            >
+              Valmennusehdot sisäkaudelle 2024-2025
+            </a>
+            <a
+              href="/seura/hallitus"
+              className='flex bg-grayBg items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold hover:text-accent transition-all duration-300 ease-in-out'
+            >
+              Pelisäännöt valmennustunnille
+            </a>
+          </div>
+          <div className='flex items-center flex-col gap-4'>
+
+            <HeroServiceCard url="" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
+            
+            <p className="font-text text-lg leading-relaxed">Järvenpään Tennisseura tarjoaa tennisopetusta sekä lapsille että aikuisille. Järjestämme viikoittaista pienryhmäopetusta sekä Järvenpäässä että Keravalla. Lisäksi tarjoamme yksityisopetusta, alkeiskursseja ja tehotreenejä. Lisätietoja saat JäTS:n valmennuspäällikkö Matti Käpylältä (puh. 0503052120 tai matti(at)jarvenpaantennisseura.fi).</p>
+          
+            <a
+              href="/valmennus/aikuisvalmennus-sisakausi-2024-2025/"
+              className='flex border-[3px] border-black items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold hover:text-accent'
+            >
+              Lisätietoa aikuisvalmennuksesta
+            </a>
+            <Link
+              to="/valmennus/juniorivalmennus-sisakausi-2024-2025/"
+              className='flex border-[3px] border-black items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold hover:text-accent'
+            >
+              Lisätietoa juniorivalmennuksesta
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default Valmennus

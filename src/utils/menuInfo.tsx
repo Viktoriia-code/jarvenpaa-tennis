@@ -20,7 +20,7 @@ export const MenuLinks: MenuLink[] = [
 	},
 	{
 		id: 3,
-		url: "/#services",
+		url: "/valmennus",
 		text: "Viikoittainen valmennus",
 		group: "Ohjelmat",
 	},

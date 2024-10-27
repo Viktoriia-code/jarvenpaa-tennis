@@ -27,7 +27,6 @@ const HeroCardStyles = styled.div`
 `;
 
 export interface HeroServiceCards {
-  id: number;
   url: string;
   title: string;
   subtitle: string;
