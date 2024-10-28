@@ -13,6 +13,8 @@ import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/Valmennus";
+import Pelisaannot from "./pages/Pelisaannot";
+import ValmennusLayout from "./layouts/ValmennusLayout";
 
 const App = () => {
   return (
@@ -23,7 +25,6 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="seura" element={<Seura />} />
             <Route path="seura/hallitus" element={<Hallitus />} />
-            <Route path="valmennus" element={<Valmennus />} />
             <Route path="yksityistunnit" element={<Yksityistunnit />} />
             <Route path="tapahtumat-ja-kurssit" element={<Tapahtumat />} />
             <Route path="yhteystiedot" element={<Yhteystiedot />} />
@@ -32,6 +33,10 @@ const App = () => {
             <Route path="in-english" element={<English />} />
             <Route path="senioritennis" element={<Senioritennis />} />
             <Route path="*" element={<Error />} />
+          </Route>
+          <Route path="/valmennus" element={<ValmennusLayout />}>
+            <Route index element={<Valmennus />} />
+            <Route path="pelisaannot-valmennustunnille" element={<Pelisaannot />} />
           </Route>
         </Routes>
       </ScrollToTop>
