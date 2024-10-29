@@ -47,8 +47,8 @@ const PageTitleStyles = styled.section`
     line-height: 55px; /* 103.774% */
     text-transform: uppercase;
     color: white;
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     padding-left: 48px;
     padding-right: 20px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

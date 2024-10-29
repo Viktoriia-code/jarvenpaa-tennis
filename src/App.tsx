@@ -15,6 +15,7 @@ import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/Valmennus";
 import Pelisaannot from "./pages/Pelisaannot";
 import ValmennusLayout from "./layouts/ValmennusLayout";
+import Aikuisvalmennus from "./pages/Aikuisvalmennus";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           </Route>
           <Route path="/valmennus" element={<ValmennusLayout />}>
             <Route index element={<Valmennus />} />
+            <Route path="aikuisvalmennus-sisakausi-2024-2025" element={<Aikuisvalmennus />} />
             <Route path="pelisaannot-valmennustunnille" element={<Pelisaannot />} />
           </Route>
         </Routes>

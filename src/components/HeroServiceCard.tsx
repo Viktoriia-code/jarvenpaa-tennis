@@ -37,17 +37,19 @@ function HeroServiceCard(heroServiceCards: HeroServiceCards) {
 
       
         <HeroCardStyles>
-          <div className="herocard_subtitle">
-            <h3>{heroServiceCards.subtitle}</h3>
-          </div>
-          <div className="hero-card-content">
-            <div className="card-title">{heroServiceCards.title}</div>
-            <img
-              src={arrowIcon}
-              alt="Learn more"
-              className="hero-card-icon"
-            />
-          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" target="_blank" rel="noopener noreferrer">
+            <div className="herocard_subtitle">
+              <h3>{heroServiceCards.subtitle}</h3>
+            </div>
+            <div className="hero-card-content">
+              <div className="card-title">{heroServiceCards.title}</div>
+              <img
+                src={arrowIcon}
+                alt="Learn more"
+                className="hero-card-icon"
+                />
+            </div>
+          </a>
         </HeroCardStyles>
 
 

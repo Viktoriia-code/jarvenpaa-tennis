@@ -15,7 +15,7 @@ const ValmennusLayout: React.FC = () => {
         <section>
           <div className="container flex gap-10 items-start">
             <ValmennusMenu />
-            <div className="flex items-center flex-col gap-4">
+            <div className="flex flex-col gap-4">
               <Outlet />
             </div>
           </div>
