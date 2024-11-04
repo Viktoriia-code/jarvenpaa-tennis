@@ -45,7 +45,20 @@ body {
 @font-face {
   font-weight: 900;
   font-family: Montserrat;
+  font-style: italic;
   src: url("assets/fonts/Montserrat/Montserrat-BlackItalic.otf");
+}
+
+@font-face {
+  font-weight: 900;
+  font-family: Montserrat;
+  src: url("assets/fonts/Montserrat/Montserrat-Black.otf");
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 800;
+  src: url("assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.otf");
 }
 
 @layer components {
@@ -70,6 +83,7 @@ h1 {
   font-size: 3em;
   line-height: 1.1;
   font-family: 'Montserrat';
+  font-style: italic;
 }
 h2 {
   font-family: 'Montserrat';
@@ -90,8 +104,7 @@ h3 {
 
 .section-title {
   font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 900;
+  font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
 }

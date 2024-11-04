@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
                 alt="Jäts_logo"
                 width={70}
               />
-              <p className="font-title text-white text-xl leading-tight">Järvenpään<br/>Tennisseura</p>
+              <p className="font-title text-white text-xl leading-tight italic">Järvenpään<br/>Tennisseura</p>
             </Link>
             <div className='flex gap-5'>
               <a className='instagram-link' href="https://www.instagram.com/jarvenpaantennisseura" target="_blank" rel="noopener noreferrer">

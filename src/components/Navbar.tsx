@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
               alt="Jäts_logo"
               width={70}
             />
-            <p className="font-title text-black text-xl leading-tight">Järvenpään Tennisseura</p>
+            <p className="font-title text-black text-xl leading-tight font-black italic">Järvenpään Tennisseura</p>
           </Link>
           <nav className="flex gap-x-2 flex-wrap w-full content-evenly">
             {MenuLinks.map((menu) => {
