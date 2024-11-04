@@ -1,7 +1,8 @@
 import '../App.css';
 import JarvTennis from '../assets/images/Jats_logo_full.png';
 import PageTitle from '../components/PageTitle';
-import arrowIcon from "../assets/icons/big-arrow.svg";
+import { Link } from 'react-router-dom';
+import '../index.css';
 
 const Hallitus = () => {
   return (
@@ -9,19 +10,9 @@ const Hallitus = () => {
       <PageTitle title='Seura' image={JarvTennis} />
       <section>
         <div className="container flex gap-10 items-start">
-          <a
-            href="/seura/hallitus"
-            className='flex border-[3px] border-black items-stretch justify-between gap-6 min-w-[280px]'
-          >
+          <Link to="/seura/hallitus" className='side_link'>
             <h3 className='p-3'>Hallitus</h3>
-            <div className='border-l-[3px] border-black p-3'>
-              <img
-                src={arrowIcon}
-                alt="Learn more"
-                className="w-6 h-6"
-              />
-            </div>
-          </a>
+          </Link>
           <div className='flex flex-col gap-4'>
             <h1 className='text-darkBlue'>Hallitus 2024-2025</h1>
             <p className="font-text text-lg leading-relaxed">Mathias Kalliokoski (puheenjohtaja)</p>

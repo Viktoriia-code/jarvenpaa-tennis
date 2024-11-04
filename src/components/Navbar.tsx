@@ -109,10 +109,12 @@ const Navbar: React.FC = () => {
           <nav className="flex gap-x-2 flex-wrap w-full content-evenly">
             {MenuLinks.map((menu) => {
               const { id, url, text } = menu;
+              const isActive = (url === '/' && pathname === '/') || (url !== '/' && pathname.includes(url));
+
               return (
                 <NavLink
                   key={id}
-                  className={`nav_item nav_link leading-none p-2 text-black ${pathname === url ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
+                  className={`nav_item nav_link leading-none p-2 text-black ${isActive ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
                   to={url}
                 >
                   {text}
