@@ -1,5 +1,5 @@
 import { HandThumbUpIcon } from '@heroicons/react/24/outline';
-import '../index.css';
+import '../../index.css';
 
 const Saannot = [
   'Olen ajoissa valmennustunnilla',

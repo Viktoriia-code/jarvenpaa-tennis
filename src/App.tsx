@@ -13,9 +13,10 @@ import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/Valmennus";
-import Pelisaannot from "./pages/Pelisaannot";
 import ValmennusLayout from "./layouts/ValmennusLayout";
-import Aikuisvalmennus from "./pages/Aikuisvalmennus";
+import Aikuisvalmennus from "./pages/Valmennus/Aikuisvalmennus";
+import Juniorvalmennus from "./pages/Valmennus/Juniorvalmennus";
+import Pelisaannot from "./pages/Valmennus/Pelisaannot";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/valmennus" element={<ValmennusLayout />}>
             <Route index element={<Valmennus />} />
             <Route path="aikuisvalmennus-sisakausi-2024-2025" element={<Aikuisvalmennus />} />
+            <Route path="juniorivalmennus-sisakausi-2024-2025" element={<Juniorvalmennus />} />
             <Route path="pelisaannot-valmennustunnille" element={<Pelisaannot />} />
           </Route>
         </Routes>

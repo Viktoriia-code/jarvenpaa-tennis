@@ -190,12 +190,16 @@ button:focus-visible {
   display: flex;
 }
 .side_link:hover {
-  @apply bg-gray
+  @apply bg-gray;
 }
 
 .form_input {
   padding: 0.5rem;
   border: 1px solid #d1d5db;
+}
+
+.checkbox_input {
+  @apply w-4 h-4 mr-2;
 }
 
 @media (prefers-color-scheme: light) {

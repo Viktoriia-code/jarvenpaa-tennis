@@ -109,7 +109,7 @@ export const ValmennusMenuLinks = [
 	{
 		id: 3,
 		url: "/valmennus/juniorivalmennus-sisakausi-2024-2025/",
-		title: "Aikuisvalmennus sisäkausi 2024-2025",
+		title: "Juniorvalmennus sisäkausi 2024-2025",
 	},
 	{
 		id: 4,

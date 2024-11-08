@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "../App.css";
+import "../index.css";
 import PageTitle from "../components/PageTitle";
 import ValmennusImage from "../assets/images/valmennus.jpg";
 import ValmennusMenu from "../components/ValmennusMenu";
 
 const ValmennusLayout: React.FC = () => {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <main className="content">
         <PageTitle title='Viikoittainen valmennus' image={ValmennusImage} />

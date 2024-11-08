@@ -1,4 +1,4 @@
-import '../App.css';
+import '../index.css';
 import JarvTennis from '../assets/images/Jats_logo_full.png';
 import PageTitle from '../components/PageTitle';
 import '../index.css';
