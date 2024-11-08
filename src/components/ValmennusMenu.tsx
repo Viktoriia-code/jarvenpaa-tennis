@@ -1,13 +1,26 @@
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../index.css';
+import { ValmennusMenuLinks } from "../utils/menuInfo";
 
 const ValmennusMenu = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
   return (
-    <aside className='flex flex-col gap-1 max-w-80'>
-      <Link to="/valmennus/aikuisvalmennus-sisakausi-2024-2025/" className='side_link'>Aikuisvalmennus sisäkausi 2024-2025</Link>
-      <Link to="/valmennus/juniorivalmennus-sisakausi-2024-2025/" className='side_link'>Aikuisvalmennus sisäkausi 2024-2025</Link>
-      <Link to="/valmennus/valmennusehdot-sisakaudelle-2024-2025/" className='side_link'>Valmennusehdot sisäkaudelle 2024-2025</Link>
-      <Link to="/valmennus/pelisaannot-valmennustunnille/" className='side_link'>Pelisäännöt valmennustunnille</Link>
+    <aside className='flex flex-col max-w-80 gap-1 border-l-[3px] border-black'>
+      {ValmennusMenuLinks.map((menu) => {
+        const { id, url, title } = menu;
+        const isActive = url === pathname;
+        return (
+          <NavLink
+            key={id}
+            className={`side_link ${isActive ? 'bg-yellow hover:bg-yellow':'bg-grayBg'}`}
+            to={url}
+          >
+            {title}
+          </NavLink>
+        );
+      })}
     </aside>
   )
 }

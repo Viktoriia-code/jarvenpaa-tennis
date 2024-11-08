@@ -94,3 +94,31 @@ export const HeroServiceCards = [
 		subtitle: "Venues",
 	}
 ];
+
+export const ValmennusMenuLinks = [
+	{
+		id: 1,
+		url: "/valmennus",
+		title: "Viikoittainen valmennus",
+	},
+	{
+		id: 2,
+		url: "/valmennus/aikuisvalmennus-sisakausi-2024-2025/",
+		title: "Aikuisvalmennus sisäkausi 2024-2025",
+	},
+	{
+		id: 3,
+		url: "/valmennus/juniorivalmennus-sisakausi-2024-2025/",
+		title: "Aikuisvalmennus sisäkausi 2024-2025",
+	},
+	{
+		id: 4,
+		url: "/valmennus/valmennusehdot-sisakaudelle-2024-2025/",
+		title: "Valmennusehdot sisäkaudelle 2024-2025",
+	},
+	{
+		id: 5,
+		url: "/valmennus/pelisaannot-valmennustunnille/",
+		title: "Pelisäännöt valmennustunnille",
+	}
+];

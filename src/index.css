@@ -178,9 +178,8 @@ button:focus-visible {
 }
 
 .side_link {
-  background-color: #e4e5e5;
-  min-width: 300px;
-  padding-left: 1rem;
+  min-width: 290px;
+  padding-left: 0.75rem;
   padding-right: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -191,7 +190,12 @@ button:focus-visible {
   display: flex;
 }
 .side_link:hover {
-  background-color: #c8c9c9;
+  @apply bg-gray
+}
+
+.form_input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
 }
 
 @media (prefers-color-scheme: light) {

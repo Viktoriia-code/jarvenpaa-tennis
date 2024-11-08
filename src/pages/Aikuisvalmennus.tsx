@@ -2,6 +2,7 @@ import HeroServiceCard from '../components/HeroServiceCard';
 import { HandThumbUpIcon } from '@heroicons/react/24/outline';
 import '../index.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Harjoitukset = [
   'Säännölliset harjoitukset 1-3 krt viikossa',
@@ -13,8 +14,20 @@ const Harjoitukset = [
 ];
 
 const Aikuisvalmennus = () => {
+  const [continueWithSameGroup, setContinueWithSameGroup] = useState('');
+  const [place, setPlace] = useState('');
+
+  // Handle changes in the select dropdown
+  const handleGroupSelectionChange = (event) => {
+    setContinueWithSameGroup(event.target.value);
+  };
+
+  const handlePlace = (event) => {
+    setPlace(event.target.value);
+  };
+  
   return (
-    <div className='flex flex-col gap-4'>
+    <>
       <h3 className='section-title'>Aikuisvalmennus sisäkausi 2024-2025</h3>
       <div className='mx-auto'>
         <HeroServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
@@ -25,7 +38,7 @@ const Aikuisvalmennus = () => {
       <ul className='flex flex-col gap-3 ml-2'>
         {Harjoitukset.map((text, index) => (
           <li key={index} className="font-text text-lg leading-relaxed flex gap-3 items-start">
-            <HandThumbUpIcon width={25} className='text-darkGray shrink-0' />
+            <HandThumbUpIcon width={25} className='text-gray shrink-0' />
             {text}
           </li>
         ))}
@@ -67,7 +80,113 @@ const Aikuisvalmennus = () => {
         <h3 className='subtitle mb-2 font-text'>Yksityisvalmennus kerran viikossa:</h3>
         <p className="font-text text-lg leading-relaxed">- 70€/tunti/pelaaja</p>
       </div>
-    </div>
+      <section className='bg-grayBg flex flex-col py-7 px-9 max-w-[800px]'>
+        <h3 className='section-title mb-4 text-center'>Aikuisvalmennuslomake</h3>
+        <span className='flex justify-end'>*Vaaditaan</span>
+        <form className='w-full flex flex-col gap-6'>
+          <label htmlFor="name" className="font-text text-lg leading-relaxed flex flex-col">Nimi *
+            <input id="name"
+              type="text"
+              name="name"
+              //value={passwordData.confirmNewPassword}
+              //onChange={handlePasswordChange}
+              placeholder="Anna nimesi"
+              className="form_input" />
+          </label>
+          <label htmlFor="address" className="font-text text-lg leading-relaxed flex flex-col">Osoite, postinumero ja kaupunki *
+            <input id="address"
+              type="text"
+              name="address"
+              //value={passwordData.confirmNewPassword}
+              //onChange={handlePasswordChange}
+              placeholder="Anna osoitteesi"
+              className="form_input" />
+          </label>
+          <label htmlFor="email" className="font-text text-lg leading-relaxed flex flex-col">Sähköposti (mm. laskutusta varten ja yhteydenpitoa varten) *
+            <input id="email"
+              type="email"
+              name="email"
+              //value={passwordData.confirmNewPassword}
+              //onChange={handlePasswordChange}
+              placeholder="Anna sähköpostiosoitteesi"
+              className="form_input" />
+          </label>
+          <label htmlFor="phone" className="font-text text-lg leading-relaxed flex flex-col">Puhelinnumero *
+            <input id="phone"
+              type="phone"
+              name="phone"
+              //value={passwordData.confirmNewPassword}
+              //onChange={handlePasswordChange}
+              placeholder="Anna puhelinnumerosi"
+              className="form_input" />
+          </label>
+          <label htmlFor="year" className="font-text text-lg leading-relaxed flex flex-col">Syntymäaika (Tennisliiton rekisteriä varten)
+            <input id="year"
+              type="text"
+              name="year"
+              //value={passwordData.confirmNewPassword}
+              //onChange={handlePasswordChange}
+              placeholder="Anna syntymävuosi"
+              className="form_input" />
+          </label>
+
+          <fieldset>
+            <legend className='font-text text-lg leading-relaxed'>Haluaisin jatkaa samassa ryhmässä kuin viime kaudella (voit jättää alempana olevia kohtia väliin, jos vastasit "Kyllä"):</legend>
+
+            <select 
+              value={continueWithSameGroup} 
+              onChange={handleGroupSelectionChange} 
+              className='form_input w-full text-lg'
+            >
+              <option value="">Vatitse...</option>
+              <option value="yes">Kyllä</option>
+              <option value="no">Ei</option>
+              <option value="new">Olen uusi pelaaja</option>
+              <option value="indifferent">Ei väliä</option>
+            </select>
+          </fieldset>
+
+          <fieldset className="font-text text-lg leading-relaxed">
+            <legend className='mb-2'>Monessako erässä haluat maksaa valmennusmaksun? (kts. Valmennusehdot sisäkausi 2023-2024)</legend>
+            <div className='ml-4 flex flex-col gap-3'>
+              <label className="flex items-center select-none cursor-pointer">
+                <input type="radio" name="payment-plan" className="w-4 h-4 mr-2"/>
+                Kymmenessä erässä
+              </label>
+              <label className="flex items-center select-none cursor-pointer">
+                <input type="radio" name="payment-plan" className="w-4 h-4 mr-2"/>
+                Neljässä erässä
+              </label>
+              <label className="flex items-center select-none cursor-pointer">
+                <input type="radio" name="payment-plan" className="w-4 h-4 mr-2"/>
+                Kahdessa erässä
+              </label>
+              <label className="flex items-center select-none cursor-pointer">
+                <input type="radio" name="payment-plan" className="w-4 h-4 mr-2"/>
+                Yhdessä erässä
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend className='font-text text-lg leading-relaxed'>Missä haluaisit osallistua harjoituksiin?</legend>
+
+            <select 
+              value={place} 
+              onChange={handlePlace} 
+              className='form_input w-full text-lg'
+            >
+              <option value="">Vatitse...</option>
+              <option value="Jarvenpaa">Järvenpäässä</option>
+              <option value="Kerava">Keravalla</option>
+              <option value="Both">Kumpikin on ok</option>
+            </select>
+          </fieldset>
+
+          <button className='main-btn mx-auto'>Lähetä lomake</button>
+        </form>
+      </section>
+    </>
   )
 }
 

@@ -17,7 +17,7 @@ const Pelisaannot = () => {
       <ul className='flex flex-col gap-3 ml-2'>
         {Saannot.map((saanto, index) => (
           <li key={index} className="font-text text-lg leading-relaxed flex gap-3 items-center">
-            <HandThumbUpIcon width={25} className='text-darkGray' />
+            <HandThumbUpIcon width={25} className='text-gray' />
             {saanto}
           </li>
         ))}

@@ -13,7 +13,7 @@ const ValmennusLayout: React.FC = () => {
       <main className="content">
         <PageTitle title='Viikoittainen valmennus' image={ValmennusImage} />
         <section>
-          <div className="container flex gap-10 items-start">
+          <div className="container flex gap-12 items-start">
             <ValmennusMenu />
             <div className="flex flex-col gap-4">
               <Outlet />

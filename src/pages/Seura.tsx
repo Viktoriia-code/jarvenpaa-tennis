@@ -10,9 +10,14 @@ const Seura = () => {
       <PageTitle title='Seura' image={JarvTennis} />
       <section>
         <div className="container flex gap-10 items-start">
-          <Link to="/seura/hallitus" className='side_link'>
-            <h3 className='p-3'>Hallitus</h3>
-          </Link>
+          <aside className='flex flex-col gap-1 max-w-80'>
+            <Link to="/seura" className='side_link'>
+              <h3 className='p-3'>Meidän historia</h3>
+            </Link>
+            <Link to="/seura/hallitus" className='side_link'>
+              <h3 className='p-3'>Hallitus</h3>
+            </Link>
+          </aside>
           <div className='flex flex-col gap-4'>
             <h1 className='text-darkBlue'>Järvenpään Tennisseura ry</h1>
             <p className="font-text text-lg leading-relaxed">
