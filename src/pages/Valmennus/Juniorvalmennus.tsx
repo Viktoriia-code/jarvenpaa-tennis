@@ -9,7 +9,7 @@ const Juniorvalmennus = () => {
       <div className='mx-auto'>
         <HeroServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
       </div>
-      <div className='bg-grayBg text-lg font-medium py-7 px-9 flex flex-col gap-3 border-l-4 border-black'>
+      <div className='notice_box'>
         <p className='font-semibold'>Harjoitukset alkavat Järvenpäässä ja Keravalla maanantaina 12.8. ja loppuvat sunnuntaina 22.6.2025!</p>
       </div>
       {JuniorGroups.map((group, index) => (
@@ -26,7 +26,7 @@ const Juniorvalmennus = () => {
         </div>
       ))}
       <h3 className='section-title'>Juniorivalmennuksen hinnasto sisäkaudelle 2024-2025</h3>
-      <div className='bg-grayBg text-lg font-medium py-7 px-9 text-center flex flex-col gap-3 border-l-4 border-black'>
+      <div className='notice_box text-center'>
         <p>- Varaamme oikeuden hintojen muutoksiin 1.1.2025 alkaen.</p>
         <p>- Mikäli samasta ruokakunnasta on seuran valmennuksessa useampi kuin yksi pelaaja, myönnetään 10% perhealennus pienimmästä valmennusmaksusta!</p>
       </div>

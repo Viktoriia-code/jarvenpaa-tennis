@@ -39,7 +39,7 @@ const Aikuisvalmennus = () => {
       <p className="font-text text-lg leading-relaxed">Sisäkausi alkaa Järvenpäässä ja Keravalla maanantaina 12.8.2024. Sisäkausi loppuu sunnuntaina 22.6.2025 (45 viikkoa). Valmennusmaksuihin lisätään laskutuksen yhteydessä hallintokulu, mikä on 7€ per lähetettävä lasku. Laskut lähetetään sähköpostitse pelaajan toiveen mukaisesti kymmenessä erässä, neljästi kaudessa, kahdesti kaudessa tai kerran kaudessa. Valmennukseen osallistuvilta edellytetään myös tennisseuran jäsenyyttä. Jäsenmaksut laskutetaan vasta vuonna 2025, mutta uudet pelaajat saavat halutessaan maksaa syksyllä myös <Link className='link' to="/liity-jaseneksi/">vuoden 2024 jäsenmaksun</Link>.</p>
       <p className="font-text text-lg leading-relaxed">Varaamme oikeuden hintojen muutoksiin 1.1.2025 alkaen.</p>
 
-      <div className='bg-grayBg text-lg font-medium py-7 px-9 text-center flex flex-col gap-3 border-l-4 border-black'>
+      <div className='notice_box'>
         <p>- Mikäli samasta ruokakunnasta on seuran valmennuksessa useampi kuin yksi pelaaja, myönnetään 10% perhealennus pienimmästä valmennusmaksusta!</p>
         <p>- 10% alennus arkipäivien 3-4 pelaajan päiväryhmistä (klo 7.00-15:00)</p>
       </div>

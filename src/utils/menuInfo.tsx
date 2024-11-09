@@ -51,7 +51,7 @@ export const MenuLinks: MenuLink[] = [
 	},
 	{
 		id: 8,
-		url: "/#contacts",
+		url: "/hallisarjajaturnaukset",
 		title: "Hallisarja ja turnaukset",
 	},
 	{

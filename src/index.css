@@ -70,10 +70,10 @@ body {
 }
 
 .link {
-  font-weight: 500;
   color: var(--dark-blue);
   text-decoration: underline;
   transition: all .3s ease-in-out;
+  @apply font-semibold;
 }
 
 .link:hover {
@@ -197,6 +197,10 @@ button:focus-visible {
 .form_input {
   padding: 0.5rem;
   border: 1px solid #d1d5db;
+}
+
+.notice_box {
+  @apply bg-grayBg font-medium py-7 px-9 flex flex-col gap-3 border-l-4 border-black
 }
 
 .checkbox_input {

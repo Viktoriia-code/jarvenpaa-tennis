@@ -18,6 +18,7 @@ import Aikuisvalmennus from "./pages/Valmennus/Aikuisvalmennus";
 import Juniorvalmennus from "./pages/Valmennus/Juniorvalmennus";
 import ValmennusEhdot from "./pages/Valmennus/ValmennusEhdot";
 import Pelisaannot from "./pages/Valmennus/Pelisaannot";
+import HallisarjajaTurnaukset from "./pages/HallisarjajaTurnaukset";
 
 const App = () => {
   return (
@@ -43,6 +44,9 @@ const App = () => {
             <Route path="juniorivalmennus-sisakausi-2024-2025" element={<Juniorvalmennus />} />
             <Route path="valmennusehdot-sisakaudelle-2024-2025" element={<ValmennusEhdot />} />
             <Route path="pelisaannot-valmennustunnille" element={<Pelisaannot />} />
+          </Route>
+          <Route path="/hallisarjajaturnaukset" element={<ValmennusLayout />}>
+            <Route index element={<HallisarjajaTurnaukset />} />
           </Route>
         </Routes>
       </ScrollToTop>
