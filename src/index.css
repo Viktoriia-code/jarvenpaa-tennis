@@ -18,6 +18,7 @@ body {
   background-color: var(--backgroundColor);
   font-family: 'Poppins', sans-serif;
   color: black;
+  @apply font-text text-lg leading-relaxed
 }
 
 :root {
