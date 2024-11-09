@@ -1,4 +1,5 @@
 import HeroServiceCard from '../../components/HeroServiceCard';
+import JuniorValmennusForm from '../../components/JuniorValmennusForm';
 import { JuniorGroups } from '../../utils/menuInfo';
 
 const Juniorvalmennus = () => {
@@ -10,20 +11,20 @@ const Juniorvalmennus = () => {
       </div>
       <div className='bg-grayBg text-lg font-medium py-7 px-9 flex flex-col gap-3 border-l-4 border-black'>
         <p className='font-semibold'>Harjoitukset alkavat Järvenpäässä ja Keravalla maanantaina 12.8. ja loppuvat sunnuntaina 22.6.2025!</p>
-        {JuniorGroups.map((group, index) => (
-          <div key={index}>
-            <h3 className='subtitle mb-2 font-text'>{group.title}</h3>
-            <ul className='flex flex-col gap-3 ml-2'>
-              {group.info.map((info, index) => (
-                <li key={index} className="font-text text-lg leading-relaxed flex gap-3 items-start">
-                  <span className="shrink-0 text-xl">◦</span>
-                  {info}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
       </div>
+      {JuniorGroups.map((group, index) => (
+        <div key={index}>
+          <h3 className='subtitle mb-2 font-text'>{group.title}</h3>
+          <ul className='flex flex-col gap-3 ml-2'>
+            {group.info.map((info, index) => (
+              <li key={index} className="font-text text-lg leading-relaxed flex gap-3 items-start">
+                <span className="shrink-0 text-xl">◦</span>
+                {info}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
       <h3 className='section-title'>Juniorivalmennuksen hinnasto sisäkaudelle 2024-2025</h3>
       <div className='bg-grayBg text-lg font-medium py-7 px-9 text-center flex flex-col gap-3 border-l-4 border-black'>
         <p>- Varaamme oikeuden hintojen muutoksiin 1.1.2025 alkaen.</p>
@@ -49,6 +50,8 @@ const Juniorvalmennus = () => {
       </div>
 
       <p className="font-text text-lg leading-relaxed">HUOM! Laskut lähetetään toiveenne mukaisesti sähköpostitse kymmenessä erässä, neljästi kaudessa, kahdesti kaudessa tai kerran kaudessa. Valmennusmaksuihin lisätään laskutuksen yhteydessä hallintokulu, mikä on 7€ per lähetettävä lasku. Lisäksi jokaiselta valmennukseen osallistuvilta edellytetään tennisseuran jäsenyyttä.</p>
+
+      <JuniorValmennusForm />
     </>
   )
 }

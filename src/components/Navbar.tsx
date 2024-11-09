@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
           </Link>
           <nav className="flex gap-x-2 flex-wrap w-full content-evenly">
             {MenuLinks.map((menu) => {
-              const { id, url, text } = menu;
+              const { id, url, title } = menu;
               const isActive = (url === '/' && pathname === '/') || (url !== '/' && pathname.includes(url));
 
               return (
@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
                   className={`nav_item nav_link leading-none p-2 text-black ${isActive ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
                   to={url}
                 >
-                  {text}
+                  {title}
                 </NavLink>
               );
             })}
@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
                         onClick={() => setOpenMobileSidebar(!openMobileSidebar)}
                         className="nav_links"
                       >
-                        {item.text}
+                        {item.title}
                       </a>
                     
                   </div>

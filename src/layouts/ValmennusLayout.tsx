@@ -4,7 +4,8 @@ import Footer from "../components/Footer";
 import "../index.css";
 import PageTitle from "../components/PageTitle";
 import ValmennusImage from "../assets/images/valmennus.jpg";
-import ValmennusMenu from "../components/ValmennusMenu";
+import SideMenu from "../components/SideMenu";
+import { ValmennusMenuLinks } from "../utils/menuInfo";
 
 const ValmennusLayout: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const ValmennusLayout: React.FC = () => {
         <PageTitle title='Viikoittainen valmennus' image={ValmennusImage} />
         <section>
           <div className="container flex gap-12 items-start">
-            <ValmennusMenu />
+            <SideMenu linksList={ValmennusMenuLinks} />
             <div className="flex flex-col gap-4">
               <Outlet />
             </div>

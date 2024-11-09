@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                     to={link.url}
                     className='tag-link'
                   >
-                    <span className='tag-item'>{link.text}</span>
+                    <span className='tag-item'>{link.title}</span>
                   </NavLink>
                 )
               })}
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
                     to={link.url}
                     className='tag-link'
                   >
-                    <span className='tag-item'>{link.text}</span>
+                    <span className='tag-item'>{link.title}</span>
                   </NavLink>
                 )
               })}

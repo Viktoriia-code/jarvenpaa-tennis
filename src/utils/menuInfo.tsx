@@ -1,7 +1,7 @@
 export interface MenuLink {
 	id: number;
 	url: string;
-	text: string;
+	title: string;
 	group?: string;
 }
 
@@ -9,66 +9,66 @@ export const MenuLinks: MenuLink[] = [
 	{
 		id: 1,
 		url: "/",
-		text: "Etusivu",
+		title: "Etusivu",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 2,
 		url: "/seura",
-		text: "Seura",
+		title: "Seura",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 3,
 		url: "/valmennus",
-		text: "Viikoittainen valmennus",
+		title: "Viikoittainen valmennus",
 		group: "Ohjelmat",
 	},
 
 	{
 		id: 4,
 		url: "/yksityistunnit",
-		text: "Yksityistunnit",
+		title: "Yksityistunnit",
 		group: "Ohjelmat",
 	},
 	{
 		id: 5,
 		url: "/tapahtumat-ja-kurssit",
-		text: "Tapahtumat ja kurssit",
+		title: "Tapahtumat ja kurssit",
 		group: "Ohjelmat",
 	},
   {
 		id: 6,
 		url: "/yhteystiedot",
-		text: "Yhteystiedot",
+		title: "Yhteystiedot",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 7,
 		url: "/liity-jaseneksi",
-		text: "Liity jäseneksi",
+		title: "Liity jäseneksi",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 8,
 		url: "/#contacts",
-		text: "Hallisarja ja turnaukset",
+		title: "Hallisarja ja turnaukset",
 	},
 	{
 		id: 9,
 		url: "/kenttavaraukset",
-		text: "Kenttävaraukset",
+		title: "Kenttävaraukset",
 	},
 	{
 		id: 10,
 		url: "/in-english",
-		text: "In English",
+		title: "In English",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 11,
 		url: "/senioritennis",
-		text: "Senioritennis",
+		title: "Senioritennis",
 		group: "Ohjelmat",
 	},
 ];
@@ -95,7 +95,7 @@ export const HeroServiceCards = [
 	}
 ];
 
-export const ValmennusMenuLinks = [
+export const ValmennusMenuLinks: MenuLink[] = [
 	{
 		id: 1,
 		url: "/valmennus",
@@ -121,6 +121,19 @@ export const ValmennusMenuLinks = [
 		url: "/valmennus/pelisaannot-valmennustunnille/",
 		title: "Pelisäännöt valmennustunnille",
 	}
+];
+
+export const SeuraMenuLinks: MenuLink[] = [
+	{
+		id: 1,
+		url: "/seura",
+		title: "Meidän historia",
+	},
+	{
+		id: 2,
+		url: "/seura/hallitus",
+		title: "Hallitus",
+	},
 ];
 
 export const JuniorGroups = [
