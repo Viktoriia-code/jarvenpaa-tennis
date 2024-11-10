@@ -5,17 +5,23 @@ import "../index.css";
 import PageTitle from "../components/PageTitle";
 import ValmennusImage from "../assets/images/valmennus.jpg";
 import SideMenu from "../components/SideMenu";
-import { ValmennusMenuLinks } from "../utils/menuInfo";
+import { MenuLink } from "../utils/menuInfo";
 
-const ValmennusLayout: React.FC = () => {
+
+interface SideMenuLayoutProps {
+  title: string;
+  links: MenuLink[];
+}
+
+const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({ title, links }) => {
   return (
     <div>
       <Navbar />
       <main className="content">
-        <PageTitle title='Viikoittainen valmennus' image={ValmennusImage} />
+        <PageTitle title={title} image={ValmennusImage} />
         <section>
           <div className="container flex gap-12 items-start">
-            <SideMenu linksList={ValmennusMenuLinks} />
+            <SideMenu linksList={links} />
             <div className="flex flex-col gap-4">
               <Outlet />
             </div>
@@ -27,4 +33,4 @@ const ValmennusLayout: React.FC = () => {
   );
 };
 
-export default ValmennusLayout;
+export default SideMenuLayout;

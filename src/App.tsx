@@ -13,12 +13,15 @@ import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/Valmennus";
-import ValmennusLayout from "./layouts/ValmennusLayout";
+import SideMenuLayout from "./layouts/SideMenuLayout";
 import Aikuisvalmennus from "./pages/Valmennus/Aikuisvalmennus";
 import Juniorvalmennus from "./pages/Valmennus/Juniorvalmennus";
 import ValmennusEhdot from "./pages/Valmennus/ValmennusEhdot";
 import Pelisaannot from "./pages/Valmennus/Pelisaannot";
 import HallisarjajaTurnaukset from "./pages/HallisarjajaTurnaukset";
+
+import { ValmennusMenuLinks } from "./utils/menuInfo";
+import { TurnauksetLinks } from "./utils/menuInfo";
 
 const App = () => {
   return (
@@ -38,14 +41,14 @@ const App = () => {
             <Route path="senioritennis" element={<Senioritennis />} />
             <Route path="*" element={<Error />} />
           </Route>
-          <Route path="/valmennus" element={<ValmennusLayout />}>
+          <Route path="/valmennus" element={<SideMenuLayout title="Viikoittainen valmennus" links={ValmennusMenuLinks} />}>
             <Route index element={<Valmennus />} />
             <Route path="aikuisvalmennus-sisakausi-2024-2025" element={<Aikuisvalmennus />} />
             <Route path="juniorivalmennus-sisakausi-2024-2025" element={<Juniorvalmennus />} />
             <Route path="valmennusehdot-sisakaudelle-2024-2025" element={<ValmennusEhdot />} />
             <Route path="pelisaannot-valmennustunnille" element={<Pelisaannot />} />
           </Route>
-          <Route path="/hallisarjajaturnaukset" element={<ValmennusLayout />}>
+          <Route path="/hallisarjajaturnaukset" element={<SideMenuLayout title="Hallisarja ja turnaukset" links={TurnauksetLinks} />}>
             <Route index element={<HallisarjajaTurnaukset />} />
           </Route>
         </Routes>

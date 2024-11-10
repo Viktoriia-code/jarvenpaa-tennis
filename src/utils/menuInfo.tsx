@@ -136,6 +136,19 @@ export const SeuraMenuLinks: MenuLink[] = [
 	},
 ];
 
+export const TurnauksetLinks: MenuLink[] = [
+	{
+		id: 1,
+		url: "/hallisarjajaturnaukset",
+		title: "Keski-Uudenmaan hallisarja 2023-2024",
+	},
+	{
+		id: 2,
+		url: "/hallisarjajaturnaukset/saannot",
+		title: "Hallisarjan säännöt",
+	}
+];
+
 export const JuniorGroups = [
   {
     "title": "MINITENNIS (PIKKUISET) 4-5 -VUOTIAILLE",
