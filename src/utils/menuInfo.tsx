@@ -144,9 +144,19 @@ export const TurnauksetLinks: MenuLink[] = [
 	},
 	{
 		id: 2,
-		url: "/hallisarjajaturnaukset/saannot",
-		title: "Hallisarjan säännöt",
-	}
+		url: "/hallisarjajaturnaukset/jats-mestaruuskilpailut-2023",
+		title: "JäTS:n Mestaruuskilpailut 11.-13.8.2023",
+	},
+	{
+		id: 3,
+		url: "/hallisarjajaturnaukset/jats-hallimestaruuskilpailut-2024",
+		title: "JäTS:n hallimestaruuskilpailut 2024",
+	},
+	{
+		id: 4,
+		url: "/hallisarjajaturnaukset/jats-ulkokenttienkisat-2024",
+		title: "JäTS:n ulkokenttien mestaruuskilpailut 9.8.-11.8.2024",
+	},
 ];
 
 export const JuniorGroups = [

@@ -14,14 +14,17 @@ import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/Valmennus";
 import SideMenuLayout from "./layouts/SideMenuLayout";
-import Aikuisvalmennus from "./pages/Valmennus/Aikuisvalmennus";
-import Juniorvalmennus from "./pages/Valmennus/Juniorvalmennus";
-import ValmennusEhdot from "./pages/Valmennus/ValmennusEhdot";
-import Pelisaannot from "./pages/Valmennus/Pelisaannot";
-import HallisarjajaTurnaukset from "./pages/HallisarjajaTurnaukset";
+import Aikuisvalmennus from "./pages/valmennus/Aikuisvalmennus";
+import Juniorvalmennus from "./pages/valmennus/Juniorvalmennus";
+import ValmennusEhdot from "./pages/valmennus/ValmennusEhdot";
+import Pelisaannot from "./pages/valmennus/Pelisaannot";
+import HallisarjajaTurnaukset from "./pages/turnaukset/HallisarjajaTurnaukset";
 
 import { ValmennusMenuLinks } from "./utils/menuInfo";
 import { TurnauksetLinks } from "./utils/menuInfo";
+import JatsMestaruuskilpailut2023 from "./pages/turnaukset/JatsMestaruuskilpailut2023";
+import JatsHallimestaruuskilpailut2024 from "./pages/turnaukset/JatsHallimestaruuskilpailut2024";
+import JatsUlkokenttienkisat2024 from "./pages/turnaukset/JatsUlkokenttienkisat2024";
 
 const App = () => {
   return (
@@ -50,6 +53,9 @@ const App = () => {
           </Route>
           <Route path="/hallisarjajaturnaukset" element={<SideMenuLayout title="Hallisarja ja turnaukset" links={TurnauksetLinks} />}>
             <Route index element={<HallisarjajaTurnaukset />} />
+            <Route path="jats-mestaruuskilpailut-2023" element={<JatsMestaruuskilpailut2023 />} />
+            <Route path="jats-hallimestaruuskilpailut-2024" element={<JatsHallimestaruuskilpailut2024 />} />
+            <Route path="jats-ulkokenttienkisat-2024" element={<JatsUlkokenttienkisat2024 />} />
           </Route>
         </Routes>
       </ScrollToTop>

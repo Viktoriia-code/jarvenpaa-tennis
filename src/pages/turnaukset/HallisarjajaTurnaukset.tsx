@@ -1,5 +1,4 @@
-import React from 'react'
-import HallisarjaForm from '../components/HallisarjaForm'
+import HallisarjaForm from '../../components/HallisarjaForm';
 
 const HallisarjajaTurnaukset = () => {
   return (
