@@ -1,5 +1,3 @@
-import React from 'react'
-
 const JatsUlkokenttienkisat2024 = () => {
   return (
     <section className='flex flex-col gap-4'>
