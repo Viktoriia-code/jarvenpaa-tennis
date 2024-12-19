@@ -20,7 +20,7 @@ const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({ title, links }) => {
       <main className="content">
         <PageTitle title={title} image={ValmennusImage} />
         <section>
-          <div className="container flex gap-12 items-start">
+          <div className="container flex gap-12">
             <SideMenu linksList={links} />
             <div className="flex flex-col gap-4">
               <Outlet />

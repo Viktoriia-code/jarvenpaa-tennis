@@ -20,7 +20,7 @@ export const MenuLinks: MenuLink[] = [
 	},
 	{
 		id: 3,
-		url: "/valmennus",
+		url: "/valmennus/viikoittainen-valmennus",
 		title: "Viikoittainen valmennus",
 		group: "Ohjelmat",
 	},
@@ -98,7 +98,7 @@ export const HeroServiceCards = [
 export const ValmennusMenuLinks: MenuLink[] = [
 	{
 		id: 1,
-		url: "/valmennus",
+		url: "/valmennus/viikoittainen-valmennus",
 		title: "Viikoittainen valmennus",
 	},
 	{

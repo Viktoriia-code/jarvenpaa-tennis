@@ -13,6 +13,7 @@ export default {
         darkAccent: "#F76800",
         grayBg: "#E4E5E5",
         gray: "#c8c9c9",
+        darkGray: "#7D7D7D",
         darkBlue: "#0A4E91",
         yellow: "#f6b93b",
         darkGreen: "#138C52",

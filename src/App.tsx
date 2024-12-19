@@ -42,7 +42,7 @@ const App = () => {
             <Route path="*" element={<Error />} />
           </Route>
           <Route path="/valmennus" element={<SideMenuLayout title="Viikoittainen valmennus" links={ValmennusMenuLinks} />}>
-            <Route index element={<Valmennus />} />
+            <Route path="viikoittainen-valmennus" element={<Valmennus />} />
             <Route path="aikuisvalmennus-sisakausi-2024-2025" element={<Aikuisvalmennus />} />
             <Route path="juniorivalmennus-sisakausi-2024-2025" element={<Juniorvalmennus />} />
             <Route path="valmennusehdot-sisakaudelle-2024-2025" element={<ValmennusEhdot />} />
