@@ -1,3 +1,5 @@
+import GalleryComponent from "../../components/GalleryComponent"
+
 const JatsMestaruuskilpailut2023 = () => {
   return (
     <section className='flex flex-col gap-4'>
@@ -23,6 +25,8 @@ const JatsMestaruuskilpailut2023 = () => {
       <p>Sekanelinpelin finaali: Tomi Salmenpää/Heini Sarpakunnas vs. Martti Pennanen/Raija Komu 1-6, 6-3, 10-5</p>
 
       <h3 className='subtitle mb-2 font-text'>Onnittelut voittajille ja kiitos kaikille osallistuneille!</h3>
+
+      <GalleryComponent />
 
     </section>
   )
