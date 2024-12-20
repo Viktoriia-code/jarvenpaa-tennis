@@ -22,6 +22,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ linksList }) => {
             key={id}
             className='side_link'
             to={url}
+            state={{ fromSideMenu: true }}
             end
           >
             {title}

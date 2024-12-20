@@ -196,7 +196,7 @@ button:focus-visible {
 }
 .side_link.active {
   transform: translateX(10px);
-  @apply bg-accent text-white border-accent;
+  @apply bg-accent text-white border-gray;
 }
 
 .form_input {

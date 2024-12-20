@@ -55,7 +55,7 @@ const NavbarStyles = styled.header`
 
 const Navbar: React.FC = () => {
 
-  const [isClick, setIsClick] = useState(false);
+  //const [isClick, setIsClick] = useState(false);
   const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -89,9 +89,9 @@ const Navbar: React.FC = () => {
     };
   }, [openMobileSidebar]);
 
-  const closeMobileMenu = () => {
+  /*const closeMobileMenu = () => {
     setIsClick(false);
-  };
+  };*/
 
   return (
     <NavbarStyles>
@@ -109,12 +109,27 @@ const Navbar: React.FC = () => {
           <nav className="flex gap-x-2 flex-wrap w-full content-evenly">
             {MenuLinks.map((menu) => {
               const { id, url, title } = menu;
-              const isActive = (url === '/' && pathname === '/') || (url !== '/' && pathname.includes(url));
+              
+              const isActive = () => {
+                if (url === '/' && pathname === '/') {
+                  return true;
+                }
+
+                if (url.startsWith('/valmennus') && pathname.startsWith('/valmennus')) {
+                  return true;
+                }
+
+                if (url !== '/' && pathname.includes(url)) {
+                  return true;
+                }
+              
+                return false;
+              };
 
               return (
                 <NavLink
                   key={id}
-                  className={`nav_item nav_link leading-none p-2 text-black ${isActive ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
+                  className={`nav_item nav_link leading-none p-2 text-black ${isActive() ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
                   to={url}
                 >
                   {title}

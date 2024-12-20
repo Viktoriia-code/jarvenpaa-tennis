@@ -9,8 +9,13 @@ interface Props {
 
 const ScrollToTop: React.FC<Props> = (props) => {
   const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const fromSideMenu = location.state?.fromSideMenu;
+
+    if (!fromSideMenu) {
+      window.scrollTo(0, 0);
+    }
   }, [location]);
 
   return <>{props.children}</>

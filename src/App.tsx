@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
-import Seura from "./pages/Seura";
-import Hallitus from "./pages/Hallitus";
+import Seura from "./pages/seura/Seura";
+import Hallitus from "./pages/seura/Hallitus";
 import English from "./pages/English";
 import Yksityistunnit from "./pages/Yksityistunnit";
 import Tapahtumat from "./pages/Tapahtumat";
@@ -20,7 +20,7 @@ import ValmennusEhdot from "./pages/valmennus/ValmennusEhdot";
 import Pelisaannot from "./pages/valmennus/Pelisaannot";
 import HallisarjajaTurnaukset from "./pages/turnaukset/HallisarjajaTurnaukset";
 
-import { ValmennusMenuLinks } from "./utils/menuInfo";
+import { SeuraMenuLinks, ValmennusMenuLinks } from "./utils/menuInfo";
 import { TurnauksetLinks } from "./utils/menuInfo";
 import JatsMestaruuskilpailut2023 from "./pages/turnaukset/JatsMestaruuskilpailut2023";
 import JatsHallimestaruuskilpailut2024 from "./pages/turnaukset/JatsHallimestaruuskilpailut2024";
@@ -33,8 +33,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="seura" element={<Seura />} />
-            <Route path="seura/hallitus" element={<Hallitus />} />
             <Route path="yksityistunnit" element={<Yksityistunnit />} />
             <Route path="tapahtumat-ja-kurssit" element={<Tapahtumat />} />
             <Route path="yhteystiedot" element={<Yhteystiedot />} />
@@ -43,6 +41,10 @@ const App = () => {
             <Route path="in-english" element={<English />} />
             <Route path="senioritennis" element={<Senioritennis />} />
             <Route path="*" element={<Error />} />
+          </Route>
+          <Route path="/seura" element={<SideMenuLayout title="Seura" links={SeuraMenuLinks} />}>
+            <Route index element={<Seura />} />
+            <Route path="hallitus" element={<Hallitus />} />
           </Route>
           <Route path="/valmennus" element={<SideMenuLayout title="Viikoittainen valmennus" links={ValmennusMenuLinks} />}>
             <Route path="viikoittainen-valmennus" element={<Valmennus />} />
