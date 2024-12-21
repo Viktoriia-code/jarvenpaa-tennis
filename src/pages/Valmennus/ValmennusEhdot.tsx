@@ -57,7 +57,7 @@ const ValmennusEhdot = () => {
             rel="noopener noreferrer">
               Suora Edenred Pay -maksulinkki
           </a>
-          {' '}(opens in a new tab)
+          {' '}(avautuu uuteen välilehteen)
         </span>
       </div>
 

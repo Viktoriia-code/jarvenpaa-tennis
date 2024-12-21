@@ -4,6 +4,7 @@ import HeroImg from "../../assets/images/hero_bg.png";
 import HeroCard from "../HeroServiceCard";
 import { HeroServiceCards } from "../../utils/menuInfo";
 import '../../index.css';
+import { HomeHeroContent } from '../../utils/menuInfo';
 
 const HeroStyles = styled.section`
   .container {
@@ -119,8 +120,6 @@ const HeroStyles = styled.section`
     line-height: 28px;
   }
   .tag-link-wrapper {
-    display: flex;
-    justify-content: space-between;
     max-width: 1114px;
     padding-top: 27px;
     padding-bottom: 25px;
@@ -152,7 +151,7 @@ const Hero: React.FC = () => {
           <div className='high-court-line'>
             <div className="title">
               <div className="title">
-                <button className='main-btn'>Book now</button>
+                <button className='main-btn'>Varaa nyt</button>
               </div>
               <div className='top-block'></div>
             </div>
@@ -166,25 +165,8 @@ const Hero: React.FC = () => {
           </div>
           <div className='left-part'>
           </div>
-          <div className='tag-link-wrapper'>
-            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-              <span className='tag-item'>#Tennis coach</span>
-            </a>
-            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-              <span className='tag-item'>#Padel coach</span>
-            </a>
-            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-              <span className='tag-item'>#Kerava</span>
-            </a>
-            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-              <span className='tag-item'>#Tuusula</span>
-            </a>
-            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-              <span className='tag-item'>#Järvenpää</span>
-            </a>
-            <a href="http://" target="_blank" className='tag-link' rel="noopener noreferrer">
-              <span className='tag-item'>#Vantaa</span>
-            </a>
+          <div className='tag-link-wrapper text-center'>
+            <p className='tag-item text-white'>{HomeHeroContent.info}</p>
           </div>
         </div>
         <div className="cards_wrapper">

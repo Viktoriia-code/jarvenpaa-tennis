@@ -13,7 +13,7 @@ const HallisarjajaTurnaukset = () => {
             rel="noopener noreferrer">
               Hallisarjan lohkot ja aikataulut
           </a>
-          {' '}(opens in a new tab)
+          {' '}(avautuu uuteen välilehteen)
         </span>
       </div>
       <p>Hallisarjassa pelataan tunnin mittaisia otteluita 5-7 pelaajan lohkoissa. Kaiken tasoiset pelaajat ovat tervetulleita osallistumaan. Hallisarja toimii hyvänä mahdollisuutena pelata kilpailuhenkisiä otteluita uusia pelaajia vastaan. Samalla voit myös hankkia itsellesi uusia saman tasoisia pelikavereita.</p>
