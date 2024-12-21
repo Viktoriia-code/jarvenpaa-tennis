@@ -15,7 +15,7 @@ const Harjoitukset = [
 
 const Aikuisvalmennus = () => {
   return (
-    <>
+    <section className='flex flex-col gap-4'>
       <h3 className='section-title'>Aikuisvalmennus sisäkausi 2024-2025</h3>
       <div className='mx-auto'>
         <HeroServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
@@ -69,7 +69,7 @@ const Aikuisvalmennus = () => {
         <p className="font-text text-lg leading-relaxed">- 70€/tunti/pelaaja</p>
       </div>
       <AikuisvalmennusForm />
-    </>
+    </section>
   )
 }
 

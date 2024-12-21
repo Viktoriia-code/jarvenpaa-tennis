@@ -4,7 +4,7 @@ import { JuniorGroups } from '../../utils/menuInfo';
 
 const Juniorvalmennus = () => {
   return (
-    <>
+    <section className='flex flex-col gap-4'>
       <h3 className='section-title'>Juniorivalmennus sisäkausi 2024-2025</h3>
       <div className='mx-auto'>
         <HeroServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
@@ -52,7 +52,7 @@ const Juniorvalmennus = () => {
       <p className="font-text text-lg leading-relaxed">HUOM! Laskut lähetetään toiveenne mukaisesti sähköpostitse kymmenessä erässä, neljästi kaudessa, kahdesti kaudessa tai kerran kaudessa. Valmennusmaksuihin lisätään laskutuksen yhteydessä hallintokulu, mikä on 7€ per lähetettävä lasku. Lisäksi jokaiselta valmennukseen osallistuvilta edellytetään tennisseuran jäsenyyttä.</p>
 
       <JuniorValmennusForm />
-    </>
+    </section>
   )
 }
 

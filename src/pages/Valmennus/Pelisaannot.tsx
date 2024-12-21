@@ -12,7 +12,7 @@ const Saannot = [
 
 const Pelisaannot = () => {
   return (
-    <div className='flex flex-col gap-4'>
+    <section className='flex flex-col gap-4'>
       <h3 className='section-title'>Pelisäännöt valmennustunnille</h3>
       <ul className='flex flex-col gap-3 ml-2'>
         {Saannot.map((saanto, index) => (
@@ -22,7 +22,7 @@ const Pelisaannot = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 
