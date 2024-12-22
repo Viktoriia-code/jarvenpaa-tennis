@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MenuLinks } from "../utils/menuInfo";
 import JatsLogo from "../assets/images/jäts_logo.png";
 import styled from 'styled-components';
@@ -54,49 +54,18 @@ const NavbarStyles = styled.header`
 `;
 
 const Navbar: React.FC = () => {
-
-  //const [isClick, setIsClick] = useState(false);
-  const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
   const location = useLocation();
   const pathname = location.pathname; 
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+  const [nav, setNav] = useState(false);
 
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener when component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (openMobileSidebar) {
-      document.body.classList.add("disable-scrolling");
-    } else {
-      document.body.classList.remove("disable-scrolling");
-    }
-
-    // Clean up the class when component unmounts
-    return () => {
-      document.body.classList.remove("disable-scrolling");
-    };
-  }, [openMobileSidebar]);
-
-  /*const closeMobileMenu = () => {
-    setIsClick(false);
-  };*/
+  const showNav = () => {
+    setNav(!nav);
+  };
 
   return (
     <NavbarStyles>
       
-      {windowWidth >= 630 ? (
         <div className="container justify-between py-3 gap-10">
           <Link to="/" className="flex items-center gap-3">
             <img
@@ -106,7 +75,61 @@ const Navbar: React.FC = () => {
             />
             <p className="font-title text-black text-xl leading-tight font-black italic">Järvenpään Tennisseura</p>
           </Link>
-          <nav className="flex gap-x-2 flex-wrap w-full content-evenly">
+
+          {/* Desktop menu */}
+          <nav className="hidden md:flex gap-x-2 flex-wrap w-full content-evenly">
+            {MenuLinks.map((menu) => {
+              const { id, url, title } = menu;
+              
+              const isActive = () => {
+                if (url === '/' && pathname === '/') {
+                  return true;
+                }
+
+                if (url.startsWith('/valmennus') && pathname.startsWith('/valmennus')) {
+                  return true;
+                }
+
+                if (url !== '/' && pathname.includes(url)) {
+                  return true;
+                }
+              
+                return false;
+              };
+
+              return (
+                <NavLink
+                  key={id}
+                  className={`nav_item nav_link leading-none p-2 text-black ${isActive() ? 'bg-darkGreen text-white shadow-button':'hover:text-accent'}`}
+                  to={url}
+                >
+                  {title}
+                </NavLink>
+              );
+            })}
+          </nav>
+
+          {/* hamburger */}
+          {nav ? (
+            <i
+              className="fixed right-[30px] fa fa-times text-3xl text-black z-60 md:hidden"
+              aria-hidden="true"
+              onClick={showNav}
+            ></i>
+          ) : (
+            <i 
+              className="fa fa-bars text-3xl md:hidden text-black" 
+              aria-hidden="true"
+              onClick={showNav}
+            ></i>
+          )}
+          
+          {/* Mobile menu */}
+          <nav
+            className={`h-[100vh] fixed top-[0px] flex flex-col justify-around items-center w-full md:hidden bg-white z-40 duration-1000 ${
+              nav ? "right-[0px]" : "right-[-100vw]"
+            } `}
+          >
             {MenuLinks.map((menu) => {
               const { id, url, title } = menu;
               
@@ -138,59 +161,7 @@ const Navbar: React.FC = () => {
             })}
           </nav>
         </div>
-      ) : (
-        <>
-          <nav className="navbar">
-            <div className="navbar_logos">
-              <div>
-                <NavLink to="/">
-                  <img
-                    src={JatsLogo}
-                    alt="Jäts_logo"
-                    className="logo_img"
-                  />
-                </NavLink>
-              </div>
-            </div>
-            <div
-              className={
-                openMobileSidebar
-                  ? "burgermenu_wrapper_active"
-                  : "burgermenu_wrapper"
-              }
-              onClick={() => setOpenMobileSidebar(!openMobileSidebar)}
-            >
-              <span className="burgermenu_btn_line"></span>
-              <span className="burgermenu_btn_line"></span>
-              <span className="burgermenu_btn_line"></span>
-            </div>
-          </nav>
 
-          <div
-            className={
-              openMobileSidebar ? "sidebar_active" : "sidebar"
-            }
-          >
-            <div className="sidebarLinkWrapper">
-              {MenuLinks.map((item) => {
-                return (
-                  <div key={item.id} className="nav_item">
-                    
-                      <a
-                        href={item.url}
-                        onClick={() => setOpenMobileSidebar(!openMobileSidebar)}
-                        className="nav_links"
-                      >
-                        {item.title}
-                      </a>
-                    
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </>
-      )}
     </NavbarStyles>
   );
 };
