@@ -18,7 +18,7 @@ body {
   background-color: var(--backgroundColor);
   font-family: 'Poppins', sans-serif;
   color: black;
-  @apply font-text text-lg leading-relaxed
+  @apply font-text text-base md:text-lg leading-relaxed
 }
 
 :root {
@@ -65,7 +65,7 @@ body {
 @layer components {
   /*  <Global styles>    */
   .section-title {
-    @apply text-darkBlue text-[40px];
+    @apply text-darkBlue text-3xl md:text-4xl lg:text-[40px];
   }
 }
 
@@ -81,11 +81,18 @@ body {
 }
 
 h1 {
-  font-size: 3em;
   line-height: 1.1;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
+  font-weight: 900;
+  line-height: 55px; /* 103.774% */
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-wrap: break-word;
+  @apply text-4xl lg:text-5xl
 }
+
 h2 {
   font-family: 'Montserrat';
   font-size: 35px;
@@ -93,21 +100,34 @@ h2 {
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
+  @apply text-3xl lg:text-4xl
 }
-h3 {
+
+/*h3 {
   color: #2B2B2B;
   font-family: 'Poppins';
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
+}*/
+
+.main_title {
+  line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 55px; /* 103.774% */
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  @apply text-4xl lg:text-5xl
 }
 
-.section-title {
-  font-family: 'Montserrat';
-  font-weight: 800;
+.section_title {
+  font-family: 'Poppins';
+  font-weight: 500;
   line-height: normal;
-  text-transform: uppercase;
+  @apply text-3xl lg:text-[40px] text-darkBlue mb-2
 }
 
 .card-title {

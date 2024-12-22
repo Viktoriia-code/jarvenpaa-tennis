@@ -3,7 +3,7 @@ import GalleryComponent from "../../components/GalleryComponent"
 const JatsMestaruuskilpailut2023 = () => {
   return (
     <section className='flex flex-col gap-4'>
-      <h3 className='section-title'>JäTS:n Mestaruuskilpailut 11.-13.8.2023</h3>
+      <h3 className='section_title'>JäTS:n Mestaruuskilpailut 11.-13.8.2023</h3>
       <div className='notice_box'>
         <span>
           <a 

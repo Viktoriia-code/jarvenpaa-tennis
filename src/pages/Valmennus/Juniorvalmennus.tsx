@@ -5,7 +5,7 @@ import { JuniorGroups } from '../../utils/menuInfo';
 const Juniorvalmennus = () => {
   return (
     <section className='flex flex-col gap-4'>
-      <h3 className='section-title'>Juniorivalmennus sisäkausi 2024-2025</h3>
+      <h3 className='section_title'>Juniorivalmennus sisäkausi 2024-2025</h3>
       <div className='mx-auto'>
         <HeroServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
       </div>
@@ -25,7 +25,7 @@ const Juniorvalmennus = () => {
           </ul>
         </div>
       ))}
-      <h3 className='section-title'>Juniorivalmennuksen hinnasto sisäkaudelle 2024-2025</h3>
+      <h3 className='section_title'>Juniorivalmennuksen hinnasto sisäkaudelle 2024-2025</h3>
       <div className='notice_box text-center'>
         <p>- Varaamme oikeuden hintojen muutoksiin 1.1.2025 alkaen.</p>
         <p>- Mikäli samasta ruokakunnasta on seuran valmennuksessa useampi kuin yksi pelaaja, myönnetään 10% perhealennus pienimmästä valmennusmaksusta!</p>

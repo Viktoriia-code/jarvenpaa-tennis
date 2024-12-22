@@ -40,7 +40,6 @@ const HeroStyles = styled.section`
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 53px;
     font-style: italic;
     font-weight: 900;
     line-height: 55px; /* 103.774% */

@@ -31,33 +31,12 @@ const NavbarStyles = styled.header`
     letter-spacing: 0.51px;
     transition: all .3s ease-in-out;
   }
-  .logo_img {
-    width: 50px;
-  }
-  .instagram-icon {
-    margin: 10px;
-    width: 35px;
-    height: 35px;
-    border-radius: 10px;
-  }
-  .instagram-link .instagram-icon {
-    background-image: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
-    transition: all .3s ease-in-out;
-    background-size: 35px 35px;
-    background-position-y: -35px;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-  .instagram-link:hover .instagram-icon {
-    background-position: 100% 100%;
-  }
 `;
 
 const Navbar: React.FC = () => {
+  const [nav, setNav] = useState(false);
   const location = useLocation();
   const pathname = location.pathname; 
-
-  const [nav, setNav] = useState(false);
 
   const showNav = () => {
     setNav(!nav);
@@ -65,7 +44,6 @@ const Navbar: React.FC = () => {
 
   return (
     <NavbarStyles>
-      
         <div className="container justify-between py-3 gap-10">
           <Link to="/" className="flex items-center gap-3">
             <img
@@ -112,14 +90,14 @@ const Navbar: React.FC = () => {
           {/* hamburger */}
           {nav ? (
             <i
-              className="fixed right-[30px] fa fa-times text-3xl text-black z-60 md:hidden"
+              className="fixed right-[30px] fa fa-times text-3xl z-50 md:hidden"
               aria-hidden="true"
               onClick={showNav}
-            ></i>
+            />
           ) : (
             <i 
-              className="fa fa-bars text-3xl md:hidden text-black" 
-              aria-hidden="true"
+              className="fa fa-bars text-3xl md:hidden" 
+              aria-hidden="true" 
               onClick={showNav}
             ></i>
           )}

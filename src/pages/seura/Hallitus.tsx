@@ -3,7 +3,7 @@ import '../../index.css';
 const Hallitus = () => {
   return (
     <div className='flex flex-col gap-4'>
-      <h1 className='text-darkBlue'>Hallitus 2024-2025</h1>
+      <h3 className='section_title'>Hallitus 2024-2025</h3>
       <p className="font-text text-lg leading-relaxed">Mathias Kalliokoski (puheenjohtaja)</p>
 
       <p className="font-text text-lg leading-relaxed">Sampo Haapaniemi</p>

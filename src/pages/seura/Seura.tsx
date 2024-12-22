@@ -3,7 +3,7 @@ import '../../index.css';
 const Seura = () => {
   return (
     <div className='flex flex-col gap-4'>
-      <h1 className='text-darkBlue'>Järvenpään Tennisseura ry</h1>
+      <h3 className='section_title'>Järvenpään Tennisseura ry</h3>
       <p className="font-text text-lg leading-relaxed">
         JäTS on perinteikäs tennisseura, joka on perustettu vuonna 1975. Tavoitteenamme on edistää tennisharrastusta Järvenpäässä ja Keski-Uudellamaalla siten, että mahdollisimman monella on mahdollisuus harrastaa tennistä edellytystensä ja tavoitteidensa mukaisesti.  Seurassa on tällä hetkellä (loppuvuosi 2023) 170 aikuisjäsentä ja 85 juniorijäsentä. Valmennustoimintaan osallistuu noin 150 pelaajaa. Seuran toiminta on keskittynyt Järvenpäähän ja Keravalle. 
       </p>

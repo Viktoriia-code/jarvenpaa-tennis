@@ -3,7 +3,7 @@ import HallisarjaForm from '../../components/HallisarjaForm';
 const HallisarjajaTurnaukset = () => {
   return (
     <section className='flex flex-col gap-4'>
-      <h3 className='section-title'>KESKI-UUDENMAAN HALLISARJA 2023-2024</h3>
+      <h3 className='section_title'>Keski-Uudenmaan hallisarja 2023-2024</h3>
       <div className='notice_box'>
         <span>
           <a 
@@ -24,7 +24,7 @@ const HallisarjajaTurnaukset = () => {
 
       <HallisarjaForm />
 
-      <h3 className='section-title'>HALLISARJAN SÄÄNNÖT</h3>
+      <h3 className='section_title'>HALLISARJAN SÄÄNNÖT</h3>
 
       <div>
         <h3 className='subtitle mb-2 font-text'>Ottelun kesto on 1 tunti</h3>

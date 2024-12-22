@@ -39,21 +39,6 @@ const PageTitleStyles = styled.section`
     align-content: center;
     position: relative;
   }
-  h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
-    font-style: italic;
-    font-weight: 900;
-    line-height: 55px; /* 103.774% */
-    text-transform: uppercase;
-    color: white;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 48px;
-    padding-right: 20px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    overflow-wrap: break-word;
-  }
   .title {
     border-right: white solid 3px;
     max-width: 50%;
@@ -61,6 +46,10 @@ const PageTitleStyles = styled.section`
     height: 100%;
     display: flex;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 48px;
+    padding-right: 20px;
   }
   .small-court-line {
     border-right: white solid 3px;

@@ -54,10 +54,10 @@ const About: React.FC = () => {
         <div className="title_wrapper">
           <SectionTitle title={Content.about.title} />
         </div>
-        <h1 className='name_title mb-2'>Järvenpään Tennisseura</h1>
+        <h2 className='main_title text-darkBlue mb-2'>Järvenpään Tennisseura</h2>
         <p className="subtitle mb-4 font-text">perustettu vuonna 2001</p>
         <div className="flex justify-between gap-16">
-          <p className="font-text text-lg leading-relaxed">
+          <p>
           Tavoitteenamme on edistää tennistoimintaa Järvenpäässä ja Keravalla yhteistyössä Keravan Tennisseuran kanssa. Haluaisimme, että mahdollisimman monella olisi mahdollisuus harrastaa kunto- tai kilpatennistä edellytystensä ja tavoitteidensa mukaisesti. Järjestämme ohjattuja ryhmätunteja lapsille ja aikuisille sekä arkisin että viikonloppuisin. Lisäksi tarjoamme yksityisopetusta, lyhytkursseja ja pyöritämme hallisarjaa Keski-Uudellamaalla.
           </p>
           <div className="left-part">

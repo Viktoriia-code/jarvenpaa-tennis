@@ -1,7 +1,7 @@
 const JatsUlkokenttienkisat2024 = () => {
   return (
     <section className='flex flex-col gap-4'>
-      <h3 className='section-title'>JäTS:n ulkokenttien mestaruuskilpailut 9.8.-11.8.2024</h3>
+      <h3 className='section_title'>JäTS:n ulkokenttien mestaruuskilpailut 9.8.-11.8.2024</h3>
       <div className='notice_box'>
         <span>
           <a 

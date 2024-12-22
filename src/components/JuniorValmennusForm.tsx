@@ -74,7 +74,7 @@ const JuniorValmennusForm = () => {
 
   return (
     <section className='bg-grayBg flex flex-col py-8 px-9 max-w-[800px]'>
-      <h3 className='section-title mb-4 text-center'>ILMOITTAUDU SISÄKAUDEN 2024-2025 JUNIORIVALMENNUKSEEN!</h3>
+      <h3 className='section_title mb-4 text-center'>ILMOITTAUDU SISÄKAUDEN 2024-2025 JUNIORIVALMENNUKSEEN!</h3>
       <span className='flex justify-end'>*Vaaditaan</span>
       <form className='w-full flex flex-col gap-6 font-text text-lg leading-relaxed' onSubmit={handleSubmit}>
         <label htmlFor="name" className="flex flex-col">Juniorin nimi *

@@ -13,7 +13,7 @@ const Saannot = [
 const Pelisaannot = () => {
   return (
     <section className='flex flex-col gap-4'>
-      <h3 className='section-title'>Pelisäännöt valmennustunnille</h3>
+      <h3 className='section_title'>Pelisäännöt valmennustunnille</h3>
       <ul className='flex flex-col gap-3 ml-2'>
         {Saannot.map((saanto, index) => (
           <li key={index} className="font-text text-lg leading-relaxed flex gap-3 items-center">

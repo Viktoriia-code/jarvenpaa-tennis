@@ -4,7 +4,7 @@ import '../../index.css';
 const ValmennusEhdot = () => {
   return (
     <section className='flex flex-col gap-4'>
-      <h3 className='section-title'>Valmennusehdot sisäkaudelle 2024-2025</h3>
+      <h3 className='section_title'>Valmennusehdot sisäkaudelle 2024-2025</h3>
       <div>
         <h3 className='subtitle mb-2 font-text'>Valmennuskauden pituus</h3>
         <p>Sisäkausi alkaa sekä Järvenpäässä ja Keravalla maanantaina 12.8.2024 ja loppuu sunnuntaina 22.6.2025.</p>
