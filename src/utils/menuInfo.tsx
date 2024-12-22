@@ -83,21 +83,15 @@ export const HomeHeroContent = {
 export const HeroServiceCards = [
 	{
 		id: 1,
-		url: "/",
-		title: "Junior Tennis",
-		subtitle: "Groups",
+		url: "/valmennus/aikuisvalmennus-sisakausi-2024-2025",
+		title: "Aikuisvalmennus",
+		subtitle: "Sisäkausi 2024-2025",
 	},
 	{
 		id: 2,
-		url: "/#partners",
-		title: "adult Tennis",
-		subtitle: "Groups",
-	},
-	{
-		id: 3,
-		url: "/#about",
-		title: "Court booking",
-		subtitle: "Venues",
+		url: "/valmennus/juniorivalmennus-sisakausi-2024-2025",
+		title: "Juniorivalmennus",
+		subtitle: "Sisäkausi 2024-2025",
 	}
 ];
 

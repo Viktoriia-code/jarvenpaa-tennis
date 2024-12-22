@@ -128,7 +128,7 @@ const HeroStyles = styled.section`
   .cards_wrapper {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 `;
 

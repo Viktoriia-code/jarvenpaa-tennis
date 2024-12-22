@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const HeroCardStyles = styled.a`
   border: 3px solid #2B2B2B;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   .herocard_subtitle {
@@ -17,15 +16,17 @@ const HeroCardStyles = styled.a`
   }
   .card-title {
     color: #0A4E91;
-    padding: 10px 40px 17px 25px;
+    padding: 10px 40px 10px 25px;
     border-right: 3px solid #2B2B2B;
-    max-width: 297px;
+    display: flex;
+    align-items: center;
+    max-width: 500px;
   }
   .hero-card-content {
     display: flex;
   }
   .hero-card-icon {
-    margin: 0 22px;
+    margin: 12px 22px;
   }
 `;
 
@@ -47,6 +48,7 @@ function HeroServiceCard(heroServiceCards: HeroServiceCards) {
           src={arrowIcon}
           alt="Learn more"
           className="hero-card-icon"
+          width={40}
         />
       </div>
     </HeroCardStyles>
