@@ -7,11 +7,11 @@ import styled from 'styled-components';
 const NavbarStyles = styled.header`
   //background: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
   //box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
   .container {
-    max-width: 1330px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
   }
   .nav_menu {
     display: flex;
@@ -44,12 +44,12 @@ const Navbar: React.FC = () => {
 
   return (
     <NavbarStyles>
-        <div className="container justify-between py-3 gap-10">
+        <div className="container justify-between py-3 gap-10 items-center md:items-start">
           <Link to="/" className="flex items-center gap-3">
             <img
               src={JatsLogo}
               alt="Jäts_logo"
-              width={70}
+              className="w-14 md:w-[70px]"
             />
             <p className="font-title text-black text-xl leading-tight font-black italic">Järvenpään Tennisseura</p>
           </Link>

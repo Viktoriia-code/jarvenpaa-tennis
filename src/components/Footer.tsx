@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
   return (
     <FooterStyles>
       <div className="container">
-        <div className='flex justify-between items-start mb-6'>
+        <div className='flex justify-between items-start mb-6 flex-col md:flex-row gap-6'>
           <div className='flex flex-col gap-8'>
             <Link to="/" className="flex items-center gap-3">
               <img

@@ -130,24 +130,28 @@ h2 {
   @apply text-3xl lg:text-[40px] text-darkBlue mb-2
 }
 
-.card-title {
+.card_title {
   font-family: 'Montserrat';
-  font-size: 33px;
   font-style: italic;
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
+  @apply text-2xl lg:text-4xl
 }
 
 section, 
 header {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .container {
-  max-width: 1330px;
+  max-width: 1394px;
   width: 100%;
+  @apply px-3 md:px-4 lg:px-6 xl:px-8
 }
 
 section .container {
@@ -166,10 +170,10 @@ button:focus-visible {
 }
 
 .subtitle {
-  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.66px;
   text-transform: uppercase;
+  @apply text-lg lg:text-[22px]
 }
 
 .main-btn {

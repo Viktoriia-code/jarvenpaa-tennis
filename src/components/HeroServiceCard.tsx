@@ -3,30 +3,25 @@ import arrowIcon from "../assets/icons/big-arrow.svg";
 import styled from 'styled-components';
 
 const HeroCardStyles = styled.a`
-  border: 3px solid #2B2B2B;
+  border: 3px solid #7D7D7D;
   display: flex;
   flex-direction: column;
   .herocard_subtitle {
-    border-bottom: 3px solid #2B2B2B;
+    border-bottom: 3px solid #7D7D7D;
     background-color: var(--gray-bg);
     display: flex;
     align-self: center;
-    padding: 10px 22px 9px 22px;
     width: 100%;
   }
   .card-title {
     color: #0A4E91;
-    padding: 10px 40px 10px 25px;
-    border-right: 3px solid #2B2B2B;
+    border-right: 3px solid #7D7D7D;
     display: flex;
     align-items: center;
     max-width: 500px;
   }
   .hero-card-content {
     display: flex;
-  }
-  .hero-card-icon {
-    margin: 12px 22px;
   }
 `;
 
@@ -39,16 +34,15 @@ export interface HeroServiceCards {
 function HeroServiceCard(heroServiceCards: HeroServiceCards) {
   return (
     <HeroCardStyles href={heroServiceCards.url} target="_blank" rel="noopener noreferrer">
-      <div className="herocard_subtitle">
+      <div className="herocard_subtitle px-3 py-2 md:py-3 md:px-6">
         <h3>{heroServiceCards.subtitle}</h3>
       </div>
       <div className="hero-card-content">
-        <div className="card-title">{heroServiceCards.title}</div>
+        <div className="card_title card-title p-3 md:py-5 md:px-6">{heroServiceCards.title}</div>
         <img
           src={arrowIcon}
           alt="Learn more"
-          className="hero-card-icon"
-          width={40}
+          className="hero-card-icon w-6 md:w-10 my-2 mx-3 md:my-3 md:mx-5"
         />
       </div>
     </HeroCardStyles>

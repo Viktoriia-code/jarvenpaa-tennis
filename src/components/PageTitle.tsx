@@ -16,10 +16,6 @@ const PageTitleStyles = styled.section`
   }
   .subtitle {
     color: #FFF;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 0.66px;
-    text-transform: uppercase;
     padding-top: 24px;
     padding-bottom: 22px;
     padding-left: 50px;

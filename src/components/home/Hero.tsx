@@ -7,25 +7,14 @@ import '../../index.css';
 import { HomeHeroContent } from '../../utils/menuInfo';
 
 const HeroStyles = styled.section`
-  .container {
-    margin-top: 15px;
-  }
   .court-part {
+    color: #FFF;
     background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 35px;
   }
   .subtitle {
-    color: #FFF;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 0.66px;
-    text-transform: uppercase;
-    padding-top: 24px;
-    padding-bottom: 22px;
-    padding-left: 50px;
     border-right: white solid 3px;
-    width: 50%;
   }
   .court-line {
     border-bottom: white solid 3px;
@@ -60,7 +49,6 @@ const HeroStyles = styled.section`
   .main-btn {
     border: 3px solid #FFF;
     background: #FF861E;
-    color: #FFF;
     text-align: center;
     font-family: 'Poppins';
     font-size: 18px;
@@ -68,7 +56,7 @@ const HeroStyles = styled.section`
     letter-spacing: 3.06px;
     text-transform: uppercase;
     border-radius: 0;
-    padding: 18px 61px;
+    padding: 20px 60px;
     margin-left: 50px;
     margin-right: 66px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -86,7 +74,6 @@ const HeroStyles = styled.section`
     position: relative;
     bottom: 26vh;
     left: 10vw;
-    width: 330px;
     height: auto;
     transform: rotate(6deg);
     border: 3px solid #FFF;
@@ -96,14 +83,12 @@ const HeroStyles = styled.section`
     position: relative;
   }
   .right-side {
-    display: flex;
     justify-content: flex-end;
     width: 50%;
     padding-right: 9px;
   }
   .tag-link {
     text-decoration: none;
-    color: #FFFFFF;
     transition: all .3s ease-in-out;
   }
   .tag-link:hover {
@@ -124,41 +109,34 @@ const HeroStyles = styled.section`
     padding-bottom: 25px;
     margin: 0 auto;
   }
-  .cards_wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-  }
 `;
 
 const Hero: React.FC = () => {
   return (
     <HeroStyles>
-      <div className="container">
+      <div className="container mt-1 md:mt-3">
         <div className='court-part'>
           <div className='court-line'>
-              <p className="subtitle">Sekä arkisin että viikonloppuisin</p>
-              <div className='right-side'>
+              <p className="subtitle w-full md:w-1/2 py-6 pl-6 md:pl-[50px]">Sekä arkisin että viikonloppuisin</p>
+              <div className="hidden md:flex right-side">
               </div>
           </div>
           <div className='high-court-line'>
             <div className="title">
               <h1>Tennis lapsille ja aikuisille</h1>
             </div>
-            <div className='top-block'></div>
+            <div className='hidden md:block top-block'></div>
           </div>
-          <div className='high-court-line'>
-            <div className="title">
-              <div className="title">
-                <button className='main-btn'>Varaa nyt</button>
-              </div>
-              <div className='top-block'></div>
+          <div className='high-court-line flex-col md:flex-row'>
+            <div className="title w-full md:w-1/2">
+              <button className='main-btn'>Varaa nyt</button>
+              <div className='hidden md:block top-block'></div>
             </div>
             <div className='top-block'>
               <img 
                 src={HeroImg} 
                 alt="" 
-                className="hero-img"
+                className="hero-img w-60 md:w-[330px]"
               />
             </div>
           </div>
@@ -168,7 +146,7 @@ const Hero: React.FC = () => {
             <p className='tag-item text-white'>{HomeHeroContent.info}</p>
           </div>
         </div>
-        <div className="cards_wrapper">
+        <div className="flex w-full justify-center gap-6 md:justify-around flex-wrap">
           {HeroServiceCards.map((path, index) => {
             return <HeroCard {...path} key={index} />;
           })}
