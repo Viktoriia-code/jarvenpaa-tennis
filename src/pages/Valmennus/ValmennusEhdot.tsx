@@ -3,7 +3,7 @@ import '../../index.css';
 
 const ValmennusEhdot = () => {
   return (
-    <section className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4'>
       <h3 className='section_title'>Valmennusehdot sisäkaudelle 2024-2025</h3>
       <div>
         <h3 className='subtitle mb-2 font-text'>Valmennuskauden pituus</h3>
@@ -95,7 +95,7 @@ const ValmennusEhdot = () => {
       <div className='notice_box'>
         <p className='font-semibold text-center'>Kuvaus ja videointi on tunneilla kielletty. Seura kysyy kuvausluvan erikseen ilmoittautumislomakkeessa, mutta kuvauslupa koskee vain seuran viestintävälineissä julkaistavaa materiaalia.</p>
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -2,7 +2,7 @@ import HallisarjaForm from '../../components/HallisarjaForm';
 
 const HallisarjajaTurnaukset = () => {
   return (
-    <section className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4'>
       <h3 className='section_title'>Keski-Uudenmaan hallisarja 2023-2024</h3>
       <div className='notice_box'>
         <span>
@@ -51,7 +51,7 @@ const HallisarjajaTurnaukset = () => {
         <h3 className='subtitle mb-2 font-text'>Tuloksen merkintä ja ilmoittaminen</h3>
         <p>Pelaajat sopivat ottelun jälkeen kumpi syöttää tuloksen järjestelmään (hyvä nyrkkisääntö on, että ottelun voittaja).</p>
       </div>
-    </section>
+    </div>
   )
 }
 
