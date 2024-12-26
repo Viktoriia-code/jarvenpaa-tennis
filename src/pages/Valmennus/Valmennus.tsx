@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import HeroServiceCard from '../components/HeroServiceCard';
-import '../index.css';
+import HeroServiceCard from '../../components/HeroServiceCard';
+import '../../index.css';
 
 const Valmennus = () => {
   return (
@@ -9,13 +9,13 @@ const Valmennus = () => {
       <p className="font-text text-lg leading-relaxed">Järvenpään Tennisseura tarjoaa tennisopetusta sekä lapsille että aikuisille. Järjestämme viikoittaista pienryhmäopetusta sekä Järvenpäässä että Keravalla. Lisäksi tarjoamme yksityisopetusta, alkeiskursseja ja tehotreenejä. Lisätietoja saat JäTS:n valmennuspäällikkö Matti Käpylältä (puh. 0503052120 tai matti(at)jarvenpaantennisseura.fi).</p>
       <a
         href="/valmennus/aikuisvalmennus-sisakausi-2024-2025/"
-        className='flex border-[3px] border-black items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold bg-grayBg hover:bg-gray transition-all duration-300 ease-in-out'
+        className='secondary-brn'
       >
         Lisätietoa aikuisvalmennuksesta
       </a>
       <Link
         to="/valmennus/juniorivalmennus-sisakausi-2024-2025/"
-        className='flex border-[3px] border-black items-stretch justify-between gap-6 min-w-[300px] p-3 text-lg font-semibold bg-grayBg hover:bg-gray transition-all duration-300 ease-in-out'
+        className='secondary-brn'
       >
         Lisätietoa juniorivalmennuksesta
       </Link>

@@ -17,13 +17,13 @@ const TitleStyles = styled.div`
   }
   .title-doubler {
     font-family: 'Montserrat';
-    font-size: 40px;
     font-style: italic;
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
     color: transparent !important;
     -webkit-text-stroke: 1px white;
+    @apply text-3xl lg:text-4xl;
   }
 
 `

@@ -13,7 +13,7 @@ const HeroStyles = styled.section`
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 35px;
   }
-  .subtitle {
+  .border_right {
     border-right: white solid 3px;
   }
   .court-line {
@@ -30,7 +30,6 @@ const HeroStyles = styled.section`
     width: 473px;
   }
   .title {
-    border-right: white solid 3px;
     min-width: 50%;
     height: 100%;
     display: flex;
@@ -95,18 +94,18 @@ const Hero: React.FC = () => {
       <div className="container mt-1 md:mt-3">
         <div className='court-part'>
           <div className='court-line'>
-              <p className="subtitle w-full md:w-1/2 py-3 pl-6 md:pl-[50px] md:py-5">Sekä arkisin että viikonloppuisin</p>
+              <p className="subtitle md:border_right w-full md:w-1/2 py-3 pl-6 md:pl-[50px] md:py-5 md:border-r-[3px] md:border-r-white">Sekä arkisin että viikonloppuisin</p>
               <div className="hidden md:flex right-side">
               </div>
           </div>
           <div className='high-court-line'>
-            <div className="title">
+            <div className="title md:border-r-[3px] md:border-r-white">
               <h1 className='main_title py-5 pl-6 md:py-8 md:pl-[50px]'>Tennis lapsille ja aikuisille</h1>
             </div>
             <div className='hidden md:block top-block'></div>
           </div>
           <div className='high-court-line flex-col md:flex-row'>
-            <div className="title w-full md:w-1/2">
+            <div className="title w-full md:w-1/2 md:border-r-[3px] md:border-r-white">
               <button className='main-btn my-5 md:my-8 ml-6 md:ml-[50px]'>Varaa nyt</button>
               <div className='hidden md:block top-block'></div>
             </div>

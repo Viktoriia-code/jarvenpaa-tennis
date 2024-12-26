@@ -68,8 +68,8 @@ const AikuisvalmennusForm = () => {
 
   return (
     <section className='bg-grayBg flex flex-col py-8 px-9 max-w-[800px]'>
-      <h3 className='section_title mb-4 text-center'>Aikuisvalmennuslomake</h3>
-      <span className='flex justify-end'>*Vaaditaan</span>
+      <h2 className='text-darkBlue mb-4 text-center'>Aikuisvalmennuslomake</h2>
+      <span className='flex justify-end w-full'>*Vaaditaan</span>
       <form className='w-full flex flex-col gap-6 font-text text-lg leading-relaxed' onSubmit={handleSubmit}>
         <label htmlFor="name" className="flex flex-col">Nimi *
           <input id="name"

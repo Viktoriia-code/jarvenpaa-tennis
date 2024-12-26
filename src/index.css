@@ -95,7 +95,6 @@ h1 {
 
 h2 {
   font-family: 'Montserrat';
-  font-size: 35px;
   font-style: italic;
   font-weight: 900;
   line-height: normal;
@@ -130,6 +129,10 @@ h2 {
   @apply text-3xl lg:text-[40px] text-darkBlue mb-2
 }
 
+.title-doubler {
+  @apply text-3xl lg:text-4xl
+}
+
 .card_title {
   font-family: 'Montserrat';
   font-style: italic;
@@ -149,8 +152,15 @@ header {
 }
 
 .container {
-  max-width: 1394px;
+  max-width: 1400px;
   width: 100%;
+  @apply px-3 md:px-4 lg:px-6 xl:px-8
+}
+
+.container_small {
+  max-width: 1000px;
+  width: 100%;
+  margin-bottom: 50px;
   @apply px-3 md:px-4 lg:px-6 xl:px-8
 }
 
@@ -158,11 +168,6 @@ section .container {
   margin-bottom: 50px;
 }
 
-.container_small {
-  max-width: 1000px;
-  width: 100%;
-  margin-bottom: 50px;
-}
 
 button:focus,
 button:focus-visible {
@@ -221,6 +226,20 @@ button:focus-visible {
 .side_link.active {
   transform: translateX(10px);
   @apply bg-accent text-white border-gray;
+}
+
+.secondary-brn {
+  min-width: 290px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  transition: all 300ms ease-in-out;
+  display: flex;
+  @apply bg-grayBg border-[3px] border-gray hover:bg-gray;
 }
 
 .form_input {

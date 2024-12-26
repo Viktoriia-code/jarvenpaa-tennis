@@ -26,7 +26,7 @@ const LiityJaseneksi = () => {
           <div className="flex justify-center">
             <SectionTitle title="Jäsentietolomake" />
           </div>
-          <div className='flex gap-16 justify-between'>
+          <div className='flex gap-16 justify-between flex-col-reverse md:flex-row'>
             <FormStyles className='w-full flex flex-col gap-6'>
               <span className='flex justify-end'>*Vaaditaan</span>
               <label htmlFor="name" className="font-text text-lg leading-relaxed flex flex-col">Nimi *
@@ -84,7 +84,7 @@ const LiityJaseneksi = () => {
               <button className='main-btn'>Lähetä lomake</button>
             </FormStyles>
             <div className='w-full flex flex-col gap-3'>
-              <h1 className='text-center text-darkBlue mb-4'>Miksi JäTS:n jäseneksi kannattaa liittyä?</h1>
+              <h2 className='text-darkBlue text-center mb-4'>Miksi JäTS:n jäseneksi kannattaa liittyä?</h2>
               <p className="font-text text-lg leading-relaxed">- Yksityistunnit ovat seuran jäsenille edullisempia kuin ei-jäsenille</p>
               <p className="font-text text-lg leading-relaxed">- Saat alennusta ulkokauden kenttävarauksista Järvenpään Tenniskeskuksessa</p>
               <p className="font-text text-lg leading-relaxed">- Seuran jäsenet saavat 10%:n alennuksen tennisverkkokauppa www.tenniswarehouse-europe.comista tai 5%:n alennuksen https://global.tennis-point.comista. Etukoodit voit saada Matilta (matti (at) jarvenpaantennisseura.fi)</p>

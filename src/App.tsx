@@ -12,7 +12,7 @@ import Senioritennis from "./pages/Senioritennis";
 import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
-import Valmennus from "./pages/Valmennus";
+import Valmennus from "./pages/valmennus/Valmennus";
 import SideMenuLayout from "./layouts/SideMenuLayout";
 import Aikuisvalmennus from "./pages/valmennus/Aikuisvalmennus";
 import Juniorvalmennus from "./pages/valmennus/Juniorvalmennus";
