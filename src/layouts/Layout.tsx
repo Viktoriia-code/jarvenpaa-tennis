@@ -5,9 +5,9 @@ import "../index.css";
 
 const Layout: React.FC = () => {
   return (
-    <div className="App flex flex-col min-h-screen">
+    <div className="App flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
-      <main className="content flex flex-col items-center flex-grow overflow-x-hidden">
+      <main className="content flex flex-col items-center flex-grow">
         <Outlet />
       </main>
       <Footer />
