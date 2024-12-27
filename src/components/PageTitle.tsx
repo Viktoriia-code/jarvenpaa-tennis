@@ -22,12 +22,6 @@ const PageTitleStyles = styled.section`
     align-content: center;
     position: relative;
   }
-  .title {
-    min-width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
   .small-court-line {
     border-right: white solid 3px;
     min-width: 50%;
@@ -35,27 +29,6 @@ const PageTitleStyles = styled.section`
     min-height: 50px;
     display: flex;
     align-items: center;
-  }
-  .main-btn {
-    border: 3px solid #FFF;
-    background: #FF861E;
-    text-align: center;
-    font-family: 'Poppins';
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 3.06px;
-    text-transform: uppercase;
-    border-radius: 0;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    background-image: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
-    transition: all .3s ease-in-out;
-    background-size: 100% 100%;
-    background-position-y: -100px;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-  .main-btn:hover {
-    background-position: 100% 100%;
   }
   .hero-img {
     width: auto;
@@ -101,15 +74,15 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image, subtitle, note, but
             <div className='hidden md:flex right-side'></div>
           </div>
           <div className='high-court-line'>
-            <div className="title md:border-r-[3px] md:border-r-white">
+            <div className="md:border-r-[3px] md:border-r-white w-1/2">
               <h1 className='main_title py-5 pl-6 md:py-8 md:pl-[50px]'>{title}</h1>
             </div>
-            <div className='hidden top-block md:h-28 bottom-[38vh] md:flex justify-center items-center w-full'>
+            <div className='hidden top-block md:h-28 bottom-[38vh] md:flex justify-center items-center'>
             </div>
           </div>
           {button && (
             <div className='high-court-line flex-col md:flex-row'>
-              <div className="title w-full md:w-1/2 md:border-r-[3px] md:border-r-white">
+              <div className="w-full md:w-1/2 md:border-r-[3px] md:border-r-white">
                 <button className='main-btn my-5 md:my-8 ml-6 md:ml-[50px]'>Varaa nyt</button>
               </div>
               <div className='hidden md:block top-block'></div>
