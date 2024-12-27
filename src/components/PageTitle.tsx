@@ -14,9 +14,6 @@ const PageTitleStyles = styled.section`
     border-right: white solid 3px;
   }
   .court-line {
-    border-bottom: white solid 3px;
-    display: flex;
-    align-items: center;
     min-height: 50px;
   }
   .high-court-line {
@@ -35,6 +32,7 @@ const PageTitleStyles = styled.section`
     border-right: white solid 3px;
     min-width: 50%;
     height: 100%;
+    min-height: 50px;
     display: flex;
     align-items: center;
   }
@@ -48,7 +46,6 @@ const PageTitleStyles = styled.section`
     letter-spacing: 3.06px;
     text-transform: uppercase;
     border-radius: 0;
-    padding: 20px 60px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     background-image: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
     transition: all .3s ease-in-out;
@@ -62,8 +59,6 @@ const PageTitleStyles = styled.section`
   }
   .hero-img {
     width: auto;
-    height: 230px;
-    transform: rotate(6deg);
     border: 3px solid #FFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -100,21 +95,16 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image, subtitle, note, but
   return (
     <PageTitleStyles>
       <div className="container">
-        <div className='court-part'>
-          <div className='court-line'>
+        <div className='court-part border-[3px] border-white relative'>
+          <div className='court-line flex border-b-[3px] border-b-white'>
             <p className="subtitle md:border_right w-full md:w-1/2 py-3 pl-6 md:pl-[50px] md:py-5 md:border-r-[3px] md:border-r-white">{subtitle}</p>
-            <div className='hidden md:flex right-side md:border-l-[3px] md:border-l-white'></div>
+            <div className='hidden md:flex right-side'></div>
           </div>
           <div className='high-court-line'>
             <div className="title md:border-r-[3px] md:border-r-white">
               <h1 className='main_title py-5 pl-6 md:py-8 md:pl-[50px]'>{title}</h1>
             </div>
-            <div className='top-block md:h-28 bottom-[38vh] flex justify-center items-center w-full'>
-              <img 
-                src={image ? image : JarvTennis} 
-                alt="" 
-                className="hero-img absolute"
-              />
+            <div className='hidden top-block md:h-28 bottom-[38vh] md:flex justify-center items-center w-full'>
             </div>
           </div>
           {button && (
@@ -130,16 +120,20 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image, subtitle, note, but
               <p className='tag-item text-white text-lg md:text-[21px] py-4 md:py-6 mx-6'>{note}</p>
             </div>
             ) : (
-              <div className='court-line'>
+              <div className='court-line hidden md:flex'>
                 <div className="small-court-line">
                   <div className="small-court-line"></div>
-                  <div className='top-block'>
-                  </div>
+                  <div className='top-block'></div>
                 </div>
                 <div className='top-block'></div>
               </div>
             )
           }
+          <img 
+            src={image ? image : JarvTennis} 
+            alt=""
+            className={`hero-img md:absolute left-[65%] z-10 md:top-1/2 transform md:-translate-y-1/2 flex justify-self-center rotate-[6deg] ${button ? 'h-[320px]' : 'h-44 md:h-[210px]'}`}
+          />
         </div>
       </div>
     </PageTitleStyles>
