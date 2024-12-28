@@ -18,12 +18,11 @@ body {
   background-color: var(--backgroundColor);
   font-family: 'Poppins', sans-serif;
   color: black;
-  @apply font-text text-base md:text-lg leading-relaxed
+  @apply font-text text-base md:text-lg;
 }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -81,7 +80,6 @@ body {
 }
 
 h1 {
-  line-height: 1.1;
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
   font-weight: 900;
@@ -178,7 +176,7 @@ button:focus-visible {
   font-weight: 600;
   letter-spacing: 0.66px;
   text-transform: uppercase;
-  @apply text-lg lg:text-[22px]
+  @apply text-lg lg:text-[22px] leading-6
 }
 
 .main-btn {
@@ -219,13 +217,15 @@ button:focus-visible {
   display: flex;
   @apply bg-grayBg border-[3px] border-gray;
 }
-.side_link:hover:not(.active) {
-  @apply bg-gray;
-  transform: translateX(10px);
+
+@media (hover: hover) {
+  .side_link:hover:not(.active) {
+    @apply bg-gray md:translate-x-[10px];
+  }
 }
+
 .side_link.active {
-  transform: translateX(10px);
-  @apply bg-accent text-white border-gray;
+  @apply bg-accent text-white border-gray md:translate-x-[10px];
 }
 
 .secondary-brn {

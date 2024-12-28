@@ -32,7 +32,7 @@ const SideMenuLayout: React.FC<SideMenuLayoutProps> = ({ title, links }) => {
   return (
     <div>
       <Navbar />
-      <main className="content">
+      <main className="content leading-relaxed">
         <PageTitle title={title} image={ValmennusImage} />
         <section>
           <div className="container flex gap-12 flex-col md:flex-row">

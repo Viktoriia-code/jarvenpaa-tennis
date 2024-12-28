@@ -19,10 +19,10 @@ const Tapahtumat = () => {
       <PageTitle title='Tapahtumat ja kurssit syksy 2024' image={TennisCourt} />
       <section>
         <div className="container flex flex-col gap-4 px-12">
-          <p className="font-text text-lg leading-relaxed">Järvenpään Tennisseura tarjoaa tenniskursseja sekä aloittelijoille että jo pidempäänkin pelanneille Järvenpään Tenniskeskuksessa (Kuuselankatu 2). Järjestämme <span className="font-semibold">aikuisille alkeiskursseja, tehotreenejä ja tennisklinikoita. Kursseihin ja tapahtumiin osallistuminen ei edellytä JäTS:n jäsenyyttä!</span> Voit osallistua mukaan myös <Link to="/hallisarja/" className="link">hallisarjaan</Link>, mikä toimii sopivana muotona kilpailemisen aloittamiselle. </p>
-          <p className="font-text text-lg leading-relaxed"><span className="font-semibold">Alkeiskurssit</span> (3h tai 4h) sopivat uusille pelaajille, jotka eivät ole aikaisemmin olleet tennivalmennustunnilla mukana. Kursseilla harjoitellaan perustekniikoita sekä käydään läpi tenniksen oleellisimmat säännöt. Sisältää myös lainamailan. Kurssin hinta 75€ (3 tuntia) tai 100€ (4 tuntia). Max. 6 osallistujaa.</p>
-          <p className="font-text text-lg leading-relaxed"><span className="font-semibold">Tehotreenit</span> (1.5h) keskittyvät tietyn teeman ympärille (peruslyönnit, verkkopeli jne.) ja harjoituksissa tehdään paljon toistoja teemaan liittyen. Hinta 45€. Max. 4 osallistujaa.</p>
-          <p className="font-text text-lg leading-relaxed"><span className="font-semibold">Tennisklinikoilla</span> (1.5h) keskitytään ennen kaikkea lyöntitekniikoiden tai taktiikan harjoitteluun. Klinikat sisältävät lyhyen luennon klinikan teemasta, mahdollisia videoanalyysejä suorituksistasi sekä paljon toistoja klinikan aiheeseen liittyen. Hinta 60€. Max. 4 osallistujaa ja kaksi valmentajaa.</p>
+          <p>Järvenpään Tennisseura tarjoaa tenniskursseja sekä aloittelijoille että jo pidempäänkin pelanneille Järvenpään Tenniskeskuksessa (Kuuselankatu 2). Järjestämme <span className="font-semibold">aikuisille alkeiskursseja, tehotreenejä ja tennisklinikoita. Kursseihin ja tapahtumiin osallistuminen ei edellytä JäTS:n jäsenyyttä!</span> Voit osallistua mukaan myös <Link to="/hallisarja/" className="link">hallisarjaan</Link>, mikä toimii sopivana muotona kilpailemisen aloittamiselle. </p>
+          <p><span className="font-semibold">Alkeiskurssit</span> (3h tai 4h) sopivat uusille pelaajille, jotka eivät ole aikaisemmin olleet tennivalmennustunnilla mukana. Kursseilla harjoitellaan perustekniikoita sekä käydään läpi tenniksen oleellisimmat säännöt. Sisältää myös lainamailan. Kurssin hinta 75€ (3 tuntia) tai 100€ (4 tuntia). Max. 6 osallistujaa.</p>
+          <p><span className="font-semibold">Tehotreenit</span> (1.5h) keskittyvät tietyn teeman ympärille (peruslyönnit, verkkopeli jne.) ja harjoituksissa tehdään paljon toistoja teemaan liittyen. Hinta 45€. Max. 4 osallistujaa.</p>
+          <p><span className="font-semibold">Tennisklinikoilla</span> (1.5h) keskitytään ennen kaikkea lyöntitekniikoiden tai taktiikan harjoitteluun. Klinikat sisältävät lyhyen luennon klinikan teemasta, mahdollisia videoanalyysejä suorituksistasi sekä paljon toistoja klinikan aiheeseen liittyen. Hinta 60€. Max. 4 osallistujaa ja kaksi valmentajaa.</p>
         </div>
       </section>
       <section className='bg-grayBg'>
@@ -31,11 +31,11 @@ const Tapahtumat = () => {
             <SectionTitle title="Tapahtumat" />
           </div>
           <p className="subtitle mb-4 font-text">VAPAAT PAIKAT PÄIVITETTY 4.10. klo 13.00</p>
-          <p className="font-text text-lg leading-relaxed mb-6">OSALLISTUJILLE LÄHETETÄÄN VAHVISTUSVIESTI TAPAHTUMAN TOTEUTUMISESTA TAPAHTUMAA EDELTÄVÄNÄ KESKIVIIKKONA.</p>
+          <p className="mb-6">OSALLISTUJILLE LÄHETETÄÄN VAHVISTUSVIESTI TAPAHTUMAN TOTEUTUMISESTA TAPAHTUMAA EDELTÄVÄNÄ KESKIVIIKKONA.</p>
           
           <TapahtumatFormStyles className='flex flex-col gap-3'>
             <span className='flex justify-end'>*Vaaditaan</span>
-            <label htmlFor="name" className="font-text text-lg leading-relaxed flex items-center justify-between">Osallistujan nimi
+            <label htmlFor="name" className="flex items-center justify-between">Osallistujan nimi
               <input id="name"
                 type="text"
                 name="name"
@@ -45,7 +45,7 @@ const Tapahtumat = () => {
                 className="form_input" />
             </label>
 
-            <label htmlFor="email" className="font-text text-lg leading-relaxed flex items-center justify-between">Osallistujan sähköpostiosoite
+            <label htmlFor="email" className="flex items-center justify-between">Osallistujan sähköpostiosoite
               <input id="email"
                 type="email"
                 name="email"
@@ -55,7 +55,7 @@ const Tapahtumat = () => {
                 className="form_input" />
             </label>
 
-            <label htmlFor="address" className="font-text text-lg leading-relaxed flex items-center justify-between">Osoitetiedot laskutusta varten (osoite, postinumero, kaupunki)*
+            <label htmlFor="address" className="flex items-center justify-between">Osoitetiedot laskutusta varten (osoite, postinumero, kaupunki)*
               <input id="address"
                 type="text"
                 name="address"
@@ -65,7 +65,7 @@ const Tapahtumat = () => {
                 className="form_input" />
             </label>
 
-            <label htmlFor="phone" className="font-text text-lg leading-relaxed flex items-center justify-between">Osallistujan puhelinnumero*
+            <label htmlFor="phone" className="flex items-center justify-between">Osallistujan puhelinnumero*
               <input id="phone"
                 type="phone"
                 name="phone"
@@ -75,7 +75,7 @@ const Tapahtumat = () => {
                 className="form_input" />
             </label>
 
-            <label htmlFor="level" className="font-text text-lg leading-relaxed flex items-center justify-between">Lyhyt kuvaus pelitasostasi (jos et ole aiemmin osallistunut JäTS:n kursseille)
+            <label htmlFor="level" className="flex items-center justify-between">Lyhyt kuvaus pelitasostasi (jos et ole aiemmin osallistunut JäTS:n kursseille)
               <input id="level"
                 type="text"
                 name="level"
@@ -85,7 +85,7 @@ const Tapahtumat = () => {
                 className="form_input" />
             </label>
 
-            <div className="font-text text-lg leading-relaxed flex items-start justify-between mt-2">
+            <div className="flex items-start justify-between mt-2">
               <legend>Mille kurssille haluat ilmoittautua?</legend>
               <div className='w-[62%] flex flex-col gap-3'>
                 <div>

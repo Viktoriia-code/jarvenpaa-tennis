@@ -17,7 +17,7 @@ const Juniorvalmennus = () => {
           <h3 className='subtitle mb-2 font-text'>{group.title}</h3>
           <ul className='flex flex-col gap-3 ml-2'>
             {group.info.map((info, index) => (
-              <li key={index} className="font-text text-lg leading-relaxed flex gap-3 items-start">
+              <li key={index} className="flex gap-3 items-start">
                 <span className="shrink-0 text-xl">◦</span>
                 {info}
               </li>
@@ -33,23 +33,23 @@ const Juniorvalmennus = () => {
 
       <div>
         <h3 className='subtitle mb-2 font-text'>Minitennis pikkuiset (kausihinta):</h3>
-        <p className="font-text text-lg leading-relaxed">55min/viikko: 450€ kausi (10.00€/kerta)</p>
+        <p>55min/viikko: 450€ kausi (10.00€/kerta)</p>
       </div>
 
       <div>
         <h3 className='subtitle mb-2 font-text'>Minitennis isommat (kausihinta):</h3>
-        <p className="font-text text-lg leading-relaxed">55min/viikko: 540€ kausi (12.00€/tunti)</p>
-        <p className="font-text text-lg leading-relaxed">2 x 55min/viikko: 990€ kausi (11.00€/tunti)</p>
+        <p>55min/viikko: 540€ kausi (12.00€/tunti)</p>
+        <p>2 x 55min/viikko: 990€ kausi (11.00€/tunti)</p>
       </div>
 
       <div>
         <h3 className='subtitle mb-2 font-text'>Miditennis ja junioritennis 9-18 -vuotiaille (kausihinta):</h3>
-        <p className="font-text text-lg leading-relaxed">1h/viikko: 720€ kausi (16.00€/tunti)</p>
-        <p className="font-text text-lg leading-relaxed">2h/viikko: 1350€ kausi (15.00€/tunti)</p>
-        <p className="font-text text-lg leading-relaxed">3h/viikko: 1890€ kausi (14.00€/tunti)</p>
+        <p>1h/viikko: 720€ kausi (16.00€/tunti)</p>
+        <p>2h/viikko: 1350€ kausi (15.00€/tunti)</p>
+        <p>3h/viikko: 1890€ kausi (14.00€/tunti)</p>
       </div>
 
-      <p className="font-text text-lg leading-relaxed">HUOM! Laskut lähetetään toiveenne mukaisesti sähköpostitse kymmenessä erässä, neljästi kaudessa, kahdesti kaudessa tai kerran kaudessa. Valmennusmaksuihin lisätään laskutuksen yhteydessä hallintokulu, mikä on 7€ per lähetettävä lasku. Lisäksi jokaiselta valmennukseen osallistuvilta edellytetään tennisseuran jäsenyyttä.</p>
+      <p>HUOM! Laskut lähetetään toiveenne mukaisesti sähköpostitse kymmenessä erässä, neljästi kaudessa, kahdesti kaudessa tai kerran kaudessa. Valmennusmaksuihin lisätään laskutuksen yhteydessä hallintokulu, mikä on 7€ per lähetettävä lasku. Lisäksi jokaiselta valmennukseen osallistuvilta edellytetään tennisseuran jäsenyyttä.</p>
 
       <JuniorValmennusForm />
     </div>

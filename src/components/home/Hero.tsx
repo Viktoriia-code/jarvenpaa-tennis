@@ -5,8 +5,6 @@ import '../../index.css';
 import { HomeHeroContent } from '../../utils/menuInfo';
 import PageTitle from '../PageTitle';
 
-
-
 const Hero: React.FC = () => {
   return (
     <section className="mt-1 md:mt-3">

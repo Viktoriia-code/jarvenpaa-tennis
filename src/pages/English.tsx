@@ -10,7 +10,7 @@ const English = () => {
       <section>
         <div className="container px-12">
 
-          <p className="font-text text-lg leading-relaxed">Järvenpään Tennisseura provides tennis coaching for all levels and ages in Järvenpää and Kerava. You can take part in our weekly group sessions or have a private lesson to improve your own game. Contact head coach <Link className='link' to="/yhteystiedot/">Matti Käpylä</Link> to find out more!</p>
+          <p>Järvenpään Tennisseura provides tennis coaching for all levels and ages in Järvenpää and Kerava. You can take part in our weekly group sessions or have a private lesson to improve your own game. Contact head coach <Link className='link' to="/yhteystiedot/">Matti Käpylä</Link> to find out more!</p>
               
         </div>
       </section>
