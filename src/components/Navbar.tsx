@@ -87,7 +87,8 @@ const Navbar: React.FC = () => {
               );
             })}
           </nav>
-          <LanguageToggle />
+
+          <LanguageToggle className="hidden md:flex" />
 
           {/* hamburger */}
           {nav ? (
@@ -139,6 +140,7 @@ const Navbar: React.FC = () => {
                 </NavLink>
               );
             })}
+            <LanguageToggle className="flex" />
           </nav>
         </div>
 

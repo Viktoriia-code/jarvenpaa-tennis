@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const LanguageToggle: React.FC = () => {
+interface LanguageToggleProps {
+  className?: string;
+}
+
+const LanguageToggle: React.FC<LanguageToggleProps> = ({ className }) => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -15,19 +19,19 @@ const LanguageToggle: React.FC = () => {
   };
 
   return (
-    <div className="flex border-[3px] border-gray p-0.5">
+    <div className={`${className} border-[3px] border-gray p-0.5`}>
       <button
         onClick={() => handleChangeLanguage('fi')}
-        className={`appearance-none focus:outline-none py-1 min-w-11 ${
-          i18n.language === 'fi' ? 'bg-gray text-black' : 'text-black'
+        className={`appearance-none focus:outline-none py-1 min-w-11 text-[17px] ${
+          i18n.language === 'fi' ? 'bg-gray' : ''
         }`}
       >
         FI
       </button>
       <button
         onClick={() => handleChangeLanguage('en')}
-        className={`appearance-none focus:outline-none py-1 min-w-11 ${
-          i18n.language === 'en' ? 'bg-gray text-black' : 'text-black'
+        className={`appearance-none focus:outline-none py-1 min-w-11 text-[17px] ${
+          i18n.language === 'en' ? 'bg-gray' : ''
         }`}
       >
         EN
