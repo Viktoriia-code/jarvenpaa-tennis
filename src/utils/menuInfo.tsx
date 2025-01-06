@@ -73,13 +73,6 @@ export const MenuLinks: MenuLink[] = [
 	},
 ];
 
-export const HomeHeroContent = {
-	subtitle: "Tervetuloa Järvenpään Tennisseuran sivuille!",
-	title: "Järvenpään Tennisseura",
-	info: "Valmennukset ovat joulutauolla ma 23.12. - ma 6.1."
-};
-
-
 export const HeroServiceCards = [
 	{
 		id: 1,

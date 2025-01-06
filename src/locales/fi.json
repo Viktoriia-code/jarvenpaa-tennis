@@ -1,5 +1,8 @@
 {
   "hero": {
-    "title": "Tennis lapsille ja aikuisille"
+    "title": "Tennis lapsille ja aikuisille",
+    "subtitle": "Sekä arkisin että viikonloppuisin",
+    "note": "Valmennukset ovat joulutauolla ma 23.12. - ma 6.1.",
+    "cta": "Varaa nyt"
   }
 }
