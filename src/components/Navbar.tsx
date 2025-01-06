@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MenuLinks } from "../utils/menuInfo";
 import JatsLogo from "../assets/images/jäts_logo.png";
 import styled from 'styled-components';
+import LanguageToggle from "./LanguageToggle";
 
 const NavbarStyles = styled.header`
   //background: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
@@ -44,7 +45,7 @@ const Navbar: React.FC = () => {
 
   return (
     <NavbarStyles>
-        <div className="container justify-between py-3 gap-10 items-center md:items-start">
+        <div className="container_big flex justify-between py-3 gap-10 items-center md:items-start">
           <Link to="/" className="flex items-center gap-3">
             <img
               src={JatsLogo}
@@ -86,6 +87,7 @@ const Navbar: React.FC = () => {
               );
             })}
           </nav>
+          <LanguageToggle />
 
           {/* hamburger */}
           {nav ? (
