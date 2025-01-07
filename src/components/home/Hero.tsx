@@ -8,22 +8,24 @@ import { useTranslation } from "react-i18next";
 const Hero: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <section className="mt-1 md:mt-3">
+    <>
       <PageTitle
-        title={t('hero.title')}
-        image={HeroImg}
-        subtitle={t('hero.subtitle')}
-        note={t('hero.note')}
-        button={t('hero.cta')}
+      title={t('hero.title')}
+      image={HeroImg}
+      subtitle={t('hero.subtitle')}
+      note={t('hero.note')}
+      button={t('hero.cta')}
       />
-      <div className="container">
-        <div className="flex w-full justify-center gap-6 md:justify-around flex-wrap">
-          {HeroServiceCards.map((path, index) => {
-            return <HeroCard {...path} key={index} />;
-          })}
+      <section>
+        <div className="container">
+          <div className="flex w-full justify-center gap-6 md:justify-around flex-wrap">
+            {HeroServiceCards.map((path, index) => {
+              return <HeroCard {...path} key={index} />;
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
