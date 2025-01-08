@@ -3,6 +3,16 @@
     "title": "Tennis lapsille ja aikuisille",
     "subtitle": "Sekä arkisin että viikonloppuisin",
     "note": "Valmennukset ovat joulutauolla ma 23.12. - ma 6.1.",
-    "cta": "Varaa nyt"
+    "cta": "Varaa nyt",
+    "serviceCards": [
+      {
+        "title": "Aikuisvalmennus",
+        "subtitle": "Sisäkausi 2024-2025"
+      },
+      {
+        "title": "Juniorivalmennus",
+        "subtitle": "Sisäkausi 2024-2025"
+      }
+    ]
   }
 }

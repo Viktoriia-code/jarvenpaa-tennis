@@ -1,4 +1,4 @@
-import HeroServiceCard from '../../components/HeroServiceCard';
+import ServiceCard from '../../components/ServiceCard';
 import JuniorValmennusForm from '../../components/JuniorValmennusForm';
 import { JuniorGroups } from '../../utils/menuInfo';
 
@@ -7,7 +7,7 @@ const Juniorvalmennus = () => {
     <div className='flex flex-col gap-4'>
       <h3 className='section_title'>Juniorivalmennus sisäkausi 2024-2025</h3>
       <div className='mx-auto'>
-        <HeroServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
+        <ServiceCard url="https://docs.google.com/spreadsheets/d/1YHNQtAfKdeQ8s5jbRpbnfQgRCzcrtHQ0g2xFz7wy078/edit?pli=1&gid=0#gid=0" title='Sisäkauden 2024-2025 ryhmäjaot' subtitle='Harjoitukset alkavat maanantaina 12.8.' />
       </div>
       <div className='notice_box'>
         <p className='font-semibold'>Harjoitukset alkavat Järvenpäässä ja Keravalla maanantaina 12.8. ja loppuvat sunnuntaina 22.6.2025!</p>

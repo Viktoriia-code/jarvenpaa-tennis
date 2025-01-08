@@ -73,7 +73,7 @@ export const MenuLinks: MenuLink[] = [
 	},
 ];
 
-export const HeroServiceCards = [
+export const ServiceCards = [
 	{
 		id: 1,
 		url: "/valmennus/aikuisvalmennus-sisakausi-2024-2025",

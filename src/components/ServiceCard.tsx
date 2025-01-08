@@ -1,4 +1,4 @@
-import { HeroServiceCards } from "../utils/menuInfo";
+import { ServiceCards } from "../utils/menuInfo";
 import arrowIcon from "../assets/icons/big-arrow.svg";
 import styled from 'styled-components';
 
@@ -25,20 +25,20 @@ const HeroCardStyles = styled.a`
   }
 `;
 
-export interface HeroServiceCards {
+export interface ServiceCards {
   url: string;
   title: string;
   subtitle: string;
 }
 
-function HeroServiceCard(heroServiceCards: HeroServiceCards) {
+function ServiceCard(ServiceCards: ServiceCards) {
   return (
-    <HeroCardStyles href={heroServiceCards.url} target="_blank" rel="noopener noreferrer">
+    <HeroCardStyles href={ServiceCards.url} target="_blank" rel="noopener noreferrer">
       <div className="herocard_subtitle px-3 py-2 md:py-3 md:px-6">
-        <h3>{heroServiceCards.subtitle}</h3>
+        <h3>{ServiceCards.subtitle}</h3>
       </div>
       <div className="hero-card-content">
-        <div className="card_title card-title p-3 md:py-5 md:px-6">{heroServiceCards.title}</div>
+        <div className="card_title card-title p-3 md:py-5 md:px-6">{ServiceCards.title}</div>
         <img
           src={arrowIcon}
           alt="Learn more"
@@ -49,4 +49,4 @@ function HeroServiceCard(heroServiceCards: HeroServiceCards) {
   );
 }
 
-export default HeroServiceCard;
+export default ServiceCard;

@@ -1,9 +1,9 @@
 import HeroImg from "../../assets/images/hero_bg.png";
-import HeroCard from "../HeroServiceCard";
-import { HeroServiceCards } from "../../utils/menuInfo";
+import { ServiceCards } from "../../utils/menuInfo";
 import '../../index.css';
 import PageTitle from '../PageTitle';
 import { useTranslation } from "react-i18next";
+import ServiceCard from "../ServiceCard";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -19,8 +19,15 @@ const Hero: React.FC = () => {
       <section>
         <div className="container">
           <div className="flex w-full justify-center gap-6 md:justify-around flex-wrap">
-            {HeroServiceCards.map((path, index) => {
-              return <HeroCard {...path} key={index} />;
+            {ServiceCards.map((item, index) => {
+              return (
+                <ServiceCard 
+                  url={item.url} 
+                  key={index} 
+                  title={t(`hero.serviceCards.${index}.title`)} 
+                  subtitle={t(`hero.serviceCards.${index}.subtitle`)}
+                />
+              )
             })}
           </div>
         </div>
