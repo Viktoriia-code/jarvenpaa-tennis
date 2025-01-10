@@ -5,12 +5,14 @@ import Intersport from '../../assets/images/Partners/Intersport_logo.png';
 import KeravaTennis from '../../assets/images/Partners/Keravan_tenniskeskus_logo.png';
 import Netvisor from '../../assets/images/Partners/Netvisor_logo.png';
 import '../../index.css';
+import { useTranslation } from "react-i18next";
 
 const Partners: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section className='bg-white'>
       <div className="flex justify-center">
-        <SectionTitle title="Kumppanimme" />
+        <SectionTitle title={t('partners.sectionTitle')} />
       </div>
       <div className="container">
         <div className="flex flex-col flex-wrap md:flex-row justify-center gap-x-10 gap-y-14 items-center">

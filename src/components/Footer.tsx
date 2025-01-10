@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import noiseBg from '../assets/images/noise_transparent.png';
-import { Link, NavLink } from 'react-router-dom';
-import JatsLogo from "../assets/images/jäts_logo.png";
+import { NavLink } from 'react-router-dom';
 import { MenuLink, MenuLinks } from '../utils/menuInfo';
+import { useTranslation } from 'react-i18next';
+import Logo from './Logo';
 
 const FooterStyles = styled.section`
   background: url(${noiseBg}) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
@@ -36,19 +37,13 @@ const FooterStyles = styled.section`
 `;
 
 const Footer: React.FC = () => {
+  const { t, i18n } = useTranslation();
   return (
     <FooterStyles>
       <div className="container">
         <div className='flex justify-between items-start mb-6 flex-col md:flex-row gap-6'>
           <div className='flex flex-col gap-8'>
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src={JatsLogo}
-                alt="Jäts_logo"
-                width={70}
-              />
-              <p className="font-title text-white text-xl leading-tight italic">Järvenpään<br/>Tennisseura</p>
-            </Link>
+            <Logo light />
             <div className='flex gap-5'>
               <a
                 className="group"
@@ -84,29 +79,31 @@ const Footer: React.FC = () => {
           </div>
           <div className='flex gap-16'>
             <div className='flex flex-col'>
-              <h3 className='subtitle mb-2 text-white'>Yleiset tiedot</h3>
+              <h3 className='subtitle mb-2 text-white'>{t('footer.contactTitle')}</h3>
               {MenuLinks.filter((link: MenuLink) => link.group === 'Yleiset tiedot').map((link: MenuLink) => {
+                const title = i18n.language === 'fi' ? link.title_fi : link.title_en;
                 return (
                   <NavLink 
                     key={link.id}
                     to={link.url}
                     className='tag-link'
                   >
-                    <span className='tag-item'>{link.title}</span>
+                    <span className='tag-item'>{title}</span>
                   </NavLink>
                 )
               })}
             </div>
             <div className='flex flex-col'>
-              <h3 className='subtitle mb-2 text-white'>Ohjelmat</h3>
+              <h3 className='subtitle mb-2 text-white'>{t('footer.programsTitle')}</h3>
               {MenuLinks.filter((link: MenuLink) => link.group === 'Ohjelmat').map((link: MenuLink) => {
+                const title = i18n.language === 'fi' ? link.title_fi : link.title_en;
                 return (
                   <NavLink 
                     key={link.id}
                     to={link.url}
                     className='tag-link'
                   >
-                    <span className='tag-item'>{link.title}</span>
+                    <span className='tag-item'>{title}</span>
                   </NavLink>
                 )
               })}

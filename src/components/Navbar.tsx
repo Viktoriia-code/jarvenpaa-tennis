@@ -1,9 +1,10 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { MenuLinks } from "../utils/menuInfo";
-import JatsLogo from "../assets/images/jäts_logo.png";
 import styled from 'styled-components';
 import LanguageToggle from "./LanguageToggle";
+import { useTranslation } from "react-i18next";
+import Logo from "./Logo";
 
 const NavbarStyles = styled.header`
   //background: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
@@ -35,6 +36,7 @@ const NavbarStyles = styled.header`
 `;
 
 const Navbar: React.FC = () => {
+  const { i18n } = useTranslation();
   const [nav, setNav] = useState(false);
   const location = useLocation();
   const pathname = location.pathname; 
@@ -46,19 +48,13 @@ const Navbar: React.FC = () => {
   return (
     <NavbarStyles>
         <div className="container_big flex justify-between py-3 gap-10 items-center md:items-start">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src={JatsLogo}
-              alt="Jäts_logo"
-              className="w-14 md:w-[70px]"
-            />
-            <p className="font-title text-black text-xl leading-tight font-black italic">Järvenpään Tennisseura</p>
-          </Link>
+          <Logo />
 
           {/* Desktop menu */}
           <nav className="hidden md:flex gap-x-2 flex-wrap w-full content-evenly">
             {MenuLinks.map((menu) => {
-              const { id, url, title } = menu;
+              const { id, url, title_fi, title_en } = menu;
+              const title = i18n.language === 'fi' ? title_fi : title_en;
               
               const isActive = () => {
                 if (url === '/' && pathname === '/') {
@@ -112,7 +108,8 @@ const Navbar: React.FC = () => {
             } `}
           >
             {MenuLinks.map((menu) => {
-              const { id, url, title } = menu;
+              const { id, url, title_fi, title_en } = menu;
+              const title = i18n.language === 'fi' ? title_fi : title_en;
               
               const isActive = () => {
                 if (url === '/' && pathname === '/') {

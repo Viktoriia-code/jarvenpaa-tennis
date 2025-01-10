@@ -14,5 +14,20 @@
         "subtitle": "Sisäkausi 2024-2025"
       }
     ]
-  }
+  },
+  "about": {
+    "sectionTitle": "Seuran esittely",
+    "title": "Järvenpään Tennisseura",
+    "subtitle": "perustettu vuonna 1975",
+    "description": "Tavoitteenamme on edistää tennistoimintaa Järvenpäässä ja Keravalla yhteistyössä Keravan Tennisseuran kanssa. Haluaisimme, että mahdollisimman monella olisi mahdollisuus harrastaa kunto- tai kilpatennistä edellytystensä ja tavoitteidensa mukaisesti. Järjestämme ohjattuja ryhmätunteja lapsille ja aikuisille sekä arkisin että viikonloppuisin. Lisäksi tarjoamme yksityisopetusta, lyhytkursseja ja pyöritämme hallisarjaa Keski-Uudellamaalla.",
+    "featureCards": ["Vuoden kokemus tenniksestä", "Tyytyväisiä tenniksen pelajia"]
+  },
+  "partners": {
+    "sectionTitle": "Kumppanimme"
+  },
+  "footer": {
+    "contactTitle": "Yleiset tiedot",
+    "programsTitle": "Ohjelmat"
+  },
+  "logo": "Järvenpään Tennisseura"
 }

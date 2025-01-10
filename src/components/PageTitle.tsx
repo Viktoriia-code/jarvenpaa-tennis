@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import noiseBg from '../assets/images/noise_transparent.png';
 import '../App.css';
 import JarvTennis from '../assets/images/Jats_logo_full.png';
+import { NavLink } from 'react-router-dom';
 
 const PageTitleStyles = styled.section`
   .court-part {
@@ -83,7 +84,9 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, image, subtitle, note, but
           {button && (
             <div className='high-court-line flex-col md:flex-row'>
               <div className="w-full md:w-1/2 md:border-r-[3px] md:border-r-white">
-                <button className='main-btn my-5 md:my-8 mx-4 md:ml-[50px]'>{button}</button>
+                <NavLink to='/liity-jaseneksi'>
+                  <button className='main-btn my-5 md:my-8 mx-4 md:ml-[50px]'>{button}</button>
+                </NavLink>
               </div>
               <div className='hidden md:block top-block'></div>
             </div>

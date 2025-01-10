@@ -1,7 +1,8 @@
 export interface MenuLink {
 	id: number;
 	url: string;
-	title: string;
+	title_fi: string;
+	title_en?: string;
 	group?: string;
 }
 
@@ -9,66 +10,77 @@ export const MenuLinks: MenuLink[] = [
 	{
 		id: 1,
 		url: "/",
-		title: "Etusivu",
+		title_fi: "Etusivu",
+		title_en: "Home",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 2,
 		url: "/seura",
-		title: "Seura",
+		title_fi: "Seura",
+		title_en: "Club",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 3,
 		url: "/valmennus/viikoittainen-valmennus",
-		title: "Viikoittainen valmennus",
+		title_fi: "Viikoittainen valmennus",
+		title_en: "Weekly coaching",
 		group: "Ohjelmat",
 	},
 
 	{
 		id: 4,
 		url: "/yksityistunnit",
-		title: "Yksityistunnit",
+		title_fi: "Yksityistunnit",
+		title_en: "Private lessons",
 		group: "Ohjelmat",
 	},
 	{
 		id: 5,
 		url: "/tapahtumat-ja-kurssit",
-		title: "Tapahtumat ja kurssit",
+		title_fi: "Tapahtumat ja kurssit",
+		title_en: "Events and courses",
 		group: "Ohjelmat",
 	},
   {
 		id: 6,
 		url: "/yhteystiedot",
-		title: "Yhteystiedot",
+		title_fi: "Yhteystiedot",
+		title_en: "Contacts",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 7,
 		url: "/liity-jaseneksi",
-		title: "Liity jäseneksi",
+		title_fi: "Liity jäseneksi",
+		title_en: "Join us",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 8,
 		url: "/hallisarjajaturnaukset",
-		title: "Hallisarja ja turnaukset",
+		title_fi: "Hallisarja ja turnaukset",
+		title_en: "Indoor league and tournaments",
 	},
 	{
 		id: 9,
 		url: "/kenttavaraukset",
-		title: "Kenttävaraukset",
+		title_fi: "Kenttävaraukset",
+		title_en: "Court reservations",
 	},
 	{
 		id: 10,
 		url: "/in-english",
-		title: "In English",
+		title_fi: "In English",
+		title_en: "In English",
 		group: "Yleiset tiedot",
 	},
 	{
 		id: 11,
 		url: "/senioritennis",
-		title: "Senioritennis",
+		title_fi: "Senioritennis",
+		title_en: "Senior tennis",
 		group: "Ohjelmat",
 	},
 ];
@@ -92,27 +104,32 @@ export const ValmennusMenuLinks: MenuLink[] = [
 	{
 		id: 1,
 		url: "/valmennus/viikoittainen-valmennus",
-		title: "Viikoittainen valmennus",
+		title_fi: "Viikoittainen valmennus",
+		title_en: "Weekly coaching",
 	},
 	{
 		id: 2,
 		url: "/valmennus/aikuisvalmennus-sisakausi-2024-2025/",
-		title: "Aikuisvalmennus sisäkausi 2024-2025",
+		title_fi: "Aikuisvalmennus sisäkausi 2024-2025",
+		title_en: "Adult coaching indoor season 2024-2025",
 	},
 	{
 		id: 3,
 		url: "/valmennus/juniorivalmennus-sisakausi-2024-2025/",
-		title: "Juniorvalmennus sisäkausi 2024-2025",
+		title_fi: "Juniorvalmennus sisäkausi 2024-2025",
+		title_en: "Junior coaching indoor season 2024-2025",
 	},
 	{
 		id: 4,
 		url: "/valmennus/valmennusehdot-sisakaudelle-2024-2025/",
-		title: "Valmennusehdot sisäkaudelle 2024-2025",
+		title_fi: "Valmennusehdot sisäkaudelle 2024-2025",
+		title_en: "Coaching terms for the indoor season 2024-2025",
 	},
 	{
 		id: 5,
 		url: "/valmennus/pelisaannot-valmennustunnille/",
-		title: "Pelisäännöt valmennustunnille",
+		title_fi: "Pelisäännöt valmennustunnille",
+		title_en: "Rules of play for coaching hours",
 	}
 ];
 
@@ -120,12 +137,14 @@ export const SeuraMenuLinks: MenuLink[] = [
 	{
 		id: 1,
 		url: "/seura",
-		title: "Meidän historia",
+		title_fi: "Meidän historia",
+		title_en: "Our history",
 	},
 	{
 		id: 2,
 		url: "/seura/hallitus",
-		title: "Hallitus",
+		title_fi: "Hallitus",
+		title_en: "Board",
 	},
 ];
 
@@ -133,22 +152,26 @@ export const TurnauksetLinks: MenuLink[] = [
 	{
 		id: 1,
 		url: "/hallisarjajaturnaukset",
-		title: "Keski-Uudenmaan hallisarja 2023-2024",
+		title_fi: "Keski-Uudenmaan hallisarja 2023-2024",
+		title_en: "Central Uusimaa indoor league 2023-2024",
 	},
 	{
 		id: 2,
 		url: "/hallisarjajaturnaukset/jats-mestaruuskilpailut-2023",
-		title: "JäTS:n Mestaruuskilpailut 11.-13.8.2023",
+		title_fi: "JäTS:n Mestaruuskilpailut 11.-13.8.2023",
+		title_en: "JäTS Championships 11.-13.8.2023",
 	},
 	{
 		id: 3,
 		url: "/hallisarjajaturnaukset/jats-hallimestaruuskilpailut-2024",
-		title: "JäTS:n hallimestaruuskilpailut 2024",
+		title_fi: "JäTS:n hallimestaruuskilpailut 2024",
+		title_en: "JäTS indoor championships 2024",
 	},
 	{
 		id: 4,
 		url: "/hallisarjajaturnaukset/jats-ulkokenttienkisat-2024",
-		title: "JäTS:n ulkokenttien mestaruuskilpailut 9.8.-11.8.2024",
+		title_fi: "JäTS:n ulkokenttien mestaruuskilpailut 9.8.-11.8.2024",
+		title_en: "JäTS outdoor championships 9.8.-11.8.2024",
 	},
 ];
 

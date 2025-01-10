@@ -14,5 +14,20 @@
         "subtitle": "Season 2024-2025"
       }
     ]
-  }
+  },
+  "about": {
+    "sectionTitle": "About us",
+    "title": "Järvenpään Tennis Club",
+    "subtitle": "Established in 1975",
+    "description": "Our goal is to promote tennis activities in Järvenpää and Kerava in cooperation with Kerava Tennis Club. We would like as many people as possible to have the opportunity to play recreational or competitive tennis according to their abilities and goals. We organize guided group lessons for children and adults on weekdays and weekends. In addition, we offer private lessons, short courses, and run an indoor league in Central Uusimaa.",
+    "featureCards": ["Years of experience in tennis", "Satisfied tennis players"]
+  },
+  "partners": {
+    "sectionTitle": "Our partners"
+  },
+  "footer": {
+    "contactTitle": "Contact information",
+    "programsTitle": "Programs"
+  },
+  "logo": "Järvenpää Tennis Club"
 }
