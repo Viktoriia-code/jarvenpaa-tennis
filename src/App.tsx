@@ -13,11 +13,11 @@ import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
 import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/valmennus/Valmennus";
-import SideMenuLayout from "./layouts/SideMenuLayout";
 import Aikuisvalmennus from "./pages/valmennus/Aikuisvalmennus";
 import Juniorvalmennus from "./pages/valmennus/Juniorvalmennus";
 import ValmennusEhdot from "./pages/valmennus/ValmennusEhdot";
 import Pelisaannot from "./pages/valmennus/Pelisaannot";
+import SideMenuLayout from "./layouts/SideMenuLayout";
 import HallisarjajaTurnaukset from "./pages/turnaukset/HallisarjajaTurnaukset";
 
 import { SeuraMenuLinks, ValmennusMenuLinks } from "./utils/menuInfo";
