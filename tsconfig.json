@@ -20,11 +20,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "baseUrl": ".",
-    "paths": {
-      "@pages/*": ["src/pages/*"]
-    }
   },
   "include": ["src", "src/declarations.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
