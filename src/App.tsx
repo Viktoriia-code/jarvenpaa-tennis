@@ -28,7 +28,7 @@ import JatsUlkokenttienkisat2024 from "./pages/turnaukset/JatsUlkokenttienkisat2
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.NODE_ENV === 'production' ? '/tennis-2023' : ''}>
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Layout />}>
