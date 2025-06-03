@@ -6,6 +6,9 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+
+ENV NODE_ENV=production
+
 RUN npm run build
 
 # Use an Nginx image to serve the build
