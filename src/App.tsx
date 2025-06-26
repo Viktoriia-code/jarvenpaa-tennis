@@ -29,6 +29,14 @@ import JatsUlkokenttienkisat2024 from "./pages/turnaukset/JatsUlkokenttienkisat2
 const App = () => {
   return (
     <Router>
+      <div style={{ color: "black" }}>
+        Test page — React работает
+      </div>
+    </Router>
+  );
+  /*
+  return (
+    <Router>
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -62,7 +70,7 @@ const App = () => {
         </Routes>
       </ScrollToTop>
     </Router>
-  );
+  );*/
 };
 
 export default App;
