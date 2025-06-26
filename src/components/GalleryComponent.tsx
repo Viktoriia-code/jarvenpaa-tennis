@@ -8,7 +8,7 @@ const GalleryComponent = () => {
     { src: import.meta.env.BASE_URL + 'images/Tournaments/Näyttökuva 2023-8-13 kello 17.29.38.png', width: 734, height: 1078, title: 'Antti ja Noel' },
     { src: import.meta.env.BASE_URL + 'images/Tournaments/Näyttökuva 2023-8-13 kello 17.30.09.png', width: 1044, height: 918, title: 'Tomi/Heini ja Raija/Martti' },
   ];
-
+  console.log(import.meta.env.BASE_URL);
   return (
     <div>
       <Gallery withCaption>
