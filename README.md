@@ -10,7 +10,7 @@
 ## 🔧 How to run locally
 1) Clone the repository:
 ```
-git clone https://github.com/Viktoriia-code/tennis-2023.git
+git clone https://github.com/Viktoriia-code/jarvenpaa-tennis.git
 ```
 2) Move to the folder and install modules:
 ```
