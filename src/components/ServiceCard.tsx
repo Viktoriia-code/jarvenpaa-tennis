@@ -1,5 +1,5 @@
 import { ServiceCards } from "../utils/menuInfo";
-import arrowIcon from "../assets/icons/big-arrow.svg";
+import arrowIcon from "/icons/big-arrow.svg";
 import styled from 'styled-components';
 
 const HeroCardStyles = styled.a`

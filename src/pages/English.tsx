@@ -1,5 +1,5 @@
 import PageTitle from '../components/PageTitle';
-import JarvTennis from '../assets/images/Jats_logo_full.png';
+import JarvTennis from '/images/pageBanners/Jats_logo_full.png';
 import '../index.css';
 import { Link } from 'react-router-dom';
 

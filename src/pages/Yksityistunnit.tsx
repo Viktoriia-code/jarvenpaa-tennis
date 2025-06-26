@@ -1,5 +1,5 @@
 import PageTitle from '../components/PageTitle';
-import TennisPlay from '../assets/images/tennis_play.jpg';
+import TennisPlay from '/images/pageBanners/tennis_play.jpg';
 import '../index.css';
 
 const Yksityistunnit = () => {

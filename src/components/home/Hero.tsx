@@ -1,4 +1,4 @@
-import HeroImg from "../../assets/images/hero_bg.png";
+import HeroImg from "/images/pageBanners/hero_bg.png";
 import { ServiceCards } from "../../utils/menuInfo";
 import '../../index.css';
 import PageTitle from '../PageTitle';

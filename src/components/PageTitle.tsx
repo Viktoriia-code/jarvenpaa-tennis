@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import noiseBg from '../assets/images/noise_transparent.png';
+import noiseBg from '/images/ui/noise_transparent.png';
 import '../App.css';
-import JarvTennis from '../assets/images/Jats_logo_full.png';
+import JarvTennis from '/images/pageBanners/Jats_logo_full.png';
 import { NavLink } from 'react-router-dom';
 
 const PageTitleStyles = styled.section`

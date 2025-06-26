@@ -1,5 +1,5 @@
 import PageTitle from '../components/PageTitle';
-import TennisCourt from '../assets/images/tennis_court.png';
+import TennisCourt from '/images/pageBanners/tennis_court.png';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import '../index.css';

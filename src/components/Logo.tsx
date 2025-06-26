@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import JatsLogo from "../assets/images/jäts_logo.png";
+import JatsLogo from "/images/jäts_logo.png";
 import { useTranslation } from 'react-i18next';
 
 interface LogoProps {

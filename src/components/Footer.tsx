@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import noiseBg from '../assets/images/noise_transparent.png';
+import noiseBg from '/images/ui/noise_transparent.png';
 import { NavLink } from 'react-router-dom';
 import { MenuLink, MenuLinks } from '../utils/menuInfo';
 import { useTranslation } from 'react-i18next';

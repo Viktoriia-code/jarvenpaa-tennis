@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../index.css";
 import PageTitle from "../components/PageTitle";
-import ValmennusImage from "../assets/images/valmennus.jpg";
+import ValmennusImage from "/images/pageBanners/valmennus.jpg";
 import SideMenu from "../components/SideMenu";
 import { MenuLink } from "../utils/menuInfo";
 

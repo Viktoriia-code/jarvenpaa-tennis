@@ -1,9 +1,9 @@
 import SectionTitle from "../SectionTitle";
-import JarvTennis from '../../assets/images/Partners/Jarvenpaan_tenniskeskus_logo.png';
-import Kets from '../../assets/images/Partners/KETS_logo.jpeg';
-import Intersport from '../../assets/images/Partners/Intersport_logo.png';
-import KeravaTennis from '../../assets/images/Partners/Keravan_tenniskeskus_logo.png';
-import Netvisor from '../../assets/images/Partners/Netvisor_logo.png';
+import JarvTennis from '/images/partnerLogos/Jarvenpaan_tenniskeskus_logo.png';
+import Kets from '/images/partnerLogos/KETS_logo.jpeg';
+import Intersport from '/images/partnerLogos/Intersport_logo.png';
+import KeravaTennis from '/images/partnerLogos/Keravan_tenniskeskus_logo.png';
+import Netvisor from '/images/partnerLogos/Netvisor_logo.png';
 import '../../index.css';
 import { useTranslation } from "react-i18next";
 
