@@ -25,6 +25,7 @@ import { TurnauksetLinks } from "./utils/menuInfo";
 import JatsMestaruuskilpailut2023 from "./pages/turnaukset/JatsMestaruuskilpailut2023";
 import JatsHallimestaruuskilpailut2024 from "./pages/turnaukset/JatsHallimestaruuskilpailut2024";
 import JatsUlkokenttienkisat2024 from "./pages/turnaukset/JatsUlkokenttienkisat2024";
+import ScrollToTopBtn from "./components/ScrollToTopBtn";
 
 const App = () => {
   return (
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="jats-ulkokenttienkisat-2024" element={<JatsUlkokenttienkisat2024 />} />
           </Route>
         </Routes>
+        <ScrollToTopBtn />
       </ScrollToTop>
     </Router>
   );
