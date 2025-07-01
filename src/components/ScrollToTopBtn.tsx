@@ -20,7 +20,7 @@ const ScrollToTopBtn = () => {
     <div
       onClick={scrollToTop}
       className={`hidden flex-col items-center w-16 h-16 fixed bottom-10 right-4 p-3 text-gray bg-gray-800 
-        rounded-full cursor-pointer z-[1000] border-[2px] border-gray hover:bg-lightGreen hover:text-black hover:border-black
+        rounded-full cursor-pointer z-[1000] border-[2px] border-gray hover:bg-lightGreen hover:text-black hover:border-white
         transition-all duration-300 ease-in-out ${
         visible ? "sm:flex" : "hidden"
       }`}

@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <p className='text-white text-center text-sm'>© Järvenpään Tennisseura, 2024</p>
+        <p className='text-white text-center text-sm'>© Järvenpään Tennisseura, 2025</p>
       </div>
     </FooterStyles>
   )
