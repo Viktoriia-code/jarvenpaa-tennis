@@ -65,6 +65,10 @@ const Navbar: React.FC = () => {
                   return true;
                 }
 
+                if (url.startsWith('/kenttavaraukset') && pathname.startsWith('/kenttavaraukset')) {
+                  return true;
+                }
+
                 if (url !== '/' && pathname.includes(url)) {
                   return true;
                 }

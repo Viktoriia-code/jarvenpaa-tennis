@@ -11,7 +11,6 @@ import Yhteystiedot from "./pages/Yhteystiedot";
 import Senioritennis from "./pages/Senioritennis";
 import LiityJaseneksi from "./pages/LiityJaseneksi";
 import ScrollToTop from "./components/ScrollToTop";
-import Kenttavaraukset from "./pages/Kenttavaraukset";
 import Valmennus from "./pages/valmennus/Valmennus";
 import Aikuisvalmennus from "./pages/valmennus/Aikuisvalmennus";
 import Juniorvalmennus from "./pages/valmennus/Juniorvalmennus";
@@ -20,12 +19,15 @@ import Pelisaannot from "./pages/valmennus/Pelisaannot";
 import SideMenuLayout from "./layouts/SideMenuLayout";
 import HallisarjajaTurnaukset from "./pages/turnaukset/HallisarjajaTurnaukset";
 
-import { SeuraMenuLinks, ValmennusMenuLinks } from "./utils/menuInfo";
+import { KenttavarauksetLinks, SeuraMenuLinks, ValmennusMenuLinks } from "./utils/menuInfo";
 import { TurnauksetLinks } from "./utils/menuInfo";
 import JatsMestaruuskilpailut2023 from "./pages/turnaukset/JatsMestaruuskilpailut2023";
 import JatsHallimestaruuskilpailut2024 from "./pages/turnaukset/JatsHallimestaruuskilpailut2024";
 import JatsUlkokenttienkisat2024 from "./pages/turnaukset/JatsUlkokenttienkisat2024";
 import ScrollToTopBtn from "./components/ScrollToTopBtn";
+import JarvenpaaTenniskeskus from "./pages/kenttavaraukset/JarvenpaaTenniskeskus";
+import KeravaTenniskeskus from "./pages/kenttavaraukset/KeravaTenniskeskus";
+import LapilaMassakentta from "./pages/kenttavaraukset/LapilaMassakentta";
 
 const App = () => {
   return (
@@ -38,10 +40,14 @@ const App = () => {
             <Route path="tapahtumat-ja-kurssit" element={<Tapahtumat />} />
             <Route path="yhteystiedot" element={<Yhteystiedot />} />
             <Route path="liity-jaseneksi" element={<LiityJaseneksi />} />
-            <Route path="kenttavaraukset" element={<Kenttavaraukset />} />
             <Route path="in-english" element={<English />} />
             <Route path="senioritennis" element={<Senioritennis />} />
             <Route path="*" element={<Error />} />
+          </Route>
+          <Route path="/kenttavaraukset" element={<SideMenuLayout title="Kenttävaraukset" links={KenttavarauksetLinks} />}>
+            <Route path="jarvenpaa-tenniskeskus" element={<JarvenpaaTenniskeskus />} />
+            <Route path="kerava-tenniskeskus" element={<KeravaTenniskeskus />} />
+            <Route path="lapila-massakentat" element={<LapilaMassakentta />} />
           </Route>
           <Route path="/seura" element={<SideMenuLayout title="Seura" links={SeuraMenuLinks} />}>
             <Route index element={<Seura />} />

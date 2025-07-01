@@ -65,7 +65,7 @@ export const MenuLinks: MenuLink[] = [
 	},
 	{
 		id: 9,
-		url: "/kenttavaraukset",
+		url: "/kenttavaraukset/jarvenpaa-tenniskeskus",
 		title_fi: "Kenttävaraukset",
 		title_en: "Court reservations",
 	},
@@ -173,6 +173,27 @@ export const TurnauksetLinks: MenuLink[] = [
 		title_fi: "JäTS:n ulkokenttien mestaruuskilpailut 9.8.-11.8.2024",
 		title_en: "JäTS outdoor championships 9.8.-11.8.2024",
 	},
+];
+
+export const KenttavarauksetLinks: MenuLink[] = [
+	{
+		id: 1,
+		url: "/kenttavaraukset/jarvenpaa-tenniskeskus",
+		title_fi: "Järvenpään Tenniskeskus",
+		title_en: "Järvenpää Tennis Center",
+	},
+	{
+		id: 2,
+		url: "/kenttavaraukset/kerava-tenniskeskus",
+		title_fi: "Keravan Tenniskeskus",
+		title_en: "Kerava Tennis Center",
+	},
+	{
+		id: 3,
+		url: "/kenttavaraukset/lapila-massakentat",
+		title_fi: "Lapilan massakentät",
+		title_en: "Lapila tennis courts",
+	}
 ];
 
 export const JuniorGroups = [

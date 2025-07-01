@@ -1,4 +1,5 @@
 import GalleryComponent from "../../components/GalleryComponent"
+import { jatsMestaruuskilpailut2023Images } from "../../utils/galleryImages"
 
 const JatsMestaruuskilpailut2023 = () => {
   return (
@@ -26,7 +27,7 @@ const JatsMestaruuskilpailut2023 = () => {
 
       <h3 className='subtitle mb-2 font-text'>Onnittelut voittajille ja kiitos kaikille osallistuneille!</h3>
 
-      <GalleryComponent />
+      <GalleryComponent images={jatsMestaruuskilpailut2023Images} />
 
     </div>
   )
