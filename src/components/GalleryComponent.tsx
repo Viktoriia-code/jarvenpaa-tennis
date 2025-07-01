@@ -1,7 +1,8 @@
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import 'photoswipe/dist/photoswipe.css';
+import { galleryImage } from '../types/galleryImage';
 
-const GalleryComponent = ({ images }) => {
+const GalleryComponent = ({ images }: { images: galleryImage[] }) => {
   return (
     <div>
       <Gallery withCaption>
