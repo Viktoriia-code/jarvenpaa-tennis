@@ -1,18 +1,17 @@
 import SectionTitle from "../SectionTitle";
 import '../../index.css';
-//import { useTranslation } from "react-i18next";
 import CourseCalendar from "../CourseCalendar";
 import { useState } from "react";
 
-const Schedule: React.FC = () => {
-  //const { t } = useTranslation();
+type LocationKeys = "Kerava" | "Järvenpää";
 
-  const [selected, setSelected] = useState({
+const Schedule: React.FC = () => {
+  const [selected, setSelected] = useState<Record<LocationKeys, boolean>>({
     Kerava: true,
     Järvenpää: true,
   });
 
-  const toggle = (loc) => {
+  const toggle = (loc: LocationKeys) => {
     setSelected((prev) => ({ ...prev, [loc]: !prev[loc] }));
   };
 
@@ -25,21 +24,24 @@ const Schedule: React.FC = () => {
         <div className="flex gap-x-8 gap-y-6 ">
           <CourseCalendar />
           <div className="flex flex-col gap-4 items-start">
-            {Object.keys(selected).map((loc) => (
-              <label key={loc} className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={selected[loc]}
-                  onChange={() => toggle(loc)}
-                />
-                <span>{loc}</span>
-              </label>
-            ))}
+            {Object.keys(selected).map((loc) => {
+              const key = loc as LocationKeys;
+              return (
+                <label key={key} className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selected[key]}
+                    onChange={() => toggle(key)}
+                  />
+                  <span>{key}</span>
+                </label>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Schedule
+export default Schedule;
