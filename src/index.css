@@ -29,7 +29,7 @@ body {
   color: rgba(255, 255, 255, 0.87);
   --backgroundColor: #F8FAF9;
   --orange-gradient: linear-gradient(351deg, #FF861E 0%, #FF861E 32.85%, #F6D217 100%);
-  --blue-court: url(assets/images/noise_transparent.png) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
+  --blue-court: url(/images/ui/noise_transparent.png) repeat, linear-gradient(343deg, #0562A5 0%, #0F85DA 100%);
   --gray-bg: #E4E5E5;
   --dark-blue: #0A4E91;
   --white: #FFF;
