@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
+import { EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import styled from "styled-components";
 
@@ -22,7 +23,7 @@ const CalendarStyles = styled.div`
   .fc-timegrid-axis {
     background-color: #f0f0f0;
     border: 1px solid #C0C0C0 !important;
-  border-right-width: 1px !important;
+    border-right-width: 1px !important;
   }
   .fc-timegrid-slot {
     height: 30px !important;
@@ -33,7 +34,6 @@ const CalendarStyles = styled.div`
   .fc-timegrid-slot-label {
     border: 1px solid #C0C0C0 !important;
     padding: 0 8px !important;
-   
   }
   .fc-timegrid-slot-frame {
     background-color: white !important;
@@ -42,45 +42,66 @@ const CalendarStyles = styled.div`
   .fc-timegrid-event {
     border: 1px solid #C0C0C0 !important;
   }
-`
+`;
 
-const dayMap = {
-  Sunday: 0, 
-  Monday: 1, 
-  Tuesday: 2, 
+type Weekday = "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday";
+
+interface RawEvent {
+  id: string;
+  text: string;
+  day: Weekday;
+  startTime: string;
+  endTime: string;
+  color: string;
+}
+
+const dayMap: Record<Weekday, number> = {
+  Sunday: 0,
+  Monday: 1,
+  Tuesday: 2,
   Wednesday: 3,
-  Thursday: 4, 
-  Friday: 5, 
-  Saturday: 6
+  Thursday: 4,
+  Friday: 5,
+  Saturday: 6,
 };
 
-const getMonday = (date) => {
+const getMonday = (date: Date): Date => {
   const d = new Date(date);
-  const day = d.getDay() || 7; // воскресенье -> 7
+  const day = d.getDay() || 7;
   d.setHours(0, 0, 0, 0);
   d.setDate(d.getDate() - day + 1);
   return d;
 };
 
-const mapEvents = (rawEvents, monday) => rawEvents.map(({ day, startTime, endTime, text, id, color }) => {
-  const date = new Date(monday);
-  date.setDate(monday.getDate() + (dayMap[day] - 1));
-  const [sh, sm] = startTime.split(":").map(Number);
-  const [eh, em] = endTime.split(":").map(Number);
-  const start = new Date(date); start.setHours(sh, sm);
-  const end = new Date(date); end.setHours(eh, em);
-  return { id, title: text, start: start.toISOString(), end: end.toISOString(), backgroundColor: color };
-});
+const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
+  return rawEvents.map(({ day, startTime, endTime, text, id, color }) => {
+    const date = new Date(monday);
+    date.setDate(monday.getDate() + (dayMap[day] - 1));
+    const [sh, sm] = startTime.split(":").map(Number);
+    const [eh, em] = endTime.split(":").map(Number);
+    const start = new Date(date);
+    start.setHours(sh, sm);
+    const end = new Date(date);
+    end.setHours(eh, em);
+    return {
+      id,
+      title: text,
+      start: start.toISOString(),
+      end: end.toISOString(),
+      backgroundColor: color,
+    };
+  });
+};
 
-const rawEvents = [
+const rawEvents: RawEvent[] = [
   { id: "1", text: "Adults", day: "Monday", startTime: "10:00", endTime: "11:00", color: "#DE6C54" },
   { id: "2", text: "Adults", day: "Tuesday", startTime: "11:00", endTime: "12:00", color: "#4285DA" },
   { id: "3", text: "Juniors", day: "Wednesday", startTime: "14:00", endTime: "15:00", color: "#79B160" },
   { id: "4", text: "Juniors", day: "Thursday", startTime: "13:00", endTime: "14:00", color: "#F2C846" },
 ];
 
-const CourseCalendar = () => {
-  const [events, setEvents] = useState([]);
+const CourseCalendar = (): JSX.Element => {
+  const [events, setEvents] = useState<EventInput[]>([]);
 
   useEffect(() => {
     const monday = getMonday(new Date());

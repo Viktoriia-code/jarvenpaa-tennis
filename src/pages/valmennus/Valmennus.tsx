@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ServiceCard from '../../components/ServiceCard';
 import '../../index.css';
-import CourseCalendar from '../../components/CourseCalendar.jsx';
+import CourseCalendar from '../../components/CourseCalendar';
 
 const Valmennus = () => {
   return (
