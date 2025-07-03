@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
-import { EventInput } from "@fullcalendar/core";
+import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import styled from "styled-components";
+
+const renderEventContent = (arg: EventContentArg) => {
+  const [line1, line2] = arg.event.title.split("\n");
+  const timeText = arg.timeText;
+  return (
+    <>
+      <div>{timeText}</div>
+      <div>{line1}</div>
+      <div>{line2}</div>
+    </>
+  );
+};
 
 const CalendarStyles = styled.div`
   font-family: Tahoma, sans-serif;
@@ -41,6 +53,7 @@ const CalendarStyles = styled.div`
   }
   .fc-timegrid-event {
     border: 1px solid #C0C0C0 !important;
+    padding-left: 2px !important;
   }
 `;
 
@@ -53,6 +66,7 @@ interface RawEvent {
   startTime: string;
   endTime: string;
   color: string;
+  location: string;
 }
 
 const dayMap: Record<Weekday, number> = {
@@ -74,7 +88,7 @@ const getMonday = (date: Date): Date => {
 };
 
 const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
-  return rawEvents.map(({ day, startTime, endTime, text, id, color }) => {
+  return rawEvents.map(({ day, startTime, endTime, text, id, color, location }) => {
     const date = new Date(monday);
     date.setDate(monday.getDate() + (dayMap[day] - 1));
     const [sh, sm] = startTime.split(":").map(Number);
@@ -85,7 +99,7 @@ const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
     end.setHours(eh, em);
     return {
       id,
-      title: text,
+      title: `${text}\n${location}`,
       start: start.toISOString(),
       end: end.toISOString(),
       backgroundColor: color,
@@ -94,10 +108,10 @@ const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
 };
 
 const rawEvents: RawEvent[] = [
-  { id: "1", text: "Adults", day: "Monday", startTime: "10:00", endTime: "11:00", color: "#DE6C54" },
-  { id: "2", text: "Adults", day: "Tuesday", startTime: "11:00", endTime: "12:00", color: "#4285DA" },
-  { id: "3", text: "Juniors", day: "Wednesday", startTime: "14:00", endTime: "15:00", color: "#79B160" },
-  { id: "4", text: "Juniors", day: "Thursday", startTime: "13:00", endTime: "14:00", color: "#F2C846" },
+  { id: "1", text: "Aikuiset", day: "Monday", startTime: "10:00", endTime: "11:00", color: "#DE6C54", location: "Kerava 1" },
+  { id: "2", text: "Aikuiset", day: "Tuesday", startTime: "11:00", endTime: "12:00", color: "#4285DA", location: "LS" },
+  { id: "3", text: "Juniors", day: "Wednesday", startTime: "14:00", endTime: "15:00", color: "#79B160", location: "TH" },
+  { id: "4", text: "Juniors", day: "Thursday", startTime: "13:00", endTime: "14:00", color: "#F2C846", location: "Kerava 2" },
 ];
 
 const CourseCalendar = (): JSX.Element => {
@@ -124,6 +138,7 @@ const CourseCalendar = (): JSX.Element => {
         headerToolbar={false}
         slotLabelFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
         eventTimeFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
+        eventContent={renderEventContent}
       />
     </CalendarStyles>
   );

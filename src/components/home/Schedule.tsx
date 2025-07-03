@@ -3,13 +3,13 @@ import '../../index.css';
 import CourseCalendar from "../CourseCalendar";
 import { useState } from "react";
 
-type LocationKeys = "Kerava" | "Järvenpää" | "All";
+type LocationKeys = "Kerava" | "Järvenpää" | "Kaikki";
 
 const Schedule: React.FC = () => {
   const [selected, setSelected] = useState<Record<LocationKeys, boolean>>({
     Kerava: true,
     Järvenpää: true,
-    All: true,
+    Kaikki: true,
   });
 
   const toggle = (loc: LocationKeys) => {
@@ -26,8 +26,8 @@ const Schedule: React.FC = () => {
         <p className="mt-4 mb-4">Harjoitukset jatkuvat ti 7.1.2025. Sisäkausi loppuu sunnuntaina 22.6.2025.</p>
         <div className="flex gap-x-8 gap-y-6 ">
           <CourseCalendar />
-          <div className="flex flex-col gap-4 items-start">
-            <p className="subtitle font-text">Locations:</p>
+          <div className="flex flex-col gap-3 items-start">
+            <p className="subtitle font-text">Sijainnit:</p>
             {Object.keys(selected).map((loc) => {
               const key = loc as LocationKeys;
               return (
