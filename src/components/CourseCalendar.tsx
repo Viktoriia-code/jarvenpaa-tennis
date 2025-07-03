@@ -8,11 +8,11 @@ const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
   const timeText = arg.timeText;
   return (
-    <>
-      <div className="whitespace-nowrap">{timeText}</div>
+    <div className="leading-tight">
+      <div className="whitespace-nowrap text-xs">{timeText}</div>
       <div>{line1}</div>
       <div>{line2}</div>
-    </>
+    </div>
   );
 };
 
@@ -21,7 +21,6 @@ const CalendarStyles = styled.div`
   font-size: 14px;
   font-weight: 300 !important;
   border: 1px solid #C0C0C0 !important;
-  height: 100% !important;
   width: 100% !important;
   .fc-day-today {
     background-color: transparent !important;
@@ -38,9 +37,9 @@ const CalendarStyles = styled.div`
     border-right-width: 1px !important;
   }
   .fc-timegrid-slot {
-    height: 30px !important;
-    min-height: 30px !important;
-    max-height: 30px !important;
+    height: 26px !important;
+    min-height: 26px !important;
+    max-height: 26px !important;
     padding: 0 !important;
   }
   .fc-timegrid-slot-label {
@@ -54,6 +53,9 @@ const CalendarStyles = styled.div`
   .fc-timegrid-event {
     border: 1px solid #C0C0C0 !important;
     padding-left: 2px !important;
+  }
+  .fc {
+    max-height: 610px;
   }
 `;
 
