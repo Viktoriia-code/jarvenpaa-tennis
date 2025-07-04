@@ -158,13 +158,33 @@ const rawEvents: RawEvent[] = [
   { id: "46", text: "Aikuiset", day: "Friday", startTime: "19:00", endTime: "20:00", color: "#4285DA", location: "TH" },
 ];
 
-const CourseCalendar = (): JSX.Element => {
+interface CourseCalendarProps {
+  locations: string[];
+}
+
+const locationMap: Record<string, string[]> = {
+  Kerava: ["Kerava 1", "Kerava 2"],
+  "Järvenpää": ["Best", "TH", "LS"],
+  Kaikki: [],
+};
+
+const CourseCalendar = ({ locations }: CourseCalendarProps): JSX.Element => {
   const [events, setEvents] = useState<EventInput[]>([]);
 
   useEffect(() => {
     const monday = getMonday(new Date());
-    setEvents(mapEvents(rawEvents, monday));
-  }, []);
+
+    let filteredEvents: RawEvent[];
+
+    if (locations.includes("Kaikki")) {
+      filteredEvents = rawEvents;
+    } else {
+      const places = locations.flatMap(loc => locationMap[loc]);
+      filteredEvents = rawEvents.filter(ev => places.includes(ev.location));
+    }
+
+    setEvents(mapEvents(filteredEvents, monday));
+  }, [locations]);
 
   return (
     <CalendarStyles>
