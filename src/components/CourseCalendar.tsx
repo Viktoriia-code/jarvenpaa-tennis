@@ -3,6 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import styled from "styled-components";
+import { dayMap, LocationKeys, locationMap, RawEvent, rawEvents } from "../utils/coursesInfo";
 
 const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
@@ -59,28 +60,6 @@ const CalendarStyles = styled.div`
   }
 `;
 
-type Weekday = "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday";
-
-interface RawEvent {
-  id: string;
-  text: string;
-  day: Weekday;
-  startTime: string;
-  endTime: string;
-  color: string;
-  location: string;
-}
-
-const dayMap: Record<Weekday, number> = {
-  Sunday: 0,
-  Monday: 1,
-  Tuesday: 2,
-  Wednesday: 3,
-  Thursday: 4,
-  Friday: 5,
-  Saturday: 6,
-};
-
 const getMonday = (date: Date): Date => {
   const d = new Date(date);
   const day = d.getDay() || 7;
@@ -109,102 +88,77 @@ const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
   });
 };
 
-const rawEvents: RawEvent[] = [
-  { id: "1", text: "Aikuiset", day: "Monday", startTime: "12:00", endTime: "13:30", color: "#DE6C54", location: "Best" },
-  { id: "2", text: "Aikuiset", day: "Monday", startTime: "16:00", endTime: "17:00", color: "#DE6C54", location: "Best" },
-  { id: "3", text: "Aikuiset", day: "Monday", startTime: "17:00", endTime: "18:00", color: "#DE6C54", location: "Best" },
-  { id: "4", text: "Aikuiset", day: "Monday", startTime: "18:00", endTime: "19:00", color: "#DE6C54", location: "Best" },
-  { id: "5", text: "Aikuiset", day: "Monday", startTime: "19:00", endTime: "20:00", color: "#DE6C54", location: "Best" },
-  { id: "6", text: "Aikuiset", day: "Monday", startTime: "20:00", endTime: "21:00", color: "#DE6C54", location: "Best" },
-  { id: "7", text: "Juniors", day: "Monday", startTime: "16:00", endTime: "17:00", color: "#4285DA", location: "LS" },
-  { id: "8", text: "Juniors", day: "Monday", startTime: "17:00", endTime: "18:00", color: "#4285DA", location: "LS" },
-  { id: "9", text: "Aikuiset", day: "Monday", startTime: "18:00", endTime: "19:00", color: "#4285DA", location: "LS" },
-  { id: "10", text: "Aikuiset", day: "Monday", startTime: "19:00", endTime: "20:00", color: "#4285DA", location: "LS" },
-  { id: "11", text: "Aikuiset", day: "Tuesday", startTime: "18:00", endTime: "19:00", color: "#DE6C54", location: "Kerava 1" },
-  { id: "12", text: "Aikuiset", day: "Tuesday", startTime: "11:00", endTime: "12:00", color: "#79B160", location: "Kerava 1" },
-  { id: "13", text: "Juniors", day: "Tuesday", startTime: "16:00", endTime: "17:00", color: "#79B160", location: "Kerava 1" },
-  { id: "14", text: "Juniors", day: "Tuesday", startTime: "17:00", endTime: "18:00", color: "#79B160", location: "Kerava 1" },
-  { id: "15", text: "Aikuiset", day: "Tuesday", startTime: "18:00", endTime: "19:00", color: "#79B160", location: "Kerava 2" },
-  { id: "16", text: "Aikuiset", day: "Tuesday", startTime: "19:00", endTime: "20:00", color: "#79B160", location: "Kerava 2" },
-  { id: "17", text: "Aikuiset", day: "Tuesday", startTime: "20:00", endTime: "21:00", color: "#79B160", location: "Kerava 2" },
-  { id: "18", text: "Juniors", day: "Tuesday", startTime: "16:00", endTime: "17:00", color: "#4285DA", location: "LS" },
-  { id: "19", text: "Aikuiset", day: "Tuesday", startTime: "17:00", endTime: "18:00", color: "#4285DA", location: "LS" },
-  { id: "20", text: "Aikuiset", day: "Tuesday", startTime: "18:00", endTime: "19:00", color: "#4285DA", location: "LS" },
-  { id: "21", text: "Aikuiset", day: "Tuesday", startTime: "19:00", endTime: "20:00", color: "#4285DA", location: "LS" },
-  { id: "22", text: "Aikuiset", day: "Tuesday", startTime: "20:00", endTime: "21:00", color: "#4285DA", location: "LS" },
-  { id: "23", text: "Juniors", day: "Tuesday", startTime: "18:00", endTime: "19:00", color: "#F2C846", location: "Best" },
-  { id: "24", text: "Juniors", day: "Wednesday", startTime: "16:00", endTime: "17:00", color: "#DE6C54", location: "TH" },
-  { id: "25", text: "Juniors", day: "Wednesday", startTime: "17:00", endTime: "18:00", color: "#DE6C54", location: "LS" },
-  { id: "26", text: "Aikuiset", day: "Wednesday", startTime: "18:00", endTime: "19:00", color: "#DE6C54", location: "LS" },
-  { id: "27", text: "Aikuiset", day: "Wednesday", startTime: "19:00", endTime: "20:00", color: "#DE6C54", location: "Best" },
-  { id: "28", text: "Juniors", day: "Wednesday", startTime: "15:00", endTime: "16:00", color: "#F2C846", location: "LS" },
-  { id: "29", text: "Juniors", day: "Wednesday", startTime: "16:00", endTime: "17:00", color: "#F2C846", location: "LS" },
-  { id: "30", text: "Juniors", day: "Wednesday", startTime: "18:00", endTime: "19:00", color: "#F2C846", location: "TH" },
-  { id: "31", text: "Juniors", day: "Wednesday", startTime: "15:00", endTime: "16:00", color: "#4285DA", location: "Best" },
-  { id: "32", text: "Aikuiset", day: "Wednesday", startTime: "16:00", endTime: "17:00", color: "#4285DA", location: "Best" },
-  { id: "33", text: "Aikuiset", day: "Wednesday", startTime: "17:00", endTime: "18:00", color: "#4285DA", location: "Best" },
-  { id: "34", text: "Aikuiset", day: "Wednesday", startTime: "18:00", endTime: "19:00", color: "#4285DA", location: "Best" },
-  { id: "35", text: "Aikuiset", day: "Thursday", startTime: "10:00", endTime: "11:00", color: "#DE6C54", location: "LS" },
-  { id: "36", text: "Aikuiset", day: "Thursday", startTime: "17:00", endTime: "18:00", color: "#DE6C54", location: "Kerava 2" },
-  { id: "37", text: "Aikuiset", day: "Thursday", startTime: "18:00", endTime: "19:00", color: "#DE6C54", location: "Kerava 2" },
-  { id: "38", text: "Aikuiset", day: "Thursday", startTime: "19:00", endTime: "20:00", color: "#DE6C54", location: "Kerava 2" },
-  { id: "39", text: "Juniors", day: "Thursday", startTime: "17:00", endTime: "18:00", color: "#4285DA", location: "LS" },
-  { id: "40", text: "Aikuiset", day: "Thursday", startTime: "18:00", endTime: "19:00", color: "#4285DA", location: "LS" },
-  { id: "41", text: "Aikuiset", day: "Thursday", startTime: "20:00", endTime: "21:00", color: "#4285DA", location: "LS" },
-  { id: "42", text: "Juniors", day: "Friday", startTime: "17:00", endTime: "18:00", color: "#DE6C54", location: "LS" },
-  { id: "43", text: "Juniors", day: "Friday", startTime: "16:00", endTime: "17:00", color: "#4285DA", location: "LS" },
-  { id: "44", text: "Juniors", day: "Friday", startTime: "17:00", endTime: "18:00", color: "#4285DA", location: "TH" },
-  { id: "45", text: "Juniors", day: "Friday", startTime: "18:00", endTime: "19:00", color: "#4285DA", location: "LS" },
-  { id: "46", text: "Aikuiset", day: "Friday", startTime: "19:00", endTime: "20:00", color: "#4285DA", location: "TH" },
-];
-
-interface CourseCalendarProps {
-  locations: string[];
-}
-
-const locationMap: Record<string, string[]> = {
-  Kerava: ["Kerava 1", "Kerava 2"],
-  "Järvenpää": ["Best", "TH", "LS"],
-  Kaikki: [],
-};
-
-const CourseCalendar = ({ locations }: CourseCalendarProps): JSX.Element => {
+const CourseCalendar = (): JSX.Element => {
   const [events, setEvents] = useState<EventInput[]>([]);
+  const [selected, setSelected] = useState<Record<LocationKeys, boolean>>({
+    Kerava: true,
+    Järvenpää: true,
+  });
+
+  const selectedLocations = Object.entries(selected)
+    .filter(([, isSelected]) => isSelected)
+    .map(([loc]) => loc as LocationKeys);
 
   useEffect(() => {
     const monday = getMonday(new Date());
 
-    let filteredEvents: RawEvent[];
-
-    if (locations.includes("Kaikki")) {
-      filteredEvents = rawEvents;
-    } else {
-      const places = locations.flatMap(loc => locationMap[loc]);
-      filteredEvents = rawEvents.filter(ev => places.includes(ev.location));
-    }
+    const places = selectedLocations.flatMap(loc => locationMap[loc]);
+    const filteredEvents = rawEvents.filter(ev => places.includes(ev.location));
 
     setEvents(mapEvents(filteredEvents, monday));
-  }, [locations]);
+  }, [selectedLocations]);
+
+  const toggle = (loc: LocationKeys) => {
+    setSelected((prev) => {
+      const other = loc === "Kerava" ? "Järvenpää" : "Kerava";
+      const newValue = !prev[loc];
+
+      // If both locations are deselected, keep at least one selected
+      if (!newValue && !prev[other]) {
+        return prev;
+      }
+
+      return { ...prev, [loc]: newValue };
+    });
+  };
 
   return (
-    <CalendarStyles>
-      <FullCalendar
-        plugins={[timeGridPlugin]}
-        initialView="timeGridWeek"
-        slotMinTime="10:00:00"
-        slotMaxTime="21:00:00"
-        slotDuration="00:30:00"
-        allDaySlot={false}
-        firstDay={1}
-        hiddenDays={[0, 6]}
-        events={events}
-        dayHeaderFormat={{ weekday: "long" }}
-        headerToolbar={false}
-        slotLabelFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
-        eventTimeFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
-        eventContent={renderEventContent}
-      />
-    </CalendarStyles>
+    <div className="flex gap-x-8 gap-y-6">
+      <CalendarStyles>
+        <FullCalendar
+          plugins={[timeGridPlugin]}
+          initialView="timeGridWeek"
+          slotMinTime="10:00:00"
+          slotMaxTime="21:00:00"
+          slotDuration="00:30:00"
+          allDaySlot={false}
+          firstDay={1}
+          hiddenDays={[0, 6]}
+          events={events}
+          dayHeaderFormat={{ weekday: "long" }}
+          headerToolbar={false}
+          slotLabelFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
+          eventTimeFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
+          eventContent={renderEventContent}
+        />
+      </CalendarStyles>
+      <div className="flex flex-col gap-3 items-start">
+        <p className="subtitle font-text">Sijainnit:</p>
+        {Object.keys(selected).map((loc) => {
+          const key = loc as LocationKeys;
+          return (
+            <label key={key} className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={selected[key]}
+                onChange={() => toggle(key)}
+              />
+              <span>{key}</span>
+            </label>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
