@@ -123,7 +123,7 @@ const CourseCalendar = (): JSX.Element => {
   };
 
   return (
-    <div className="flex gap-x-8 gap-y-6">
+    <div className="flex gap-x-8 gap-y-6 w-full">
       <CalendarStyles>
         <FullCalendar
           plugins={[timeGridPlugin]}
