@@ -3,7 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import styled from "styled-components";
-import { dayMap, LocationKeys, locationMap, RawEvent, rawEvents } from "../utils/coursesInfo";
+import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents } from "../utils/coursesInfo";
 
 const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
@@ -90,37 +90,24 @@ const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
 
 const CourseCalendar = (): JSX.Element => {
   const [events, setEvents] = useState<EventInput[]>([]);
-  const [selected, setSelected] = useState<Record<LocationKeys, boolean>>({
-    Kerava: true,
-    Järvenpää: true,
-  });
-
-  const selectedLocations = Object.entries(selected)
-    .filter(([, isSelected]) => isSelected)
-    .map(([loc]) => loc as LocationKeys);
+  const [selectedLoc, setSelectedLoc] = useState<LocationKeys>("Molemmat");
+  const [selectedAge, setSelectedAge] = useState<string>("Molemmat");
 
   useEffect(() => {
     const monday = getMonday(new Date());
 
-    const places = selectedLocations.flatMap(loc => locationMap[loc]);
-    const filteredEvents = rawEvents.filter(ev => places.includes(ev.location));
+    const locationFiltered =
+      selectedLoc === "Molemmat"
+        ? rawEvents
+        : rawEvents.filter(ev => locationMap[selectedLoc].includes(ev.location));
 
-    setEvents(mapEvents(filteredEvents, monday));
-  }, [selectedLocations]);
+    const ageFiltered =
+      selectedAge === "Molemmat"
+        ? locationFiltered
+        : locationFiltered.filter(ev => ageMap[selectedAge].includes(ev.text));
 
-  const toggle = (loc: LocationKeys) => {
-    setSelected((prev) => {
-      const other = loc === "Kerava" ? "Järvenpää" : "Kerava";
-      const newValue = !prev[loc];
-
-      // If both locations are deselected, keep at least one selected
-      if (!newValue && !prev[other]) {
-        return prev;
-      }
-
-      return { ...prev, [loc]: newValue };
-    });
-  };
+    setEvents(mapEvents(ageFiltered, monday));
+  }, [selectedLoc, selectedAge]);
 
   return (
     <div className="flex gap-x-8 gap-y-6 w-full">
@@ -142,21 +129,40 @@ const CourseCalendar = (): JSX.Element => {
           eventContent={renderEventContent}
         />
       </CalendarStyles>
-      <div className="flex flex-col gap-3 items-start">
-        <p className="subtitle font-text">Sijainnit:</p>
-        {Object.keys(selected).map((loc) => {
-          const key = loc as LocationKeys;
-          return (
+      <div className="flex flex-col gap-7 items-start">
+        {/* Location filtering */}
+        <div className="flex flex-col gap-2 items-start">
+          <p className="subtitle font-text mb-1">Sijainti:</p>
+          {Object.keys(locationMap).map((loc) => {
+            const key = loc as LocationKeys;
+            return (
+              <label key={key} className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="location"
+                  checked={selectedLoc === key}
+                  onChange={() => setSelectedLoc(key)}
+                />
+                <span>{key}</span>
+              </label>
+            );
+          })}
+        </div>
+        {/* Age filtering */}
+        <div className="flex flex-col gap-2 items-start">
+          <p className="subtitle font-text mb-1">Ikäryhmä:</p>
+          {Object.keys(ageMap).map((key) => (
             <label key={key} className="flex items-center gap-2 cursor-pointer">
               <input
-                type="checkbox"
-                checked={selected[key]}
-                onChange={() => toggle(key)}
+                type="radio"
+                name="age"
+                checked={selectedAge === key}
+                onChange={() => setSelectedAge(key)}
               />
               <span>{key}</span>
             </label>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );
