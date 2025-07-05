@@ -3,7 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import styled from "styled-components";
-import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents } from "../utils/coursesInfo";
+import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap } from "../utils/coursesInfo";
 
 const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
@@ -69,7 +69,7 @@ const getMonday = (date: Date): Date => {
 };
 
 const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
-  return rawEvents.map(({ day, startTime, endTime, text, id, color, location }) => {
+  return rawEvents.map(({ day, startTime, endTime, text, id, trainer, location }) => {
     const date = new Date(monday);
     date.setDate(monday.getDate() + (dayMap[day] - 1));
     const [sh, sm] = startTime.split(":").map(Number);
@@ -83,7 +83,7 @@ const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
       title: `${text}\n${location}`,
       start: start.toISOString(),
       end: end.toISOString(),
-      backgroundColor: color,
+      backgroundColor: trainerColorMap[trainer] || "#CCCCCC",
     };
   });
 };
@@ -92,22 +92,43 @@ const CourseCalendar = (): JSX.Element => {
   const [events, setEvents] = useState<EventInput[]>([]);
   const [selectedLoc, setSelectedLoc] = useState<LocationKeys>("Molemmat");
   const [selectedAge, setSelectedAge] = useState<string>("Molemmat");
+  const [selectedTrainer, setSelectedTrainer] = useState<Record<string, boolean>>({
+    Matti: true,
+    Samuli: true,
+    Stefan: true,
+    Viljami: true,
+  });
+
+  const selectedTrainers = Object.entries(selectedTrainer)
+    .filter(([, value]) => value)
+    .map(([key]) => key);
 
   useEffect(() => {
     const monday = getMonday(new Date());
 
-    const locationFiltered =
-      selectedLoc === "Molemmat"
-        ? rawEvents
-        : rawEvents.filter(ev => locationMap[selectedLoc].includes(ev.location));
+    let filtered = rawEvents;
 
-    const ageFiltered =
-      selectedAge === "Molemmat"
-        ? locationFiltered
-        : locationFiltered.filter(ev => ageMap[selectedAge].includes(ev.text));
+    if (selectedLoc !== "Molemmat") {
+      const allowedLocations = locationMap[selectedLoc];
+      filtered = filtered.filter(ev => allowedLocations.includes(ev.location));
+    }
 
-    setEvents(mapEvents(ageFiltered, monday));
-  }, [selectedLoc, selectedAge]);
+    if (selectedAge !== "Molemmat") {
+      const allowedAges = ageMap[selectedAge];
+      filtered = filtered.filter(ev => allowedAges.includes(ev.text));
+    }
+
+    filtered = filtered.filter(ev => selectedTrainers.includes(ev.trainer));
+
+    setEvents(mapEvents(filtered, monday));
+  }, [selectedLoc, selectedAge, selectedTrainers]);
+
+  const toggleTrainer = (trainer: string) => {
+    setSelectedTrainer(prev => ({
+      ...prev,
+      [trainer]: !prev[trainer],
+    }));
+  };
 
   return (
     <div className="flex gap-x-8 gap-y-6 w-full">
@@ -132,11 +153,11 @@ const CourseCalendar = (): JSX.Element => {
       <div className="flex flex-col gap-7 items-start">
         {/* Location filtering */}
         <div className="flex flex-col gap-2 items-start">
-          <p className="subtitle font-text mb-1">Sijainti:</p>
+          <p className="font-semibold text-lg">Sijainti:</p>
           {Object.keys(locationMap).map((loc) => {
             const key = loc as LocationKeys;
             return (
-              <label key={key} className="flex items-center gap-2 cursor-pointer">
+              <label key={key} className="flex items-center gap-1 cursor-pointer text-base">
                 <input
                   type="radio"
                   name="location"
@@ -150,9 +171,9 @@ const CourseCalendar = (): JSX.Element => {
         </div>
         {/* Age filtering */}
         <div className="flex flex-col gap-2 items-start">
-          <p className="subtitle font-text mb-1">Ikäryhmä:</p>
+          <p className="font-semibold text-lg">Ikäryhmä:</p>
           {Object.keys(ageMap).map((key) => (
-            <label key={key} className="flex items-center gap-2 cursor-pointer">
+            <label key={key} className="flex items-center gap-1 cursor-pointer text-base">
               <input
                 type="radio"
                 name="age"
@@ -160,6 +181,32 @@ const CourseCalendar = (): JSX.Element => {
                 onChange={() => setSelectedAge(key)}
               />
               <span>{key}</span>
+            </label>
+          ))}
+        </div>
+        {/* Trainer filtering */}
+        <div className="flex flex-col gap-2 items-start">
+          <p className="font-semibold text-lg">Valmentaja:</p>
+          {Object.keys(trainerMap).map((key) => (
+            <label key={key} className="flex items-center gap-1 cursor-pointer text-base">
+              <input
+                type="checkbox"
+                name="trainer"
+                checked={selectedTrainer[key]}
+                onChange={() => toggleTrainer(key)}
+              />
+              <span>{key}</span>
+              {key !== "Kaikki" && (
+                <span
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    backgroundColor: trainerColorMap[key],
+                    border: "1px solid gray",
+                    display: "inline-block",
+                  }}
+                />
+              )}
             </label>
           ))}
         </div>
