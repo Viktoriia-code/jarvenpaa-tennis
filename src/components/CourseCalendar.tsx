@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import fiLocale from '@fullcalendar/core/locales/fi';
 import styled from "styled-components";
 import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap } from "../utils/coursesInfo";
 
@@ -154,6 +155,7 @@ const CourseCalendar = (): JSX.Element => {
         <FullCalendar
           plugins={[timeGridPlugin]}
           initialView="timeGridWeek"
+          locale={fiLocale}
           slotMinTime="10:00:00"
           slotMaxTime="21:00:00"
           slotDuration="00:30:00"
