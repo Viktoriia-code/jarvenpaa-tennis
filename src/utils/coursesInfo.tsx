@@ -8,6 +8,7 @@ export interface RawEvent {
   endTime: string;
   trainer: string;
   location: string;
+  availableSpots?: number;
 }
 
 export const dayMap: Record<Weekday, number> = {
@@ -55,8 +56,8 @@ export const rawEvents: RawEvent[] = [
   { id: "4", text: "Aikuiset", day: "Monday", startTime: "18:00", endTime: "19:00", trainer: "Matti", location: "Best" },
   { id: "5", text: "Aikuiset", day: "Monday", startTime: "19:00", endTime: "20:00", trainer: "Matti", location: "Best" },
   { id: "6", text: "Aikuiset", day: "Monday", startTime: "20:00", endTime: "21:00", trainer: "Matti", location: "Best" },
-  { id: "7", text: "Juniorit", day: "Monday", startTime: "16:00", endTime: "17:00", trainer: "Samuli", location: "LS" },
-  { id: "8", text: "Juniorit", day: "Monday", startTime: "17:00", endTime: "18:00", trainer: "Samuli", location: "LS" },
+  { id: "7", text: "Juniorit", day: "Monday", startTime: "16:00", endTime: "17:00", trainer: "Samuli", location: "LS", availableSpots: 2 },
+  { id: "8", text: "Juniorit", day: "Monday", startTime: "17:00", endTime: "18:00", trainer: "Samuli", location: "LS", availableSpots: 1 },
   { id: "9", text: "Aikuiset", day: "Monday", startTime: "18:00", endTime: "19:00", trainer: "Samuli", location: "LS" },
   { id: "10", text: "Aikuiset", day: "Monday", startTime: "19:00", endTime: "20:00", trainer: "Samuli", location: "LS" },
   { id: "11", text: "Aikuiset", day: "Tuesday", startTime: "18:00", endTime: "19:00", trainer: "Matti", location: "Kerava 1" },
@@ -77,7 +78,7 @@ export const rawEvents: RawEvent[] = [
   { id: "26", text: "Aikuiset", day: "Wednesday", startTime: "18:00", endTime: "19:00", trainer: "Matti", location: "LS" },
   { id: "27", text: "Aikuiset", day: "Wednesday", startTime: "19:00", endTime: "20:00", trainer: "Matti", location: "Best" },
   { id: "28", text: "Juniorit", day: "Wednesday", startTime: "15:00", endTime: "16:00", trainer: "Viljami", location: "LS" },
-  { id: "29", text: "Juniorit", day: "Wednesday", startTime: "16:00", endTime: "17:00", trainer: "Viljami", location: "LS" },
+  { id: "29", text: "Juniorit", day: "Wednesday", startTime: "16:00", endTime: "17:00", trainer: "Viljami", location: "LS", availableSpots: 1 },
   { id: "30", text: "Juniorit", day: "Wednesday", startTime: "18:00", endTime: "19:00", trainer: "Viljami", location: "TH" },
   { id: "31", text: "Juniorit", day: "Wednesday", startTime: "15:00", endTime: "16:00", trainer: "Samuli", location: "Best" },
   { id: "32", text: "Aikuiset", day: "Wednesday", startTime: "16:00", endTime: "17:00", trainer: "Samuli", location: "Best" },
@@ -91,8 +92,8 @@ export const rawEvents: RawEvent[] = [
   { id: "40", text: "Aikuiset", day: "Thursday", startTime: "18:00", endTime: "19:00", trainer: "Samuli", location: "LS" },
   { id: "41", text: "Aikuiset", day: "Thursday", startTime: "20:00", endTime: "21:00", trainer: "Samuli", location: "LS" },
   { id: "42", text: "Juniorit", day: "Friday", startTime: "17:00", endTime: "18:00", trainer: "Matti", location: "LS" },
-  { id: "43", text: "Juniorit", day: "Friday", startTime: "16:00", endTime: "17:00", trainer: "Samuli", location: "LS" },
-  { id: "44", text: "Juniorit", day: "Friday", startTime: "17:00", endTime: "18:00", trainer: "Samuli", location: "TH" },
+  { id: "43", text: "Juniorit", day: "Friday", startTime: "16:00", endTime: "17:00", trainer: "Samuli", location: "LS", availableSpots: 1 },
+  { id: "44", text: "Juniorit", day: "Friday", startTime: "17:00", endTime: "18:00", trainer: "Samuli", location: "TH", availableSpots: 1 },
   { id: "45", text: "Juniorit", day: "Friday", startTime: "18:00", endTime: "19:00", trainer: "Samuli", location: "LS" },
-  { id: "46", text: "Aikuiset", day: "Friday", startTime: "19:00", endTime: "20:00", trainer: "Samuli", location: "TH" },
+  { id: "46", text: "Aikuiset", day: "Friday", startTime: "19:00", endTime: "20:00", trainer: "Samuli", location: "TH", availableSpots: 1 },
 ];

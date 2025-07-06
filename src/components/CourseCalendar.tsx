@@ -8,10 +8,19 @@ import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainer
 const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
   const timeText = arg.timeText;
+  const availableSpots = arg.event.extendedProps?.availableSpots;
   return (
     <div className="leading-tight">
-      <div className="whitespace-nowrap text-xs">{timeText}</div>
-      <div>{line1}</div>
+      <span className="whitespace-nowrap text-xs">{timeText}</span>
+      <div className="flex items-center gap-1">
+        {line1}
+        {availableSpots && availableSpots > 0 && (
+          <span
+            className="block w-[10px] h-[10px] rounded-full bg-lime-300 border border-1 border-darkGray shadow-lg"
+            title={`${availableSpots} vapaita paikkaa`}
+          />
+        )}
+      </div>
       <div>{line2}</div>
     </div>
   );
@@ -54,6 +63,7 @@ const CalendarStyles = styled.div`
   .fc-timegrid-event {
     border: 1px solid #C0C0C0 !important;
     padding-left: 2px !important;
+    width: 100% !important;
   }
   .fc {
     max-height: 610px;
@@ -69,7 +79,7 @@ const getMonday = (date: Date): Date => {
 };
 
 const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
-  return rawEvents.map(({ day, startTime, endTime, text, id, trainer, location }) => {
+  return rawEvents.map(({ day, startTime, endTime, text, id, trainer, location, availableSpots }) => {
     const date = new Date(monday);
     date.setDate(monday.getDate() + (dayMap[day] - 1));
     const [sh, sm] = startTime.split(":").map(Number);
@@ -84,6 +94,9 @@ const mapEvents = (rawEvents: RawEvent[], monday: Date): EventInput[] => {
       start: start.toISOString(),
       end: end.toISOString(),
       backgroundColor: trainerColorMap[trainer] || "#CCCCCC",
+      extendedProps: {
+        availableSpots
+      }
     };
   });
 };
@@ -98,6 +111,7 @@ const CourseCalendar = (): JSX.Element => {
     Stefan: true,
     Viljami: true,
   });
+  const [onlyAvailable, setOnlyAvailable] = useState(false);
 
   const selectedTrainers = Object.entries(selectedTrainer)
     .filter(([, value]) => value)
@@ -120,8 +134,12 @@ const CourseCalendar = (): JSX.Element => {
 
     filtered = filtered.filter(ev => selectedTrainers.includes(ev.trainer));
 
+    if (onlyAvailable) {
+      filtered = filtered.filter(ev => ev.availableSpots && ev.availableSpots > 0);
+    }
+
     setEvents(mapEvents(filtered, monday));
-  }, [selectedLoc, selectedAge, selectedTrainers]);
+  }, [selectedLoc, selectedAge, selectedTrainers, onlyAvailable]);
 
   const toggleTrainer = (trainer: string) => {
     setSelectedTrainer(prev => ({
@@ -209,6 +227,19 @@ const CourseCalendar = (): JSX.Element => {
               )}
             </label>
           ))}
+        </div>
+        {/* Available spots filter */}
+        <div className="flex gap-1 items-start">
+          <input
+            type="checkbox"
+            id="only-available"
+            checked={onlyAvailable}
+            onChange={() => setOnlyAvailable(prev => !prev)}
+            className="mt-[6px] cursor-pointer"
+          />
+          <label htmlFor="only-available" className="text-base cursor-pointer select-none">
+            Vain kurssit, joilla on vapaita paikkoja
+          </label>
         </div>
       </div>
     </div>
