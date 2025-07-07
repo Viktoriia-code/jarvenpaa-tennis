@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import fiLocale from '@fullcalendar/core/locales/fi';
 import styled from "styled-components";
 import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap } from "../utils/coursesInfo";
+import { ClockIcon, CalendarDaysIcon, MapPinIcon, UserIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
 
 const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
@@ -116,6 +117,8 @@ const CourseCalendar = (): JSX.Element => {
     Viljami: true,
   });
   const [onlyAvailable, setOnlyAvailable] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const selectedTrainers = Object.entries(selectedTrainer)
     .filter(([, value]) => value)
@@ -152,6 +155,35 @@ const CourseCalendar = (): JSX.Element => {
     }));
   };
 
+  const handleEventClick = (info: any) => {
+    const raw = rawEvents.find(ev => ev.id === info.event.id);
+    if (raw) {
+      setSelectedEvent({
+        title: raw.text,
+        location: raw.location,
+        day: raw.day,
+        startTime: raw.startTime,
+        endTime: raw.endTime,
+        trainer: raw.trainer,
+        availableSpots: raw.availableSpots,
+      });
+      openDialog();
+    }
+  };
+
+  const openDialog = () => {
+    dialogRef.current?.showModal();
+    document.body.classList.add("no-scroll");
+  };
+
+  const closeDialog = () => {
+    dialogRef.current?.close();
+    document.body.classList.remove("no-scroll");
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+  };
+
   return (
     <div className="flex gap-x-8 gap-y-6 w-full">
       <CalendarStyles>
@@ -171,6 +203,7 @@ const CourseCalendar = (): JSX.Element => {
           slotLabelFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
           eventTimeFormat={{ hour: "2-digit", minute: "2-digit", hour12: false }}
           eventContent={renderEventContent}
+          eventClick={handleEventClick}
         />
       </CalendarStyles>
       <div className="flex flex-col gap-7 items-start">
@@ -247,6 +280,48 @@ const CourseCalendar = (): JSX.Element => {
           </label>
         </div>
       </div>
+      <dialog
+        ref={dialogRef}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            closeDialog();
+          }
+        }}
+        className="fixed inset-0 m-auto p-7 shadow-lg border bg-white max-w-[400px] w-full"
+      >
+        {selectedEvent && (
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">{selectedEvent.title}</h2>
+            <div className="flex items-center gap-2 mb-2">
+              <ClockIcon width={25} className='text-gray' />
+              <strong>Aika:</strong> {selectedEvent.startTime} - {selectedEvent.endTime}
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              <CalendarDaysIcon width={25} className='text-gray' />
+              <strong>Viikonpäivä:</strong> {selectedEvent.day}
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              <MapPinIcon width={25} className='text-gray' />
+              <strong>Sijainti:</strong> {selectedEvent.location}
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              <UserIcon width={25} className='text-gray' />
+              <strong>Valmentaja:</strong> {selectedEvent.trainer}
+            </div>
+            {selectedEvent.availableSpots !== undefined && (
+              <div className="flex items-center gap-2 mb-2">
+                <MegaphoneIcon  width={25} className='text-gray' />
+                <strong>Vapaita paikkoja:</strong> {selectedEvent.availableSpots}
+              </div>
+            )}
+            <div className="mt-4 flex justify-end">
+              <div onClick={closeDialog} className="bg-green-700 text-white px-3 py-1 w-fit cursor-pointer">
+                Sulje
+              </div>
+            </div>
+          </div>
+        )}
+      </dialog>
     </div>
   );
 };

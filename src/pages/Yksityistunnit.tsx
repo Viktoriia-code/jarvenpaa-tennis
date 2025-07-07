@@ -1,6 +1,6 @@
-import PageTitle from '../components/PageTitle';
 import TennisPlay from '/images/pageBanners/tennis_play.jpg';
 import '../index.css';
+import PageTitle from '@/components/PageTitle';
 
 const Yksityistunnit = () => {
   return (
