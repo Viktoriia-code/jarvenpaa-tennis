@@ -69,6 +69,9 @@ const CalendarStyles = styled.div`
   .fc {
     max-height: 610px;
   }
+  .fc-event {
+    cursor: pointer;
+  }
 `;
 
 const getMonday = (date: Date): Date => {
