@@ -256,6 +256,11 @@ button:focus-visible {
   @apply bg-grayBg border-[3px] border-gray hover:bg-gray;
 }
 
+.secondary-btn {
+  transition: all 300ms ease-in-out;
+  @apply flex bg-grayBg border-[3px] border-gray hover:bg-gray px-4 py-[6px] w-fit cursor-pointer;
+}
+
 .form_input {
   padding: 0.5rem;
   border: 1px solid #d1d5db;

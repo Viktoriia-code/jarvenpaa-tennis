@@ -4,8 +4,9 @@ import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import fiLocale from '@fullcalendar/core/locales/fi';
 import styled from "styled-components";
-import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap } from "../utils/coursesInfo";
-import { ClockIcon, CalendarDaysIcon, MapPinIcon, UserIcon, MegaphoneIcon } from '@heroicons/react/24/outline';
+import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap, weekdayMap } from "../utils/coursesInfo";
+import { ClockIcon, CalendarDaysIcon, MapPinIcon, UserIcon, MegaphoneIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import "@/index.css";
 
 const renderEventContent = (arg: EventContentArg) => {
   const [line1, line2] = arg.event.title.split("\n");
@@ -291,14 +292,21 @@ const CourseCalendar = (): JSX.Element => {
       >
         {selectedEvent && (
           <div>
-            <h2 className="text-2xl font-semibold mb-4">{selectedEvent.title}</h2>
+            <div className="flex justify-between mb-4 items-start">
+              <h2 className="text-2xl font-semibold">{selectedEvent.title}</h2>
+              <XMarkIcon
+                width={25}
+                className="cursor-pointer text-darkGray hover:text-black"
+                onClick={closeDialog}
+              />
+            </div>
             <div className="flex items-center gap-2 mb-2">
               <ClockIcon width={25} className='text-gray' />
               <strong>Aika:</strong> {selectedEvent.startTime} - {selectedEvent.endTime}
             </div>
             <div className="flex items-center gap-2 mb-2">
               <CalendarDaysIcon width={25} className='text-gray' />
-              <strong>Viikonpäivä:</strong> {selectedEvent.day}
+              <strong>Viikonpäivä:</strong> {weekdayMap[selectedEvent.day]}
             </div>
             <div className="flex items-center gap-2 mb-2">
               <MapPinIcon width={25} className='text-gray' />
@@ -315,7 +323,7 @@ const CourseCalendar = (): JSX.Element => {
               </div>
             )}
             <div className="mt-4 flex justify-end">
-              <div onClick={closeDialog} className="bg-green-700 text-white px-3 py-1 w-fit cursor-pointer">
+              <div onClick={closeDialog} className="secondary-btn">
                 Sulje
               </div>
             </div>

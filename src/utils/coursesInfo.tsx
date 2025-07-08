@@ -21,6 +21,16 @@ export const dayMap: Record<Weekday, number> = {
   Saturday: 6,
 };
 
+export const weekdayMap: Record<string, string> = {
+  Monday: "Maanantai",
+  Tuesday: "Tiistai",
+  Wednesday: "Keskiviikko",
+  Thursday: "Torstai",
+  Friday: "Perjantai",
+  Saturday: "Lauantai",
+  Sunday: "Sunnuntai",
+};
+
 export type LocationKeys = "Kerava" | "Järvenpää" | "Molemmat";
 
 export const locationMap: Record<string, string[]> = {

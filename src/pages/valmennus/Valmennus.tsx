@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import ServiceCard from '../../components/ServiceCard';
-import '../../index.css';
+import ServiceCard from '@/components/ServiceCard';
+import '@/index.css';
 
 const Valmennus = () => {
   return (
