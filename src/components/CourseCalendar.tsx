@@ -4,8 +4,8 @@ import { EventContentArg, EventInput } from "@fullcalendar/core";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import fiLocale from '@fullcalendar/core/locales/fi';
 import styled from "styled-components";
-import { ageMap, dayMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap, weekdayMap } from "../utils/coursesInfo";
-import { ClockIcon, CalendarDaysIcon, MapPinIcon, UserIcon, MegaphoneIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ageMap, dayMap, locationAddressMap, locationHallMap, LocationKeys, locationMap, RawEvent, rawEvents, trainerColorMap, trainerMap, weekdayMap } from "../utils/coursesInfo";
+import { ClockIcon, CalendarDaysIcon, MapPinIcon, UserIcon, MegaphoneIcon, XMarkIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
 import "@/index.css";
 
 const renderEventContent = (arg: EventContentArg) => {
@@ -288,7 +288,7 @@ const CourseCalendar = (): JSX.Element => {
             closeDialog();
           }
         }}
-        className="fixed inset-0 m-auto p-7 shadow-lg border bg-white max-w-[400px] w-full"
+        className="fixed inset-0 m-auto p-7 shadow-lg border bg-white max-w-[450px] w-full"
       >
         {selectedEvent && (
           <div>
@@ -309,8 +309,12 @@ const CourseCalendar = (): JSX.Element => {
               <strong>Viikonpäivä:</strong> {weekdayMap[selectedEvent.day]}
             </div>
             <div className="flex items-center gap-2 mb-2">
+              <BuildingOfficeIcon width={25} className='text-gray' />
+              <strong>Halli:</strong> {locationHallMap[selectedEvent.location]}
+            </div>
+            <div className="flex items-center gap-2 mb-2">
               <MapPinIcon width={25} className='text-gray' />
-              <strong>Sijainti:</strong> {selectedEvent.location}
+              <strong>Osoite:</strong> {locationAddressMap[selectedEvent.location]}
             </div>
             <div className="flex items-center gap-2 mb-2">
               <UserIcon width={25} className='text-gray' />

@@ -39,6 +39,22 @@ export const locationMap: Record<string, string[]> = {
   Molemmat: [],
 };
 
+export const locationHallMap: Record<string, string> = {
+  "Kerava 1": "Keravan Tenniskeskus",
+  "Kerava 2": "Keravan Tenniskeskus",
+  "Best": "Best-halli",
+  "TH": "Tennishalli",
+  "LS": "Läpisyöttö",
+};
+
+export const locationAddressMap: Record<string, string> = {
+  "Kerava 1": "Metsolantie 5, Kerava",
+  "Kerava 2": "Metsolantie 5, Kerava",
+  "Best": "Neulakatu 6, Järvenpää",
+  "TH": "Kuuselankatu 2, Järvenpää",
+  "LS": "Kuuselankatu 2, Järvenpää",
+};
+
 export const ageMap: Record<string, string[]> = {
   Aikuiset: ["Aikuiset"],
   Juniorit: ["Juniorit"],
