@@ -14,7 +14,7 @@ git clone https://github.com/Viktoriia-code/jarvenpaa-tennis.git
 ```
 2) Move to the folder and install modules:
 ```
-cd ./tennis-2023
+cd ./jarvenpaa-tennis
 npm install
 ```
 3) Run the application:
