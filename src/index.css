@@ -1,13 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --font-text: Poppins, "Open Sans", sans-serif;
+  --font-title: Montserrat, sans-serif;
+  --font-subtitle: Inter, "Open Sans", sans-serif;
+
+  --color-accent: #FF861E;
+  --color-darkAccent: #F76800;
+  --color-grayBg: #E4E5E5;
+  --color-gray: #c8c9c9;
+  --color-darkGray: #7D7D7D;
+  --color-darkBlue: #0A4E91;
+  --color-yellow: #f6b93b;
+  --color-darkGreen: #138C52;
+  --color-lightGreen: #DDE79D;
 }
 
 html {
@@ -23,6 +30,12 @@ body {
   font-family: 'Poppins', sans-serif;
   color: black;
   @apply font-text text-base md:text-lg;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.125rem;
+  }
 }
 
 :root {
